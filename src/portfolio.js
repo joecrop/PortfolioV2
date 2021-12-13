@@ -3,8 +3,8 @@
 // Website related settings
 const settings = {
   isSplash: true, // Change this to true if you want to use the splash screen.
-  useCustomCursor: true, // Change this to false if you want the good'ol cursor
-  googleTrackingID: "UA-174238252-2",
+  useCustomCursor: false, // Change this to false if you want the good'ol cursor
+  googleTrackingID: "",
 };
 
 //Home Page
@@ -499,113 +499,186 @@ const certifications = {
 // Experience Page
 const experience = {
   title: "Experience",
-  subtitle: "Work, Internship and Volunteership",
-  description:
-    "I've completed one internship. I've mostly done projects on my own and I am actively looking for internships. I love organizing workshops to share my knowledge with others.",
+  subtitle: "IC Design, Web Design, and Teaching",
+  description: "",
   header_image_path: "experience.svg",
   sections: [
     {
-      title: "Work Experience",
+      title: "IC Design Experience",
       experiences: [
         {
-          title: "Full Stack Developer (Intern)",
-          company: "Valora Infotech",
-          company_url: "https://valora-infotech.business.site/",
-          logo_path: "valora.jpg",
-          duration: "Oct 2020 - Mar 2021",
-          location: "Office",
-          description: `Train, manage and provide guidance to junior software development staff.
-          Work closely with the Project Manager and Team Leads on change request functions.
-          Develops new and maintains existing applications.
-          Increased productivity and problem-solving technics by 20%.
-          We primarily used PERN and MERN Stack. 80% of my work was doing backend development and the remaining 20% was DevOps-related tasks.
-          `,
-          // "I worked on the Dashboard project which helps users track their activities while using Walo Application. I also worked on Ocean Inventory Application and it's Admin panel Backend as well as on Ocean Inventory Admin Front-end using React and also worked on Walo Admin Backend.",
+          title: "Principal Member of Technical Staff",
+          company: "Analog Devices (ADI)",
+          company_url: "https://analogdevices.com",
+          logo_path: "adi.png",
+          duration: "Oct. 2021- Present",
+          location: "Beaverton, OR",
+          description: `ADI bought/merged Maxim Integration.`,
           color: "#0071C5",
         },
         {
-          title: "Full Stack Developer (Freelancer)",
-          company: "NightOwls",
-          company_url: "http://nightowls.company/",
-          logo_path: "nightowls.jpg",
-          duration: "Sep 2020 - Oct 2020",
-          location: "Work From Home",
-          description: `Work closely with the Client and Team on change request functions.
-          We Primarily used LAMP Stack. 40% of my work was doing backend development, 30% of my work was designing database schemas, and 30% of my work was on maintain hosting and user traffics on the website.
-          `,
-          // "Created Front end of Yearn Financial Mutual Funds website. also degined simple web application for better user experience, designed DB Schemas as well.",
-          color: "#ee3c26",
+          title: "Principal Member of Technical Staff",
+          company: "Maxim Integrated",
+          company_url: "https://maximintegrated.com",
+          logo_path: "maxim.png",
+          duration: "Sept. 2014 - Oct. 2021",
+          location: "Boston, San Jose, Beaverton",
+          description: `Designing digital circuit with a mixed-signal team for IP blocks such as Pipelined ADCs and PLLs.
+          Leading diverse team of verification/software developers in CAD software.`,
+          color: "#0071C5",
+        },
+        {
+          title: "I/O Design Intern",
+          company: "Intel",
+          company_url: "https://intel.com",
+          logo_path: "intel.png",
+          duration: "Summer 2012",
+          location: "San Jose, CA",
+          description: `Worked with I/O circuit design team at Intel in Santa Clara, CA.
+          Verified I/O circuit operation for next generation server processors.
+          Designed novel circuits and architectures for next next next generation server processors.`,
+          color: "#0071C5",
+        },
+        {
+          title: "Research Intern",
+          company: "Fudan University",
+          company_url: "https://fudan.edu",
+          logo_path: "fudan.png",
+          duration: "Summer 2011",
+          location: "Shanghai, China",
+          description: `Spent the summer as a research intern at Fudan University in Shanghai, China.
+          Research focused on low-power and low-energy encryption engine optimization for integrated RFID systems.`,
+          color: "#0071C5",
+        },
+        {
+          title: "Research Assistant",
+          company: "Oregon State University",
+          company_url: "https://eecs.oregonstate.edu",
+          logo_path: "osu.png",
+          duration: "2010-2014",
+          location: "Corvallis, OR",
+          description: `Researched ultra low-power digital circuits and architectures in the VLSI group at OSU (SRC and NFS funded).`,
+          color: "#0071C5",
         },
       ],
     },
     {
-      title: "Volunteerships",
+      title: "Web Design / Dev-Ops / IT",
       experiences: [
         {
-          title: "Cross Winter of Code Mentor",
-          company: "CWOC",
-          company_url: "https://crosswoc.ieeedtu.in/",
-          logo_path: "cwoc.png",
-          duration: "Feb 2021 - Present",
-          location: "Work From Home",
-          description:
-            "Mentorship responsibilities were to help students plan the project, review issues and pull requests, ensure smooth progress and help them out when they are stuck.",
-          color: "#4285F4",
+          title: "CEO",
+          company: "GatherAct LLC",
+          company_url: "https://gatheract.com",
+          logo_path: "ga-logo.png",
+          duration: "Aug. 2010 - Present",
+          location: "Home Office",
+          description: `Co-Founded GatherAct, an ed-tech company that does consulting and API services tailored to ed-tech.
+          GatherAct founded LTI As A Service (LTIAAS) that makes it easy for ed-tech tool to integrate with schools.`,
+          color: "#0071C5",
         },
         {
-          title: "Campus Hustler",
-          company: "Skillenza",
-          company_url: "https://skillenza.com/",
-          logo_path: "skillenza.png",
-          duration: "Feb 2021 - Present",
-          location: "Work from Home",
-          description:
-            "Spread Awareness of new Technologies and new Opportunities to Students and Grow Skillenza Community.",
-          color: "#196acf",
+          title: "Web Design Consultant",
+          company: "Personal",
+          company_url: "https://joecrop.com",
+          logo_path: "consulting.png",
+          duration: "2005 - Present",
+          location: "Home Office",
+          description: `Design and maintain several websites for customers.`,
+          color: "#0071C5",
         },
         {
-          title: "GitHub Student Developer",
-          company: "GitHub",
-          company_url: "https://github.com/",
-          logo_path: "github.png",
-          duration: "Nov 2019 - Present",
-          location: "Work from Home",
-          description:
-            "Contribute to Open Source Community and Open Source Project.",
-          color: "#040f26",
+          title: "Alyrica Networks Technician",
+          company: "Summer 2008",
+          company_url: "https://alyrica.com",
+          logo_path: "alyrica.png",
+          duration: "Summer 2008",
+          location: "Philomath, OR",
+          description: `Helped a small local startup Internet Service Provider as a support technician. Duties ranged from fixing customer computers, managing websites, securing servers, to network troubleshooting and everything in between.
+          Also worked on a live customer tracking/mapping system.`,
+          color: "#0071C5",
         },
         {
-          title: "Google Local Guide",
-          company: "Google Map",
-          company_url: "https://maps.google.com/localguides/",
-          logo_path: "localguide.png",
-          duration: "Sep 2018 - Present",
-          location: "Work From Home",
-          description:
-            "Day-to-day responsibilities of helping local businesses to spread their business to the world. Helping users by writing reviews about different locations and spaces such as shops, malls, etc.",
-          color: "#D83B01",
+          title: "Engineering IT Support",
+          company: "Oregon State University",
+          company_url: "https://engr.oregonstate.edu.com",
+          logo_path: "osu.png",
+          duration: "2005 - 2009",
+          location: "Corvallis, OR",
+          description: `Worked independently with little supervisor support for the College of Engineering at OSU as an IT support representative solving problems involving High Performance Computing Clusters and general computer support.
+          Worked with the OSU HPC cluster developing an extensive usage, load, and job monitoring application.`,
+          color: "#0071C5",
         },
         {
-          title: "GDG Student Volunteer",
-          company: "Google Developer Groups",
-          company_url: "https://gdg.community.dev/",
-          logo_path: "gdg.png",
-          duration: "Feb 2021 - Present",
-          location: "Work From Home",
-          description:
-            "Google Developer Group Surat Student Volunteer and Member.",
-          color: "#D83B01",
+          title: "Student Computing Lab Manager",
+          company: "Oregon State University",
+          company_url: "https://.com",
+          logo_path: "osu.png",
+          duration: "2004 - 2005",
+          location: "Corvallis, OR",
+          description: `Worked for Oregon State University's Student Computing Facilities as a computer lab manager.
+          Troubleshot problems as they arose and helped teach users how to use the computers and software.`,
+          color: "#0071C5",
         },
         {
-          title: "E. F. I. Student Volunteer",
-          company: "ENVIRONMENTALIST FOUNDATION OF INDIA",
-          company_url: "https://indiaenvironment.org/",
-          logo_path: "efi.png",
-          duration: "Apr 2017 - Present",
-          location: "Work From Home",
-          description:
-            "Take time out over weekends to join a gang of nation builders, nature enthusiasts to conserve what is left.",
-          color: "#5a900f",
+          title: "Network Technician",
+          company: "Intel",
+          company_url: "https://intel.com",
+          logo_path: "intel.png",
+          duration: "2003 - 2004",
+          location: "Hillsboro, OR",
+          description: `Worked at Intel as the Assistant Network Technician for the Desktop Platforms Group - Electronic Communications (DPG-EC).
+          Duties included mostly layer 2 configuration of switches and a private subnet lab isolation project.`,
+          color: "#0071C5",
+        },
+      ],
+    },
+    {
+      title: "Teaching",
+      experiences: [
+        {
+          title: "Instructor",
+          company: "Oregon State University",
+          company_url: "https://eecs.oregonstate.edu",
+          logo_path: "osu.png",
+          duration: "Spring 2013",
+          location: "Corvallis, OR",
+          description: `Taught ECE 473/573 to a mixed class of senior undergrads and graduate students.
+          The class focused on digital design with Verilog, advanced synthesis techniques, and scripting.`,
+          color: "#0071C5",
+        },
+        {
+          title: "Summer Class Instructor",
+          company: "Oregon State University",
+          company_url: "https://eecs.oregonstate.edu",
+          logo_path: "osu.png",
+          duration: "Summer 2010",
+          location: "Corvallis, OR",
+          description: `Taught class of computer science students over summer term.
+          Material included an overview of architecture concepts including pipe-lining, advanced assembly programming, and digital/CMOS logic.`,
+          color: "#0071C5",
+        },
+        {
+          title: "Teaching Assistant",
+          company: "Oregon State University",
+          company_url: "https://eecs.oregonstate.edu",
+          logo_path: "osu.png",
+          duration: "2009 - 2014",
+          location: "Corvallis, OR",
+          description: `Taught Computer Architecture classes to undergraduate students. ECE/CS 375 where students learn AVR Assembly language while learning basic architecture concepts in a lab setting.
+          ECE/CS 472 where students were lead through the design of a 5-stage pipelined MIPS processor in Verilog with advanced architecture concepts.
+          ECE 473/573 Microprocessor System Design, where students are lead through the engineering, design, and programming of an Atmel controlled clock radio.`,
+          color: "#0071C5",
+        },
+        {
+          title: "Precollege Outreach Programs Instructor",
+          company: "Oregon State University",
+          company_url: "https://oregonstate.edu",
+          logo_path: "osu.png",
+          duration: "2006 - 2013",
+          location: "Corvallis, OR",
+          description: `Taught web design and other technology-oriented classes to both middle school and high school students through Oregon State University.
+          Classes are taught almost year-round through both weekend programs and summer camps.`,
+          color: "#0071C5",
         },
       ],
     },
