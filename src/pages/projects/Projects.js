@@ -38,8 +38,11 @@ function Projects(props) {
                 className="projects-header-detail-text subTitle"
                 style={{ color: theme.secondaryText }}
               >
-                {projectsHeader["description"]}
+                {projectsHeader["description"]}, or
               </p>
+              <a {...styles} className="general-btn" href="/PortfolioV2/old">
+                Check out the joecrop.com archive...
+              </a>
             </div>
           </div>
         </Fade>
@@ -52,11 +55,7 @@ function Projects(props) {
       <br />
       <br />
       <br />
-      <a
-        {...styles}
-        className="general-btn"
-        href="https://github.com/harikanani"
-      >
+      <a {...styles} className="general-btn" href="https://github.com/joecrop">
         More Projects (Github)
       </a>
       <br />

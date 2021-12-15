@@ -14,7 +14,8 @@ const greeting = {
   logo_name: "Joe Crop",
   nickname: "Joe",
   full_name: "Joe Crop",
-  subTitle: "A Microchip Designer, Full Stack Developer, Ed-Tech Enthusiast.",
+  subTitle:
+    "I'm a Microchip Designer, Full Stack Web Developer + Dev-Ops Engineer, Ed-Tech Enthusiast, and Teacher.",
   resumeLink: "resume.pdf",
   mail: "mailto:joe.crop@gmail.com",
 };
@@ -100,6 +101,13 @@ const skills = {
         {
           skillName: "C++",
           fontAwesomeClassname: "simple-icons:cplusplus",
+          style: {
+            color: "#E94E32",
+          },
+        },
+        {
+          skillName: "C#",
+          fontAwesomeClassname: "logos:c-sharp",
           style: {
             color: "#E94E32",
           },
@@ -229,7 +237,7 @@ const skills = {
       ],
     },
     {
-      title: "Full-Stack Web Development",
+      title: "Full-Stack Web Development + Dev-Ops",
       fileName: "CloudInfraImg",
       skills: [
         "⚡ Develop front end user interfaces for web applications",
@@ -238,7 +246,7 @@ const skills = {
         "⚡ Creat application backends in Node+Express",
         "⚡ Integration of third party services such as Firebase / Digital Ocean",
         "⚡ Hosting and managing websites in bare metal and Kubernetes",
-        "⚡ Experience with Continuous Integration",
+        "⚡ Managing several continuous integration pipelines that deploy to Kubernetes and Netlify",
       ],
       softwareSkills: [
         {
@@ -688,8 +696,7 @@ const experience = {
 // Projects Page
 const projectsHeader = {
   title: "Projects",
-  description:
-    "My projects make use of a vast variety of latest technology tools. My best experience is to create NodeJS Backend Projects, Python Scripts, and React Project. Below are some of my projects. Note that not all of the mentioned projects are on GitHub yet.",
+  description: "I've been busy and wear many hats. Check out what I am up to",
   avatar_image_path: "projects_image.svg",
 };
 
@@ -697,16 +704,14 @@ const projectsHeader = {
 const contactPageData = {
   contactSection: {
     title: "Contact Me",
-    profile_image_path: "harikrushn.jpg",
-    description:
-      "You can contact me at the places mentioned below. I will try to get back to you as fast as I can. ",
+    profile_image_path: "me.png",
+    description: "",
   },
   blogSection: {
-    title: "Blogs",
-    subtitle:
-      "I don't blog frequently but when I do something awesome, I do try to document it so it can be helpful to others. I write on Twitter.",
-    link: "https://twitter.com/Harikrushn9",
-    avatar_image_path: "blogs_image.svg",
+    title: "",
+    subtitle: "",
+    link: "",
+    avatar_image_path: "",
   },
 };
 
@@ -714,24 +719,46 @@ const projects = {
   data: [
     {
       id: "0",
-      name: "AutomateInstaPyBot",
-      url: "https://github.com/harikanani/AutomateInstaPyBot",
+      name: "LTI As A Service (LTIAAS)",
+      url: "https://ltiaas.com",
+      image: "ltiaas.gif",
       description:
-        "This is Instagram Bot. This will login to your Instagram account. Follow Users, Unfollow Users, Remove Profile Photo",
+        "LTIAAS is an API service that enables easy use of the LTI API",
       languages: [
         {
-          name: "Python",
-          iconifyClass: "logos-python",
+          name: "JavaScript",
+          iconifyClass: "logos:javascript",
+        },
+        {
+          name: "ReactJS",
+          iconifyClass: "logos:react",
+        },
+        {
+          name: "Kubernetes",
+          iconifyClass: "logos:kubernetes",
+        },
+        {
+          name: "Firebase",
+          iconifyClass: "logos:firebase",
+        },
+        {
+          name: "CSS3",
+          iconifyClass: "vscode-icons:file-type-css",
         },
       ],
     },
     {
       id: "1",
-      name: "react-twitter-clone",
-      url: "https://github.com/harikanani/react-twitter-clone",
+      name: "GatherAct",
+      url: "https://gatheract.com",
+      image: "GatherActBrowse_loop.gif",
       description:
-        "A React Twitter Clone UI with basic functionality such as make a Tweet.Embedded Profile Tweets and Share on Twitter.",
+        "GatherAct is an online communication platform (like Zoom) that was born out of the COVID-19 pandemic.",
       languages: [
+        {
+          name: "JavaScript",
+          iconifyClass: "logos:javascript",
+        },
         {
           name: "HTML5",
           iconifyClass: "vscode-icons:file-type-html",
@@ -741,186 +768,138 @@ const projects = {
           iconifyClass: "vscode-icons:file-type-css",
         },
         {
-          name: "React",
-          iconifyClass: "logos-react",
+          name: "VUE",
+          iconifyClass: "logos:vue",
         },
         {
-          name: "Firebase",
-          iconifyClass: "logos-firebase",
+          name: "SupaBase",
+          iconifyClass: "simple-icons:supabase",
         },
       ],
     },
     {
       id: "2",
-      name: "node-blockchain",
-      url: "https://github.com/harikanani/node-blockchain",
+      name: "VSCode-SystemVerilog",
+      url: "https://github.com/eirikpre/VSCode-SystemVerilog",
+      image: "goToDef_demo.gif",
       description:
-        "A simple blockchain and cryptocurrency wallet implemented in Node.js and TypeScript (for learning purposes).",
+        "Contributor/maintainer of SystemVerilog syntax plugin for VSCode.",
       languages: [
         {
-          name: "NodeJS",
-          iconifyClass: "logos-nodejs",
+          name: "JavaScript",
+          iconifyClass: "logos:javascript",
         },
         {
-          name: "TypeScript",
-          iconifyClass: "logos-typescript",
+          name: "SystemVerilog",
+          iconifyClass: "vscode-icons:file-type-systemverilog",
         },
       ],
     },
     {
       id: "3",
-      name: "top-crypto-gainers",
-      url: "https://github.com/harikanani/top-crypto-gainers",
-      description:
-        "A top high price changed crypto coins wring 24 hoursA sound-classifier webapp made with ReactJS + TensorflowJS.",
-      languages: [
-        {
-          name: "HTML5",
-          iconifyClass: "vscode-icons:file-type-html",
-        },
-        {
-          name: "CSS3",
-          iconifyClass: "vscode-icons:file-type-css",
-        },
-        {
-          name: "JavaScript",
-          iconifyClass: "logos-javascript",
-        },
-        {
-          name: "ReactJS",
-          iconifyClass: "logos-react",
-        },
-      ],
-    },
-    {
-      id: "4",
-      name: "personal-portfolio",
-      url: "https://github.com/harikanani/personal-portfolio",
-      description:
-        "A simple command line interface based quiz app to know more about me :).",
+      name: "How Many Kitties?",
+      image: "howmanykitties.png",
+      url: "/PortfolioV2/howmanykitties",
+      description: "A calculator from anything to Kitties.",
       languages: [
         {
           name: "JavaScript",
           iconifyClass: "logos-javascript",
         },
         {
-          name: "NodeJS",
-          iconifyClass: "logos-nodejs",
-        },
-      ],
-    },
-    {
-      id: "3",
-      name: "node_express_crud_api_starter",
-      url: "https://github.com/harikanani/node_express_crud_api_starter",
-      description: "Simple NodeJS Express CRUD Operations API starter.",
-      languages: [
-        {
-          name: "NodeJS",
-          iconifyClass: "logos-nodejs",
-        },
-      ],
-    },
-    {
-      id: "4",
-      name: "node-web-scrapper",
-      url: "https://github.com/harikanani/node-web-scrapper",
-      description:
-        "A Simple web scrapper that scrap the information of amazon products such as price.It also scrap Wikipedia Data such as birthdate.",
-      languages: [
-        {
-          name: "HTML5",
-          iconifyClass: "vscode-icons:file-type-html",
+          name: "PHP",
+          iconifyClass: "logos:php",
         },
         {
           name: "CSS3",
           iconifyClass: "vscode-icons:file-type-css",
         },
+      ],
+    },
+    {
+      id: "4",
+      name: "DrawCanvas.com",
+      image: "drawcanvas.png",
+      url: "",
+      description:
+        "A collaborative drawing website. [Retired due to Adobe Flash expiration]",
+      languages: [
         {
-          name: "NodeJs",
-          iconifyClass: "logos-nodejs",
+          name: "JavaScript",
+          iconifyClass: "logos-javascript",
+        },
+        {
+          name: "PHP",
+          iconifyClass: "logos:php",
+        },
+        {
+          name: "Flash",
+          iconifyClass: "vaadin:adobe-flash",
+        },
+        {
+          name: "MySQL",
+          iconifyClass: "logos:mysql",
         },
       ],
     },
     {
       id: "5",
-      name: "harikanani.github.io",
-      url: "https://github.com/harikanani/harikanani.github.io",
-      description:
-        "A Personal Portfolio Website that showcases my work and experience. which is hosted on Github Pages.",
+      name: "joeSpice",
+      image: "joespice.png",
+      url: "https://github.com/joecrop/joespice",
+      description: "A Verilog/Spice co-simulator written in c++.",
       languages: [
         {
-          name: "HTML5",
-          iconifyClass: "vscode-icons:file-type-html",
+          name: "C++",
+          iconifyClass: "logos:c-plusplus",
         },
         {
-          name: "CSS3",
-          iconifyClass: "vscode-icons:file-type-css",
-        },
-        {
-          name: "JavaScript",
-          iconifyClass: "logos-javascript",
-        },
-        {
-          name: "SCSS",
-          iconifyClass: "vscode-icons:file-type-scss2",
+          name: "Verilog",
+          iconifyClass: "vscode-icons:file-type-verilog",
         },
       ],
     },
     {
       id: "6",
-      name: "Automate Attendace",
-      url: "https://github.com/harikanani/Node_Python",
-      description: "Automation of Online Attendance using node js and python",
+      name: "Google Docs Circuit Templates",
+      url:
+        "https://docs.google.com/embeddedtemplate?id=1M00TjVs5Kp4BvP4EY3FMdINx2WzSoTNyclcNM8e7DUc",
+      description:
+        "A collection of popular circuit elements for anyone trying to draw circuit schematics in Google Drawings.",
       languages: [
         {
-          name: "JavaScript",
-          iconifyClass: "logos-javascript",
-        },
-        {
-          name: "Python",
-          iconifyClass: "logos-python",
+          name: "Google Docs/Drawings",
+          iconifyClass: "logos:google-drive",
         },
       ],
     },
     {
       id: "7",
-      name: "Automate Discord Bot",
-      url: "https://github.com/harikanani/AutomateDiscordBot",
+      name: "Cell Culling Toolkit",
+      url: "https://github.com/joecrop/cell_culling_toolkit",
       description:
-        "A Discord Bot to send Automatic messages to serer channel in regular time difference.",
+        "Code for my publication titled: 'Design automation methodology for improving the variability of synthesized digital circuits operating in the sub/near-threshold regime'.",
       languages: [
         {
-          name: "Python",
-          iconifyClass: "logos-python",
+          name: "Perl",
+          iconifyClass: "logos:perl",
         },
         {
-          name: "Python Selenium",
-          iconifyClass: "logos-selenium",
-        },
-        {
-          name: "Chromium Browser",
-          iconifyClass: "openmoji-chromium",
+          name: "Matlab",
+          iconifyClass: "vscode-icons:file-type-matlab",
         },
       ],
     },
     {
       id: "8",
-      name: "Flask Blog",
-      url: "https://github.com/harikanani/flask_blog",
-      description: "A Simple Blog Web Application made using Flask Framework",
+      name: "Android Network Simulator",
+      url: "/PortfolioV2/MNOS",
+      description:
+        "A Visual simulation of a conceptual android networking feature enhancement.",
       languages: [
         {
-          name: "Python",
-          iconifyClass: "logos-python",
-        },
-        {
-          name: "Flask",
-          iconifyClass: "cib-flask",
-        },
-        {
-          name: "HTML5",
-          iconifyClass: "vscode-icons:file-type-html",
+          name: "JavaScript",
+          iconifyClass: "logos-javascript",
         },
         {
           name: "CSS3",
@@ -930,99 +909,70 @@ const projects = {
     },
     {
       id: "9",
-      name: "Netflix top series",
-      url: "https://github.com/harikanani/netflix-top-series",
-      description: "List of Top Netflix Series which is deployed to vercel.",
+      name: "Star Trek Communicator Badge",
+      image: "communicator.jpeg",
+      url: "https://hackaday.io/project/19700-star-trek-communicator-badge",
+      description:
+        "In the true spirit of Star Trek, this communicator badge is completely autonomous, while fitting in the form factor of an original badge.",
       languages: [
         {
-          name: "JavaScript",
-          iconifyClass: "logos-javascript",
+          name: "c++",
+          iconifyClass: "logos:c-plusplus",
         },
         {
-          name: "ReactJS",
-          iconifyClass: "logos-react",
+          name: "Circuit Design",
+          iconifyClass: "wpf:integrated-circuit",
         },
         {
-          name: "HTML5",
-          iconifyClass: "logos-html-5",
+          name: "PCB Design",
+          iconifyClass: "flat-color-icons:circuit",
         },
         {
-          name: "CSS3",
-          iconifyClass: "logos-css-3",
+          name: "3D Modeling/Printing",
+          iconifyClass: "file-icons:3d-model",
         },
       ],
     },
     {
       id: "10",
-      name: "COVID-19 Tracker",
-      url: "https://github.com/harikanani/Covid19TrackerReact",
+      name: "Smart Desktop Medicine Organizer",
+      image: "sdmo.png",
+      url: "https://hackaday.io/project/7019-smart-desktop-medicine-organizer",
       description:
-        "Simple Covid-19 Tracker made using React and deployed to Vercel.",
+        "A coffee machine sized box that automatically organizes your medications and connects your medicine use directly to your doctor/pharmacy.",
       languages: [
         {
-          name: "JavaScript",
-          iconifyClass: "logos-javascript",
+          name: "Python",
+          iconifyClass: "logos-python",
         },
         {
-          name: "ReactJS",
-          iconifyClass: "logos-react",
+          name: "JavaScript",
+          iconifyClass: "logos:javascript",
         },
         {
           name: "HTML5",
-          iconifyClass: "logos-html-5",
+          iconifyClass: "vscode-icons:file-type-html",
         },
         {
           name: "CSS3",
-          iconifyClass: "logos-css-3",
+          iconifyClass: "vscode-icons:file-type-css",
+        },
+        {
+          name: "RaspberryPi",
+          iconifyClass: "logos:raspberry-pi",
         },
       ],
     },
     {
-      id: "11",
-      name: "Food Order Static Website",
-      url: "https://github.com/harikanani/food-order-website",
+      id: "9",
+      name: "Analog Comparator From Digital Gates",
+      url: "/blog",
       description:
-        "A simple static website related to food restaurants service. this is reasponsive as well.",
+        "An Analog Comparator Built Entirely out of 7410 Digital NAND3 Chips",
       languages: [
         {
-          name: "HTML5",
-          iconifyClass: "logos-html-5",
-        },
-        {
-          name: "CSS3",
-          iconifyClass: "logos-css-3",
-        },
-        {
-          name: "JavaScript",
-          iconifyClass: "logos-javascript",
-        },
-        {
-          name: "PHP",
-          iconifyClass: "logos-php",
-        },
-      ],
-    },
-    {
-      id: "12",
-      name: "NFT Launchpad",
-      url: "https://deliquescent-cents.000webhostapp.com/",
-      description: "NFT Launchpad crypto site portfolio",
-      languages: [
-        {
-          name: "HTML5",
-          iconifyClass: "logos-html-5",
-        },
-        {
-          name: "CSS3",
-          iconifyClass: "logos-css-3",
-        },
-        {
-          name: "JavaScript",
-          iconifyClass: "logos-javascript",
-        },
-        {
-          name: "ReactJS",
-          iconifyClass: "logos-react",
+          name: "Circuit Design",
+          iconifyClass: "wpf:integrated-circuit",
         },
       ],
     },

@@ -41,6 +41,12 @@ export default function ProjectCard({ repo, theme }) {
           <p className="repo-description" style={{ color: theme.text }}>
             {repo.description}
           </p>
+          {repo.image != null && (
+            <img
+              src={require(`../../assests/images/${repo.image}`)}
+              className="repo-image"
+            ></img>
+          )}
           <div className="repo-details">
             <ProjectLanguages logos={repo.languages} />
           </div>

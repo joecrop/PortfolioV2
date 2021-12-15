@@ -1,0 +1,25 @@
+site_name: "Joe Crop - Blog"
+theme:
+  name: material
+  logo: assets/me.png
+  favicon: assets/icon.png
+  features:
+    - navigation.instant
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - search.share
+markdown_extensions:
+  - footnotes
+  - toc:
+      permalink: true
+extra:
+  homepage: https://joecrop.com
+extra_css:
+  - css/site.css
+  - https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/styles/github.min.css
+extra_javascript:
+  - https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/highlight.min.js
+  - https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/languages/javascript.min.js
+  - js/site.js
+copyright: Copyright &copy; 2022 Joe Crop

@@ -10,7 +10,7 @@ function ExperienceAccordion(props) {
   return (
     <div className="experience-accord">
       <ThemeProvider theme={theme.name === "light" ? LightTheme : DarkTheme}>
-        <Accordion expanded={[0, 1]} expandMultiple>
+        <Accordion accordion={false}>
           {props.sections.map((section) => {
             return (
               <Panel

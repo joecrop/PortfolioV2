@@ -1,0 +1,70 @@
+:root {
+  --md-primary-fg-color: rgb(2, 62, 115);
+  --md-primary-fg-color--light: rgb(2, 62, 115);
+  --md-primary-fg-color--dark: rgb(2, 62, 115);
+  --md-default-bg-color: #fdfeff;
+  --md-default-fg-color--light: rgb(2, 62, 115);
+}
+
+body,
+input {
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.md-nav__item {
+  font-family: var(--md-text-font-family, _), -apple-system, BlinkMacSystemFont,
+    Helvetica, Arial, sans-serif;
+  color: rgb(2, 62, 115);
+}
+
+.md-header {
+  font-family: var(--md-text-font-family, _), -apple-system, BlinkMacSystemFont,
+    Helvetica, Arial, sans-serif;
+}
+
+.md-typeset h4 {
+  font-weight: 400;
+  letter-spacing: unset;
+}
+
+.md-header__title {
+  font-size: 1.3rem;
+  line-height: unset;
+  padding-top: 0.6rem;
+  margin-left: 0;
+}
+
+.md-footer-meta {
+  background-color: rgb(1, 54, 97);
+}
+
+.md-footer {
+  background-color: rgb(2, 62, 115);
+}
+.md-header__button.md-logo img,
+.md-header__button.md-logo svg {
+  width: unset;
+}
+
+.md-nav__title .md-nav__button.md-logo img,
+.md-nav__title .md-nav__button.md-logo svg {
+  fill: currentColor;
+  display: block;
+  height: unset;
+  width: unset;
+}
+
+@media screen and (max-width: 76.1875em) {
+  .md-nav--primary .md-nav__title[for="__drawer"] {
+    background-color: var(--md-primary-fg-color);
+    color: var(--md-primary-bg-color);
+    font-family: var(--md-text-font-family, _), -apple-system,
+      BlinkMacSystemFont, Helvetica, Arial, sans-serif;
+  }
+}

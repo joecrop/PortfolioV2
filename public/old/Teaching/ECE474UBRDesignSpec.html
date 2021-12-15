@@ -1,0 +1,326 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>Joseph Crop - ECE474UBRDesignSpec </title>
+	<meta http-equiv='Content-Style-Type' content='text/css' />
+	<!--HTMLHeader--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: pre; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  .TCprogress {background-color:#5af; min-height:13px; width:13px; color:#fff; margin-left:auto; margin-right:auto;}
+table.TotalCounter td {font-size:x-small; text-align:center}.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+  td.markup1 pre { white-space: pre-wrap; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none;}
+
+--></style>  <meta name='robots' content='noindex,nofollow' />
+
+	<link rel='stylesheet' href='../_fpub/skins/simpletab/pmwiki.css' type='text/css' />
+	<style type='text/css'><!--
+	#header {background-color: #950;}
+	a:link, a:visited, #menu ul li .here a, #menu ul li .here a:hover {color: #950;}
+	--></style>
+	<!--[if lte IE 6]>
+	<style type="text/css">
+	img, #logo, #vis, #header { behavior: url("../_fpub/skins/simpletab/iepngfix.htc"); }
+	</style>
+	<![endif]-->
+</head>
+<body>
+	<div id="main" style="position:absolute; top:20px; left:5px; z-index:101;">
+		<div class="image" style="width:94px;display:inline;"> 
+			<a href=".."><img border="0" src="../_fpub/skins/simpletab/images/me.png" title="Joe Crop"></img></a>
+		</div>
+		<div class="image" style="width:50px;display:inline;"> 
+			<img src="../_fpub/skins/simpletab/images/chip1.jpg" title="Sub-Threshold Asynchronous Multiplier"></img>
+		</div>
+		<div class="image" style="width:50px;display:inline;"> 
+			<img src="../_fpub/skins/simpletab/images/chip2.png" title="Low-Power Wireles Brain Sensor"></img>
+		</div>
+		<div class="image" style="width:50px;display:inline;"> 
+			<img src="../_fpub/skins/simpletab/images/chip3.jpg" title="Current Sensing and Sub-Threshold Variability Test Chip"></img>
+		</div>
+		<div class="image" style="width:50px;display:inline;"> 
+			<img src="../_fpub/skins/simpletab/images/chip4.png" title="Synctium: A 530mV 10-Lane SIMD Processor with Variation Resiliency in 45nm SOI"></img>
+		</div>
+		<div class="image" style="width:50px;display:inline;"> 
+			<img src="../_fpub/skins/simpletab/images/chip5.png" title="Advanced Near-Threshold Current Sensing Completion Detection Test Chip"></img>
+		</div>
+		<div class="image" style="width:40px;display:inline;"> 
+			<img src="../_fpub/skins/simpletab/images/toggle.png" onclick="toggleGame();" title="Toggle Balls"></img>
+		</div>
+	</div>
+	<div id="canvas"></div>
+
+	<div id="page">
+		<div id="suptitle"></div>
+		<div id="header" >
+			<div id="vis">
+				<!-- <a id="logo" href=".." title="Joseph Crop"></a> -->
+				<div id="menu"><ul><li> <a class='wikilink' href='../Main/HomePage.html'>Home</a>
+</li><li> <span class='here'>  <a class='wikilink' href='../Teaching/Teaching.html'>Teaching</a></span>
+</li><li> <a class='wikilink' href='../Resume/Objective.html'>R&eacute;sum&eacute;</a>
+</li><li> <a class='wikilink' href='../Publications/Publications.html'>Publications</a>
+</li><li> <a class='wikilink' href='../Teaching/Projects.html'>Projects</a>
+</li><li> <a class='wikilink' href='../Music/Music.html'>Music</a>
+</li><li> <a class='wikilink' href='../Pictures/Pictures.html'>Pictures</a>
+</li><li> <a class='wikilink' href='../Contact/Contact.html'>Contact</a>
+</li></ul>
+</div>
+			</div>
+		</div>
+	<div id="tools">
+	    <a rel="nofollow" accesskey='e' href='../Teaching/ECE474UBRDesignSpec.html?action=edit'></a>
+	    <a rel="nofollow" accesskey='h' href='../Teaching/ECE474UBRDesignSpec.html?action=diff'></a>      
+	    <a rel="nofollow" accesskey='a' href='../Teaching/ECE474UBRDesignSpec.html?action=upload'></a>      
+	    <a rel="nofollow" accesskey='c' href='../Teaching/RecentChanges'></a>      
+	    <a rel="nofollow" accesskey='r' href='../Site/AllRecentChanges]'></a>
+	    <a rel="nofollow" accesskey='l' href='../Teaching/SideBar?action=edit'></a>
+			<a rel="nofollow" accesskey='t' href='../Site/TopBar?action=edit'></a>
+			<a rel="nofollow" accesskey='m' href='../Site/TabMenu?action=edit'></a>
+			<a rel="nofollow" accesskey='f' href='../Site/Footer?action=edit'></a>
+	</div>
+
+	<div id="sidebar"><div class='vspace'></div><div class='frame' > 
+<h2> <a class='wikilink' href='../Main/HomePage.html'>Home</a></h2>
+<h2> <a class='wikilink' href='../Teaching/Teaching.html'>Teaching</a></h2>
+<h2> <a class='wikilink' href='../Resume/Objective.html'>R&eacute;sum&eacute;</a></h2>
+<h2> <a class='wikilink' href='../Publications/Publications.html'>Publications</a></h2>
+<div class='indent'> <a class='wikilink' href='../Publications/Images.html'>Images</a>
+</div><h2> <a class='wikilink' href='../Chips/Chips.html'>Chips</a></h2>
+<h2> <a class='wikilink' href='../Teaching/Projects.html'>Projects</a></h2>
+<h2> <a class='wikilink' href='../Music/Music.html'>Music</a></h2>
+<h2> <a class='wikilink' href='../Pictures/Pictures.html'>Pictures</a></h2>
+<h2> <a class='wikilink' href='../Contact/Contact.html'>Contact</a></h2>
+<h2> <a class='wikilink' href='../Links/Links.html'>Links</a></h2>
+<h2> <a class='wikilink' href='../Site/Search.html'>Search</a></h2>
+</div>
+<div class='vspace'></div><div class='frame' > 
+<h3>Class Projects</h3>
+<div class='indent'><a class='wikilink' href='../Classes/ECE521.html'>ECE 521 - joeSpice</a>
+</div><div class='indent'><a class='wikilink' href='../Classes/ECE570.html'>ECE 570</a>
+</div><div class='indent'><a class='wikilink' href='../Classes/ECE577.html'>ECE 577</a>
+</div><h3>Tools</h3>
+<div class='indent'><a class='wikilink' href='../Tools/VIM8VerilogSetup.html'>VIM 8.0 Setup for Verilog</a>
+</div><div class='indent'><a class='wikilink' href='../Tools/SpiceMeasureParser.html'>Spice Measure File Parser</a>
+</div><div class='indent'><a class='wikilink' href='../Tools/GoogleDocsSchematic.html'>Google Docs Circuits</a>
+</div><div class='indent'><a class='wikilink' href='../Tools/OpenCores.html'>OpenCores.org Peojects</a>
+</div><div class='indent'><a class='wikilink' href='../Tools/CellCulling.html'>Cell Culling Toolkit</a>
+</div></div>
+</div>
+	
+	<div id="content"><!--PageText-->
+<div id='wikitext'>
+<h1>ECE 474/574 Design Problem (Spring 2013)</h1>
+<h2>Ultimate Bike Reflector (UBR)</h2>
+<h3>Background:</h3>
+<div class='frame' > 
+<p>Bike reflectors serve an important purpose. Specifically the reflector in the wheel while spinning can help cars see the bike from the side while moving.
+</p>
+<p class='vspace'>There is just one problem: Bike reflectors are boring. In this project you will design SystemVerilog code that makes a more entertaining, electronic, reflector that illuminates a path as it spins on the wheel using the principal of persistence of vision (POV).
+</p></div>
+<div class='vspace'></div><h3>Operation:</h3>
+<div class='frame' > 
+<p>UBR consists of three parts:
+</p><ol><li>A sensor that measures how fast the bike wheel is spinning.
+</li><li>LED (or LEDs) that will blink a pattern stored in memory.
+</li><li>Logic that you will design to take data from the sensor and blink the LED(s) based on a pattern stored in memory.
+</li></ol><p class='vspace'>For every rotation of the wheel, 32 "pixels" will be displayed equally spaced across the circumference by turning the LED(s) on or off at the appropriate time. The pixel information is stored in an 8-bit read-only memory. For every rotation UBR will need to read 4 bytes from memory and display them in the correct order.
+</p>
+<div class='vspace'></div></div>
+<div class='vspace'></div><h3>UBR Interfaces:</h3>
+<div class='frame' > 
+<p class='vspace'>The interface of UBR to the outside world is as follows:
+</p>
+<div class='vspace'></div><pre>          INPUTS                           OUTPUTS
+                       _______________
+                      |               |
+          in_sensor --|               |-- out_LED[N:0]
+                      |               |
+                      |      UBR      |
+   in_ROM_DATA[7:0] --|               |-- out_ROM_ADDR[3:0]
+                      |               |
+                      |               |-- out_ROM_RE
+                clk --|&gt;              |-- out_ROM_CE
+            clk_mem --|&gt;              |
+            reset_n --|o              |
+                      |_______________|
+</pre><div class='vspace'></div></div>
+<div class='vspace'></div><h3>Standard I/O Timing:</h3>
+<div class='frame' > 
+<div class='vspace'></div><ul><li><strong>clk</strong> (Main system clock)
+</li></ul><pre>          _____        _____
+   ______/     \______/     \_____
+          &lt;----------&gt; 
+                |
+              frequency: 100MHz
+              duty-cycle: 50%
+</pre><div class='vspace'></div><ul><li><strong>clk_mem</strong> (Memory clock)
+</li></ul><pre>          _____        _____
+   ______/     \______/     \_____
+          &lt;----------&gt; 
+                |
+              frequency: 25MHz
+              duty-cycle: 50%
+</pre><div class='vspace'></div><ul><li><strong>reset_n</strong> (Asynchronous reset, active low)
+</li></ul><pre>   _______________________        ________
+                          \______/     
+                           &lt;----&gt; 
+                             |
+                           width:
+                              min: 1 cycle of <strong>clk</strong>
+                              max: infinity
+</pre><div class='vspace'></div><ul><li><strong>in_sensor</strong> (Sensor indicating full rotation of wheel)
+</li></ul><pre>             _____                          _____
+   _________/     \________________________/     \_____
+             &lt;---&gt;  &lt;---------------------&gt;
+               |               |
+               |             width:
+               |                min: 256 cycles of <strong>clk</strong>
+               |                max: unknown
+             width:
+                min: 2 cycles of <strong>clk</strong>
+                max: unknown
+</pre><div class='vspace'></div><ul><li><strong>out LED</strong> (single- or multi-bit bus to drive LED(s))
+</li></ul><div class='vspace'></div><pre>   No special timing requirements.
+</pre><div class='vspace'></div></div>
+<div class='vspace'></div><h3>ROM Interface Timing:</h3>
+<div class='frame' > 
+<div class='vspace'></div><pre>   <strong>description</strong>                                    <strong>min (ns)</strong>  <strong>max(ns)</strong>
+   (1) hold time clk_mem to ROM_DATA changing     2         5
+
+   (2) setup time, ROM_CE valid before 
+       rising edge of clk_mem                     10
+   (3) hold time, ROM_CE valid after 
+       rising edge of clk_mem                     5
+   (4) setup time, ROM_RE valid before 
+       rising edge of clk_mem                     10
+   (5) hold time, ROM_RE valid after 
+       rising edge of clk_mem                     5
+   (6) setup time, ROM_ADDR valid before
+       rising edge of clk_mem                     10
+   (7) hold time, ROM_ADDR valid after
+       rising edge of clk_mem                     10
+
+   (8) clock period (50MHz)                       19.9      20.1
+</pre><div class='vspace'></div></div>
+</div>
+</div>
+	
+	<div class="clear"> </div>
+	
+</div>
+	
+<div id='footer'>
+	
+	<!--HTMLFooter-->
+</div>
+
+    <!--[if IE]><script type="text/javascript" src="lib/excanvas.js"></script><![endif]-->
+    <script src="../_fpub/skins/simpletab/lib/prototype-1.6.0.2.js"></script>
+
+    <!-- box2djs -->
+    <script src='../_fpub/skins/simpletab/js/box2d/common/b2Settings.js'></script>
+    <script src='../_fpub/skins/simpletab/js/box2d/common/math/b2Vec2.js'></script>
+    <script src='../_fpub/skins/simpletab/js/box2d/common/math/b2Mat22.js'></script>
+    <script src='../_fpub/skins/simpletab/js/box2d/common/math/b2Math.js'></script>
+    <script src='../_fpub/skins/simpletab/js/box2d/collision/b2AABB.js'></script>
+    <script src='../_fpub/skins/simpletab/js/box2d/collision/b2Bound.js'></script>
+    <script src='../_fpub/skins/simpletab/js/box2d/collision/b2BoundValues.js'></script>
+    <script src='../_fpub/skins/simpletab/js/box2d/collision/b2Pair.js'></script>
+    <script src='../_fpub/skins/simpletab/js/box2d/collision/b2PairCallback.js'></script>
+    <script src='../_fpub/skins/simpletab/js/box2d/collision/b2BufferedPair.js'></script>
+    <script src='../_fpub/skins/simpletab/js/box2d/collision/b2PairManager.js'></script>
+    <script src='../_fpub/skins/simpletab/js/box2d/collision/b2BroadPhase.js'></script>
+    <script src='../_fpub/skins/simpletab/js/box2d/collision/b2Collision.js'></script>
+    <script src='../_fpub/skins/simpletab/js/box2d/collision/Features.js'></script>
+    <script src='../_fpub/skins/simpletab/js/box2d/collision/b2ContactID.js'></script>
+    <script src='../_fpub/skins/simpletab/js/box2d/collision/b2ContactPoint.js'></script>
+    <script src='../_fpub/skins/simpletab/js/box2d/collision/b2Distance.js'></script>
+    <script src='../_fpub/skins/simpletab/js/box2d/collision/b2Manifold.js'></script>
+    <script src='../_fpub/skins/simpletab/js/box2d/collision/b2OBB.js'></script>
+    <script src='../_fpub/skins/simpletab/js/box2d/collision/b2Proxy.js'></script>
+    <script src='../_fpub/skins/simpletab/js/box2d/collision/ClipVertex.js'></script>
+    <script src='../_fpub/skins/simpletab/js/box2d/collision/shapes/b2Shape.js'></script>
+    <script src='../_fpub/skins/simpletab/js/box2d/collision/shapes/b2ShapeDef.js'></script>
+    <script src='../_fpub/skins/simpletab/js/box2d/collision/shapes/b2BoxDef.js'></script>
+    <script src='../_fpub/skins/simpletab/js/box2d/collision/shapes/b2CircleDef.js'></script>
+    <script src='../_fpub/skins/simpletab/js/box2d/collision/shapes/b2CircleShape.js'></script>
+    <script src='../_fpub/skins/simpletab/js/box2d/collision/shapes/b2MassData.js'></script>
+    <script src='../_fpub/skins/simpletab/js/box2d/collision/shapes/b2PolyDef.js'></script>
+    <script src='../_fpub/skins/simpletab/js/box2d/collision/shapes/b2PolyShape.js'></script>
+    <script src='../_fpub/skins/simpletab/js/box2d/dynamics/b2Body.js'></script>
+    <script src='../_fpub/skins/simpletab/js/box2d/dynamics/b2BodyDef.js'></script>
+    <script src='../_fpub/skins/simpletab/js/box2d/dynamics/b2CollisionFilter.js'></script>
+    <script src='../_fpub/skins/simpletab/js/box2d/dynamics/b2Island.js'></script>
+    <script src='../_fpub/skins/simpletab/js/box2d/dynamics/b2TimeStep.js'></script>
+    <script src='../_fpub/skins/simpletab/js/box2d/dynamics/contacts/b2ContactNode.js'></script>
+    <script src='../_fpub/skins/simpletab/js/box2d/dynamics/contacts/b2Contact.js'></script>
+    <script src='../_fpub/skins/simpletab/js/box2d/dynamics/contacts/b2ContactConstraint.js'></script>
+    <script src='../_fpub/skins/simpletab/js/box2d/dynamics/contacts/b2ContactConstraintPoint.js'></script>
+    <script src='../_fpub/skins/simpletab/js/box2d/dynamics/contacts/b2ContactRegister.js'></script>
+    <script src='../_fpub/skins/simpletab/js/box2d/dynamics/contacts/b2ContactSolver.js'></script>
+    <script src='../_fpub/skins/simpletab/js/box2d/dynamics/contacts/b2CircleContact.js'></script>
+    <script src='../_fpub/skins/simpletab/js/box2d/dynamics/contacts/b2Conservative.js'></script>
+    <script src='../_fpub/skins/simpletab/js/box2d/dynamics/contacts/b2NullContact.js'></script>
+    <script src='../_fpub/skins/simpletab/js/box2d/dynamics/contacts/b2PolyAndCircleContact.js'></script>
+    <script src='../_fpub/skins/simpletab/js/box2d/dynamics/contacts/b2PolyContact.js'></script>
+    <script src='../_fpub/skins/simpletab/js/box2d/dynamics/b2ContactManager.js'></script>
+    <script src='../_fpub/skins/simpletab/js/box2d/dynamics/b2World.js'></script>
+    <script src='../_fpub/skins/simpletab/js/box2d/dynamics/b2WorldListener.js'></script>
+    <script src='../_fpub/skins/simpletab/js/box2d/dynamics/joints/b2JointNode.js'></script>
+    <script src='../_fpub/skins/simpletab/js/box2d/dynamics/joints/b2Joint.js'></script>
+    <script src='../_fpub/skins/simpletab/js/box2d/dynamics/joints/b2JointDef.js'></script>
+    <script src='../_fpub/skins/simpletab/js/box2d/dynamics/joints/b2DistanceJoint.js'></script>
+    <script src='../_fpub/skins/simpletab/js/box2d/dynamics/joints/b2DistanceJointDef.js'></script>
+    <script src='../_fpub/skins/simpletab/js/box2d/dynamics/joints/b2Jacobian.js'></script>
+    <script src='../_fpub/skins/simpletab/js/box2d/dynamics/joints/b2GearJoint.js'></script>
+    <script src='../_fpub/skins/simpletab/js/box2d/dynamics/joints/b2GearJointDef.js'></script>
+    <script src='../_fpub/skins/simpletab/js/box2d/dynamics/joints/b2MouseJoint.js'></script>
+    <script src='../_fpub/skins/simpletab/js/box2d/dynamics/joints/b2MouseJointDef.js'></script>
+    <script src='../_fpub/skins/simpletab/js/box2d/dynamics/joints/b2PrismaticJoint.js'></script>
+    <script src='../_fpub/skins/simpletab/js/box2d/dynamics/joints/b2PrismaticJointDef.js'></script>
+    <script src='../_fpub/skins/simpletab/js/box2d/dynamics/joints/b2PulleyJoint.js'></script>
+    <script src='../_fpub/skins/simpletab/js/box2d/dynamics/joints/b2PulleyJointDef.js'></script>
+    <script src='../_fpub/skins/simpletab/js/box2d/dynamics/joints/b2RevoluteJoint.js'></script>
+    <script src='../_fpub/skins/simpletab/js/box2d/dynamics/joints/b2RevoluteJointDef.js'></script>
+    <script type="text/javascript" src="../_fpub/skins/simpletab/js/protoclass.js"></script> 
+    <script type="text/javascript" src='../_fpub/skins/simpletab/js/main.js'></script>
+	<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-38823739-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+	</script>
+</body>
+</html>
