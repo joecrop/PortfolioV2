@@ -4,6 +4,7 @@ import Home from "../pages/home/HomeComponent";
 import Splash from "../pages/splash/Splash";
 import Education from "../pages/education/EducationComponent";
 import Experience from "../pages/experience/Experience";
+import Publications from "../pages/publications/Publications";
 import Contact from "../pages/contact/ContactComponent";
 import Projects from "../pages/projects/Projects";
 import { settings } from "../portfolio.js";
@@ -50,6 +51,16 @@ export default function Main(propss) {
               path="/education"
               render={(props) => (
                 <Education
+                  {...props}
+                  theme={propss.theme}
+                  setTheme={propss.setTheme}
+                />
+              )}
+            />
+            <Route
+              path="/publications"
+              render={(props) => (
+                <Publications
                   {...props}
                   theme={propss.theme}
                   setTheme={propss.setTheme}

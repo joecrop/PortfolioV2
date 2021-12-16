@@ -521,7 +521,7 @@ const experience = {
           logo_path: "adi.png",
           duration: "Oct. 2021- Present",
           location: "Beaverton, OR",
-          description: `ADI bought/merged Maxim Integration.`,
+          description: `ADI bought/merged Maxim Integrated.`,
           color: "#0071C5",
         },
         {
@@ -550,7 +550,7 @@ const experience = {
         {
           title: "Research Intern",
           company: "Fudan University",
-          company_url: "https://fudan.edu",
+          company_url: "https://fudan.edu.cn",
           logo_path: "fudan.png",
           duration: "Summer 2011",
           location: "Shanghai, China",
@@ -686,6 +686,332 @@ const experience = {
           location: "Corvallis, OR",
           description: `Taught web design and other technology-oriented classes to both middle school and high school students through Oregon State University.
           Classes are taught almost year-round through both weekend programs and summer camps.`,
+          color: "#0071C5",
+        },
+      ],
+    },
+  ],
+};
+
+// Experience Page
+const publications = {
+  title: "Publications",
+  subtitle: "My technical publications and articles",
+  description: "",
+  header_image_path: "experience.svg",
+  sections: [
+    {
+      title: "Publications",
+      publications: [
+        {
+          title:
+            "Architecture of a Reusable BIST Engine for Detection and Autocorrection of Memory Failures and for IO Debug, Validation, Link Training, and Power Optimization on 14-nm SoC",
+          company: "IEEE Design & Test",
+          company_url: "https://ieeexplore.ieee.org/document/7123607",
+          logo_path: "ieee.png",
+          duration: "Feb. 2016",
+          location: "",
+          description: `Bruce Querbach; Rahul Khanna; Sudeep Puligundla; David Blankenbeckler; Joseph Crop; Patrick Yin Chiang`,
+          color: "#0071C5",
+        },
+        {
+          title:
+            "Characterization of radiation-induced SRAM and logic soft errors from 0.33V to 1.0V in 65nm CMOS",
+          company:
+            "Proceedings of the IEEE 2014 Custom Integrated Circuits Conference",
+          company_url: "https://ieeexplore.ieee.org/document/6946138",
+          logo_path: "ieee.png",
+          duration: "Sept. 2014",
+          location: "",
+          description: `Robert Pawlowski; Joseph Crop; Minki Cho; James Tschanz; Vivek De; Thomas Fairbanks; Heather Quinn; Shekhar Borkar; Patrick Yin Chiang`,
+          color: "#0071C5",
+        },
+        {
+          title:
+            "Replication-Free Single-Event Transient (SET) Detection for Eliminating Silent Data Corruption in CMOS Logic",
+          company: "Silicon Errors in Logic - System Effects (SELSE-9)",
+          company_url:
+            "https://selse.org/previous-workshops/2013-archive/2013-program/",
+          logo_path: "selse.png",
+          duration: "March 2013",
+          location: "",
+          description: `Evgeni Krimer;, Joseph Crop; Mattan Erez; Patrick Chiang`,
+          color: "#0071C5",
+        },
+        {
+          title:
+            "A 12-bit 7 µW/channel 1 kHz/channel incremental ADC for biosensor interface circuits",
+          company:
+            "2012 IEEE International Symposium on Circuits and Systems (ISCAS)",
+          company_url: "https://ieeexplore.ieee.org/document/6271940",
+          logo_path: "ieee.png",
+          duration: "May 2012",
+          location: "",
+          description: `Chia-Hung Chen; Joseph Crop; Jeongseok Chae; Patrick Chiang; Gabor C. Temes`,
+          color: "#0071C5",
+        },
+        {
+          title:
+            "Regaining throughput using completion detection for error-resilient, near-threshold logic",
+          company: "DAC Design Automation Conference 2012",
+          company_url: "https://ieeexplore.ieee.org/document/6241622",
+          logo_path: "ieee.png",
+          duration: "July 2012",
+          location: "",
+          description: `Joseph Crop; Robert Pawlowski; Patrick Chiang`,
+          color: "#0071C5",
+        },
+        {
+          title:
+            "A 530mV 10-lane SIMD processor with variation resiliency in 45nm SOI",
+          company: "2012 IEEE International Solid-State Circuits Conference",
+          company_url: "https://ieeexplore.ieee.org/document/6177105",
+          logo_path: "ieee.png",
+          duration: "Feb. 2012",
+          location: "",
+          description: `Robert Pawlowski; Evgeni Krimer; Joseph Crop; Jacob Postman; Nariman Moezzi-Madani; Mattan Erez; Patrick Chiang`,
+          color: "#0071C5",
+        },
+        {
+          title:
+            "Design of a UHF RFID tag baseband with the hummingbird cryptographic engine",
+          company: "2011 9th IEEE International Conference on ASIC",
+          company_url: "https://ieeexplore.ieee.org/document/6157326",
+          logo_path: "ieee.png",
+          duration: "Oct. 2011",
+          location: "",
+          description: `Mengqin Xiao;Xiang Shen;Junyu Wang;Joseph Crop`,
+          color: "#0071C5",
+        },
+        {
+          title:
+            "Error Detection and Recovery Techniques for Variation-Aware CMOS Computing: A Comprehensive Review",
+          company: "Journal of Low Power Electronics and Applications",
+          company_url: "https://www.mdpi.com/2079-9268/1/3/334",
+          logo_path: "lpea.png",
+          duration: "Oct. 2011",
+          location: "",
+          description: `Joseph Crop; Evgeni Krimer; Nariman Moezzi-Madani; Robert Pawlowski; Thomas Ruggeri; Patrick Chiang; andMattan Erez`,
+          color: "#0071C5",
+        },
+        {
+          title:
+            "Design automation methodology for improving the variability of synthesized digital circuits operating in the sub/near-threshold regime",
+          company:
+            "2011 International Green Computing Conference and Workshops",
+          company_url: "https://ieeexplore.ieee.org/document/6008604",
+          logo_path: "ieee.png",
+          duration: "July 2011",
+          location: "",
+          description: `Joseph Crop; Robert Pawlowski; Nariman Moezzi-Madani; Jarrod Jackson; Patrick Chaing`,
+          color: "#0071C5",
+        },
+        {
+          title:
+            "An energy-efficient 64-QAM MIMO detector for emerging wireless standards",
+          company: "2011 Design, Automation & Test in Europe",
+          company_url: "https://ieeexplore.ieee.org/document/5763050",
+          logo_path: "ieee.png",
+          duration: "March 2011",
+          location: "",
+          description: `Nariman Moezzi-Madani; Thorlindur Thorolfsson; Joseph Crop; Patrick Chiang; William Rhett Davis`,
+          color: "#0071C5",
+        },
+        {
+          title:
+            "150mV sub-threshold Asynchronous multiplier for low-power sensor applications",
+          company:
+            "Proceedings of 2010 International Symposium on VLSI Design, Automation and Test",
+          company_url: "https://ieeexplore.ieee.org/document/5496737",
+          logo_path: "ieee.png",
+          duration: "April 2010",
+          location: "",
+          description: `Joseph Crop; Scott Fairbanks; Robert Pawlowski; Patrick Chiang`,
+          color: "#0071C5",
+        },
+        {
+          title: "",
+          company: "",
+          company_url: "",
+          logo_path: "ieee.png",
+          duration: "",
+          location: "",
+          description: ``,
+          color: "#0071C5",
+        },
+        {
+          title: "",
+          company: "",
+          company_url: "",
+          logo_path: "ieee.png",
+          duration: "",
+          location: "",
+          description: ``,
+          color: "#0071C5",
+        },
+      ],
+    },
+    {
+      title: "Presentations",
+      publications: [
+        {
+          title: "The Future of OTP in P90 at Maxim",
+          company: "Maxim Integrated - Internal Design Conference",
+          company_url: "",
+          logo_path: "maxim.png",
+          duration: "May 2019",
+          location: "San Jose, CA",
+          description: `Joseph Crop et. al.`,
+          color: "#0071C5",
+        },
+        {
+          title: "Radiation Induced Soft-Errors @ NTV",
+          company: "DARPA Circuits for Resilient Systems Meeting",
+          company_url: "https://intel.com",
+          logo_path: "intel.png",
+          duration: "June 2013",
+          location: "Intel Corporation, Hillsboro, OR",
+          description: `Jospeh Crop, Robert Pawlowski`,
+          color: "#0071C5",
+        },
+        {
+          title:
+            "Regaining Throughput Using Completion Detection for Error-Resilient, Near-Threshold Logic,",
+          company: "Design Automation Conference (DAC)",
+          company_url:
+            "/PortfolioV2/old/_uploads/Publications/RegainingThroughputDAC.pptx",
+          logo_path: "acm.png",
+          duration: "June 2012",
+          location: "San Francisco, CA",
+          description: `Joseph Crop`,
+          color: "#0071C5",
+        },
+        {
+          title: "Writing English Publications",
+          company: "Fudan University",
+          company_url:
+            "/PortfolioV2/old/_uploads/Publications/FudanEnglishPresentation2011.pdf",
+          logo_path: "fudan.png",
+          duration: "Aug. 2011",
+          location: "Shanghai China",
+          description: `Joseph Crop`,
+          color: "#0071C5",
+        },
+        {
+          title:
+            "Design Automation Methodology for Improving the Variability of Synthesized Digital Circuits Operating in the Sub/Near-Threshold Regime",
+          company: "International Green Computing Conference (IGCC'11)",
+          company_url:
+            "/PortfolioV2/old/_uploads/Publications/IGCC2011_Presentation.pdf",
+          logo_path: "igsc.png",
+          duration: "July 2011",
+          location: "Orlando, Florida",
+          description: `Joseph Crop`,
+          color: "#0071C5",
+        },
+        {
+          title: "Fully Automated Digital Synthesis and Place and Route",
+          company: "Visiting Student Seminar, Fudan University",
+          company_url: "",
+          logo_path: "fudan.png",
+          duration: "June 2011",
+          location: "Shanghai China",
+          description: `Joseph Crop`,
+          color: "#0071C5",
+        },
+        {
+          title:
+            "Low-Power, Variability-Aware CMOS: Techniques for Improving Power and Robustness under Low-VDD Operation",
+          company: "School of Microelectronics, Fudan University",
+          company_url:
+            "/PortfolioV2/old/_uploads/Publications/FudanPresentation2011.pdf",
+          logo_path: "fudan.png",
+          duration: "June 2011",
+          location: "Shanghai China",
+          description: `Joseph Crop`,
+          color: "#0071C5",
+        },
+        {
+          title:
+            "Optimizing Application Throughput by Exploiting Path Activation Probabilities",
+          company: "NVIDIA",
+          company_url: "",
+          logo_path: "nvidia.png",
+          duration: "June 2011",
+          location: "Beaverton, OR",
+          description: `Joseph Crop; Jacob Postman`,
+          color: "#0071C5",
+        },
+        {
+          title:
+            "Sub/Near-Threshold Variation Tolerance and Greater-than-2x Delay Detection",
+          company: "Intel Circuits Research Lab",
+          company_url: "",
+          logo_path: "intel.png",
+          duration: "September 2010",
+          location: "Hillsboro, OR",
+          description: `Joseph Crop`,
+          color: "#0071C5",
+        },
+      ],
+    },
+    {
+      title: "Posters",
+      publications: [
+        {
+          title:
+            "Replication-Free Single-Event Transient (SET) Detection for Eliminating Silent Data Corruption in CMOS Logic",
+          company: "Silicon Errors in Logic - System Effects (SELSE-9)",
+          company_url: "",
+          logo_path: "selse.png",
+          duration: "March 2013",
+          location: "Stanford University",
+          description: `Evgeni Krimer; Joseph Crop; Matan Erez; Patrick Chiang`,
+          color: "#0071C5",
+        },
+        {
+          title:
+            "Regaining Throughput Using Completion Detection for Error-Resilient, Near-Threshold Logic",
+          company: "Design Automation Conference (DAC)",
+          company_url:
+            "/PortfolioV2/old/_uploads/Publications/RegainingThroughputDAC_Poster.pdf",
+          logo_path: "acm.png",
+          duration: "June 2012",
+          location: "San Francisco, CA",
+          description: `Joseph Crop`,
+          color: "#0071C5",
+        },
+        {
+          title:
+            "Methods to Improve Reliability in Sub/Near-Threshold Circuits",
+          company: "CDADIC Winter Meeting",
+          company_url:
+            "/PortfolioV2/old/_uploads/Publications/CDADIC_WINTER_2011.pdf",
+          logo_path: "cdadic.png",
+          duration: "July 2010",
+          location: "Seattle, WA",
+          description: `Patrick Chiang; Jacob Postman; Joseph Crop`,
+          color: "#0071C5",
+        },
+        {
+          title:
+            "Methods to Improve Reliability in Sub/Near-Threshold Circuits",
+          company: "CDADIC Summer Meeting",
+          company_url: "/PortfolioV2/old/_uploads/Publications/CDADIC2010.pdf",
+          logo_path: "cdadic.png",
+          duration: "July 2010.",
+          location: "Portland, OR",
+          description: `Patrick Chiang; Jacob Postman; Joseph Crop`,
+          color: "#0071C5",
+        },
+        {
+          title: "Power Saving Techniques in Digital Systems",
+          company: "CDADIC Summer Meeting",
+          company_url: "/PortfolioV2/old/_uploads/Publications/CDADIC2009.pdf",
+          logo_path: "cdadic.png",
+          duration: "July 2009",
+          location: "",
+          description: ``,
           color: "#0071C5",
         },
       ],
@@ -987,6 +1313,7 @@ export {
   degrees,
   certifications,
   experience,
+  publications,
   projectsHeader,
   contactPageData,
   projects,
