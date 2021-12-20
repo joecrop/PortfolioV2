@@ -40,7 +40,7 @@ function Projects(props) {
               >
                 {projectsHeader["description"]}, or
               </p>
-              <a {...styles} className="general-btn" href="/PortfolioV2/old">
+              <a {...styles} className="general-btn" href="/old">
                 Check out the joecrop.com archive...
               </a>
             </div>
