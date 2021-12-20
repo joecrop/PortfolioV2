@@ -1,5 +1,10 @@
 /* Change this file to get your personal Porfolio */
 
+//TODO: Correct links to blog and blog deploying
+//TODO: Write block description
+//TODO: Link medium articles
+//TODO: change box color form blue to gray
+
 // Website related settings
 const settings = {
   isSplash: true, // Change this to true if you want to use the splash screen.
@@ -16,7 +21,7 @@ const greeting = {
   full_name: "Joe Crop",
   subTitle:
     "I'm a Microchip Designer, Full Stack Web Developer + Dev-Ops Engineer, Ed-Tech Enthusiast, and Teacher.",
-  resumeLink: "/PortfolioV2/resume.pdf",
+  resumeLink: "/resume.pdf",
   mail: "mailto:joe.crop@gmail.com",
 };
 
@@ -878,8 +883,7 @@ const publications = {
           title:
             "Regaining Throughput Using Completion Detection for Error-Resilient, Near-Threshold Logic,",
           company: "Design Automation Conference (DAC)",
-          company_url:
-            "/PortfolioV2/old/_uploads/Publications/RegainingThroughputDAC.pptx",
+          company_url: "/old/_uploads/Publications/RegainingThroughputDAC.pptx",
           logo_path: "acm.png",
           duration: "June 2012",
           location: "San Francisco, CA",
@@ -890,7 +894,7 @@ const publications = {
           title: "Writing English Publications",
           company: "Fudan University",
           company_url:
-            "/PortfolioV2/old/_uploads/Publications/FudanEnglishPresentation2011.pdf",
+            "/old/_uploads/Publications/FudanEnglishPresentation2011.pdf",
           logo_path: "fudan.png",
           duration: "Aug. 2011",
           location: "Shanghai China",
@@ -901,8 +905,7 @@ const publications = {
           title:
             "Design Automation Methodology for Improving the Variability of Synthesized Digital Circuits Operating in the Sub/Near-Threshold Regime",
           company: "International Green Computing Conference (IGCC'11)",
-          company_url:
-            "/PortfolioV2/old/_uploads/Publications/IGCC2011_Presentation.pdf",
+          company_url: "/old/_uploads/Publications/IGCC2011_Presentation.pdf",
           logo_path: "igsc.png",
           duration: "July 2011",
           location: "Orlando, Florida",
@@ -923,8 +926,7 @@ const publications = {
           title:
             "Low-Power, Variability-Aware CMOS: Techniques for Improving Power and Robustness under Low-VDD Operation",
           company: "School of Microelectronics, Fudan University",
-          company_url:
-            "/PortfolioV2/old/_uploads/Publications/FudanPresentation2011.pdf",
+          company_url: "/old/_uploads/Publications/FudanPresentation2011.pdf",
           logo_path: "fudan.png",
           duration: "June 2011",
           location: "Shanghai China",
@@ -974,7 +976,7 @@ const publications = {
             "Regaining Throughput Using Completion Detection for Error-Resilient, Near-Threshold Logic",
           company: "Design Automation Conference (DAC)",
           company_url:
-            "/PortfolioV2/old/_uploads/Publications/RegainingThroughputDAC_Poster.pdf",
+            "/old/_uploads/Publications/RegainingThroughputDAC_Poster.pdf",
           logo_path: "acm.png",
           duration: "June 2012",
           location: "San Francisco, CA",
@@ -985,8 +987,7 @@ const publications = {
           title:
             "Methods to Improve Reliability in Sub/Near-Threshold Circuits",
           company: "CDADIC Winter Meeting",
-          company_url:
-            "/PortfolioV2/old/_uploads/Publications/CDADIC_WINTER_2011.pdf",
+          company_url: "/old/_uploads/Publications/CDADIC_WINTER_2011.pdf",
           logo_path: "cdadic.png",
           duration: "July 2010",
           location: "Seattle, WA",
@@ -997,7 +998,7 @@ const publications = {
           title:
             "Methods to Improve Reliability in Sub/Near-Threshold Circuits",
           company: "CDADIC Summer Meeting",
-          company_url: "/PortfolioV2/old/_uploads/Publications/CDADIC2010.pdf",
+          company_url: "/old/_uploads/Publications/CDADIC2010.pdf",
           logo_path: "cdadic.png",
           duration: "July 2010.",
           location: "Portland, OR",
@@ -1007,7 +1008,7 @@ const publications = {
         {
           title: "Power Saving Techniques in Digital Systems",
           company: "CDADIC Summer Meeting",
-          company_url: "/PortfolioV2/old/_uploads/Publications/CDADIC2009.pdf",
+          company_url: "/old/_uploads/Publications/CDADIC2009.pdf",
           logo_path: "cdadic.png",
           duration: "July 2009",
           location: "",
@@ -1031,12 +1032,13 @@ const contactPageData = {
   contactSection: {
     title: "Contact Me",
     profile_image_path: "me.png",
-    description: "",
+    description: "Find me on social media",
   },
   blogSection: {
-    title: "",
-    subtitle: "",
-    link: "",
+    title: "Blog",
+    subtitle:
+      "Every once and a while I jot down my thoughts and share soem cool stuff I am working on.",
+    link: "/blog",
     avatar_image_path: "",
   },
 };
@@ -1147,7 +1149,7 @@ const projects = {
       id: "4",
       name: "How Many Kitties?",
       image: "howmanykitties.png",
-      url: "/PortfolioV2/howmanykitties",
+      url: "/howmanykitties",
       description: "A calculator from anything to Kitties.",
       languages: [
         {
@@ -1241,7 +1243,7 @@ const projects = {
     {
       id: "8",
       name: "Android Network Simulator",
-      url: "/PortfolioV2/MNOS",
+      url: "/MNOS",
       description:
         "A Visual simulation of a conceptual android networking feature enhancement.",
       languages: [
