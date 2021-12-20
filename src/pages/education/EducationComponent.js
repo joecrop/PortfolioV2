@@ -23,14 +23,15 @@ function Education(props) {
                 Education
               </h1>
               <h3 className="heading-sub-text" style={{ color: theme.text }}>
-                Basic Qualification and Certifications
+                My Degrees and Other Achievements
               </h3>
               <p
                 className="experience-header-detail-text subTitle"
                 style={{ color: theme.secondaryText }}
               >
-                I actively participate in hackathons and other tech-related
-                activities. Below are some of my major certifications.
+                I received my BS and PhD degrees from Oregon State University.
+                Below are some of the highlights of my education and academic
+                achievements.
               </p>
             </div>
           </div>

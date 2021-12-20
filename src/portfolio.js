@@ -16,7 +16,7 @@ const greeting = {
   full_name: "Joe Crop",
   subTitle:
     "I'm a Microchip Designer, Full Stack Web Developer + Dev-Ops Engineer, Ed-Tech Enthusiast, and Teacher.",
-  resumeLink: "resume.pdf",
+  resumeLink: "/PortfolioV2/resume.pdf",
   mail: "mailto:joe.crop@gmail.com",
 };
 
@@ -460,30 +460,39 @@ const degrees = {
 const certifications = {
   certifications: [
     {
+      title: "Best Presenter Award",
+      subtitle: "Maxim Design Conference, 2018",
+      logo_path: "maxim.png",
+      certificate_link: "",
+      alt_name: "best presenter award",
+      // color_code: "#2AAFED",
+      color_code: "#660033",
+    },
+    {
       title: "Session Chair",
       subtitle: "CJK Conference, Shanghai China, June 2011",
-      logo_path: "mongo.png",
+      logo_path: "fudan.png",
       certificate_link: "",
       alt_name: "CJK Session Chair",
       // color_code: "#2AAFED",
-      color_code: "#47A048",
+      color_code: "#0033aa",
     },
     {
       title: "Best Question Award",
       subtitle: "CJK Conference, Shanghai China, June 2011",
-      logo_path: "mongo.png",
+      logo_path: "fudan.png",
       certificate_link: "",
       alt_name: "CJK Best Question",
-      color_code: "#E2405F",
+      color_code: "#0033aa",
     },
     {
       title: "Fully Funded Research (2009-2014)",
       subtitle: "By CDADIC, NSF, SRC, DOD, Army, DARPA, Intel",
-      logo_path: "mongo.png",
+      logo_path: "cdadic.png",
       certificate_link: "",
       alt_name: "Research Funding",
       // color_code: "#F6B808",
-      color_code: "#47A048",
+      color_code: "#aaaaaa",
     },
     {
       title: "Scholarship",
@@ -496,10 +505,10 @@ const certifications = {
     {
       title: "CCNA",
       subtitle: "Cisco Certified Network Associate (2004)",
-      logo_path: "mlh-logo.svg",
+      logo_path: "ccna.png",
       certificate_link: "",
       alt_name: "CCNA",
-      color_code: "#fe0037",
+      color_code: "#005164",
     },
   ],
 };
@@ -628,7 +637,7 @@ const experience = {
           color: "#0071C5",
         },
         {
-          title: "Network Technician",
+          title: "Assistant Network Technician",
           company: "Intel",
           company_url: "https://intel.com",
           logo_path: "intel.png",
@@ -829,31 +838,22 @@ const publications = {
           description: `Joseph Crop; Scott Fairbanks; Robert Pawlowski; Patrick Chiang`,
           color: "#0071C5",
         },
-        {
-          title: "",
-          company: "",
-          company_url: "",
-          logo_path: "ieee.png",
-          duration: "",
-          location: "",
-          description: ``,
-          color: "#0071C5",
-        },
-        {
-          title: "",
-          company: "",
-          company_url: "",
-          logo_path: "ieee.png",
-          duration: "",
-          location: "",
-          description: ``,
-          color: "#0071C5",
-        },
       ],
     },
     {
       title: "Presentations",
       publications: [
+        {
+          title: "A Verification-driven model for IP delivery",
+          company:
+            "Maxim Integrated - 1st Virtual Functional Verification Summit",
+          company_url: "",
+          logo_path: "maxim.png",
+          duration: "May 2021",
+          location: "Virtual",
+          description: `Joseph Crop et. al.`,
+          color: "#0071C5",
+        },
         {
           title: "The Future of OTP in P90 at Maxim",
           company: "Maxim Integrated - Internal Design Conference",
@@ -1105,6 +1105,28 @@ const projects = {
     },
     {
       id: "2",
+      name: "Word Part",
+      url: "https://lab.gatheract.com/?app=1614925747872492417",
+      image: "word_party.png",
+      description:
+        "Word Party is a real-time collaborative word game that you can play with as many friends as you'd like.",
+      languages: [
+        {
+          name: "JavaScript",
+          iconifyClass: "logos:javascript",
+        },
+        {
+          name: "HTML5",
+          iconifyClass: "vscode-icons:file-type-html",
+        },
+        {
+          name: "CSS3",
+          iconifyClass: "vscode-icons:file-type-css",
+        },
+      ],
+    },
+    {
+      id: "3",
       name: "VSCode-SystemVerilog",
       url: "https://github.com/eirikpre/VSCode-SystemVerilog",
       image: "goToDef_demo.gif",
@@ -1122,7 +1144,7 @@ const projects = {
       ],
     },
     {
-      id: "3",
+      id: "4",
       name: "How Many Kitties?",
       image: "howmanykitties.png",
       url: "/PortfolioV2/howmanykitties",
@@ -1143,7 +1165,7 @@ const projects = {
       ],
     },
     {
-      id: "4",
+      id: "5",
       name: "DrawCanvas.com",
       image: "drawcanvas.png",
       url: "",
@@ -1169,7 +1191,7 @@ const projects = {
       ],
     },
     {
-      id: "5",
+      id: "6",
       name: "joeSpice",
       image: "joespice.png",
       url: "https://github.com/joecrop/joespice",
@@ -1186,7 +1208,7 @@ const projects = {
       ],
     },
     {
-      id: "6",
+      id: "7",
       name: "Google Docs Circuit Templates",
       url:
         "https://docs.google.com/embeddedtemplate?id=1M00TjVs5Kp4BvP4EY3FMdINx2WzSoTNyclcNM8e7DUc",
@@ -1200,7 +1222,7 @@ const projects = {
       ],
     },
     {
-      id: "7",
+      id: "8",
       name: "Cell Culling Toolkit",
       url: "https://github.com/joecrop/cell_culling_toolkit",
       description:
@@ -1234,7 +1256,7 @@ const projects = {
       ],
     },
     {
-      id: "9",
+      id: "10",
       name: "Star Trek Communicator Badge",
       image: "communicator.jpeg",
       url: "https://hackaday.io/project/19700-star-trek-communicator-badge",
@@ -1260,7 +1282,7 @@ const projects = {
       ],
     },
     {
-      id: "10",
+      id: "11",
       name: "Smart Desktop Medicine Organizer",
       image: "sdmo.png",
       url: "https://hackaday.io/project/7019-smart-desktop-medicine-organizer",
@@ -1290,7 +1312,7 @@ const projects = {
       ],
     },
     {
-      id: "9",
+      id: "12",
       name: "Analog Comparator From Digital Gates",
       url: "/blog",
       description:
