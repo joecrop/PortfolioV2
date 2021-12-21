@@ -1,5 +1,5 @@
 #!/bin/bash
 npm build
-cd mkdocs
+cd src/blog
 pip install mkdocs-material
 mkdocs build -d ../build/blog
