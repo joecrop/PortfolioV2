@@ -2,7 +2,6 @@
 
 //TODO: Correct links to blog and blog deploying
 //TODO: Write block description
-//TODO: Link medium articles
 //TODO: change box color form blue to gray
 
 // Website related settings
@@ -719,6 +718,30 @@ const publications = {
       publications: [
         {
           title:
+            "I Wrote a Real-Time Collaborative Web App using the GatherAct API",
+          company: "Medium",
+          company_url:
+            "https://joe-crop.medium.com/i-wrote-a-real-time-collaborative-app-using-the-gatheract-api-c3df1b8dd372",
+          logo_path: "medium.png",
+          duration: "Nov. 2020",
+          location: "",
+          description: `Joseph Crop`,
+          color: "#0071C5",
+        },
+        {
+          title:
+            "Why Zoom Is Not Good Enough For Online Learning And What To Do About It",
+          company: "Medium",
+          company_url:
+            "https://joe-crop.medium.com/the-future-of-online-learning-through-collaboration-cc91ddf0a10b",
+          logo_path: "medium.png",
+          duration: "Nov. 2020",
+          location: "",
+          description: `Joseph Crop`,
+          color: "#0071C5",
+        },
+        {
+          title:
             "Architecture of a Reusable BIST Engine for Detection and Autocorrection of Memory Failures and for IO Debug, Validation, Link Training, and Power Optimization on 14-nm SoC",
           company: "IEEE Design & Test",
           company_url: "https://ieeexplore.ieee.org/document/7123607",
@@ -1035,9 +1058,9 @@ const contactPageData = {
     description: "Find me on social media",
   },
   blogSection: {
-    title: "Blog",
+    title: "My Blog",
     subtitle:
-      "Every once and a while I jot down my thoughts and share soem cool stuff I am working on.",
+      "Every once in a while I jot down my thoughts and share some of the cool stuff I am working on.",
     link: "/blog",
     avatar_image_path: "",
   },
