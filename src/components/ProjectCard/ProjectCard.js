@@ -43,8 +43,9 @@ export default function ProjectCard({ repo, theme }) {
           </p>
           {repo.image != null && (
             <img
-              src={require(`../../assests/images/${repo.image}`)}
+              src={require(`../../assets/images/${repo.image}`)}
               className="repo-image"
+              alt={repo.image}
             ></img>
           )}
           <div className="repo-details">
