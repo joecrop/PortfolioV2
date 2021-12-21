@@ -1,11 +1,11 @@
-/* Change this file to get your personal Porfolio */
+/* Change this file to get your personal Portfolio */
 
-//TODO: Write block description
-//TODO: change box color form blue to gray
+//TODO: update home page images
+//TODO: add teaching philosophy
 
 // Website related settings
 const settings = {
-  isSplash: true, // Change this to true if you want to use the splash screen.
+  isSplash: false, // Change this to true if you want to use the splash screen.
   useCustomCursor: false, // Change this to false if you want the good'ol cursor
   googleTrackingID: "",
 };
@@ -534,7 +534,7 @@ const experience = {
           duration: "Oct. 2021- Present",
           location: "Beaverton, OR",
           description: `ADI bought/merged Maxim Integrated.`,
-          color: "#0071C5",
+          color: "#ECC767",
         },
         {
           title: "Principal Member of Technical Staff",
@@ -545,7 +545,7 @@ const experience = {
           location: "Boston, San Jose, Beaverton",
           description: `Designing digital circuit with a mixed-signal team for IP blocks such as Pipelined ADCs and PLLs.
           Leading diverse team of verification/software developers in CAD software.`,
-          color: "#0071C5",
+          color: "#ECC767",
         },
         {
           title: "I/O Design Intern",
@@ -557,7 +557,7 @@ const experience = {
           description: `Worked with I/O circuit design team at Intel in Santa Clara, CA.
           Verified I/O circuit operation for next generation server processors.
           Designed novel circuits and architectures for next next next generation server processors.`,
-          color: "#0071C5",
+          color: "#ECC767",
         },
         {
           title: "Research Intern",
@@ -568,7 +568,7 @@ const experience = {
           location: "Shanghai, China",
           description: `Spent the summer as a research intern at Fudan University in Shanghai, China.
           Research focused on low-power and low-energy encryption engine optimization for integrated RFID systems.`,
-          color: "#0071C5",
+          color: "#ECC767",
         },
         {
           title: "Research Assistant",
@@ -578,7 +578,7 @@ const experience = {
           duration: "2010-2014",
           location: "Corvallis, OR",
           description: `Researched ultra low-power digital circuits and architectures in the VLSI group at OSU (SRC and NFS funded).`,
-          color: "#0071C5",
+          color: "#ECC767",
         },
       ],
     },
@@ -594,7 +594,7 @@ const experience = {
           location: "Home Office",
           description: `Co-Founded GatherAct, an ed-tech company that does consulting and API services tailored to ed-tech.
           GatherAct founded LTI As A Service (LTIAAS) that makes it easy for ed-tech tool to integrate with schools.`,
-          color: "#0071C5",
+          color: "#ECC767",
         },
         {
           title: "Web Design Consultant",
@@ -604,7 +604,7 @@ const experience = {
           duration: "2005 - Present",
           location: "Home Office",
           description: `Design and maintain several websites for customers.`,
-          color: "#0071C5",
+          color: "#ECC767",
         },
         {
           title: "Alyrica Networks Technician",
@@ -615,7 +615,7 @@ const experience = {
           location: "Philomath, OR",
           description: `Helped a small local startup Internet Service Provider as a support technician. Duties ranged from fixing customer computers, managing websites, securing servers, to network troubleshooting and everything in between.
           Also worked on a live customer tracking/mapping system.`,
-          color: "#0071C5",
+          color: "#ECC767",
         },
         {
           title: "Engineering IT Support",
@@ -626,7 +626,7 @@ const experience = {
           location: "Corvallis, OR",
           description: `Worked independently with little supervisor support for the College of Engineering at OSU as an IT support representative solving problems involving High Performance Computing Clusters and general computer support.
           Worked with the OSU HPC cluster developing an extensive usage, load, and job monitoring application.`,
-          color: "#0071C5",
+          color: "#ECC767",
         },
         {
           title: "Student Computing Lab Manager",
@@ -637,7 +637,7 @@ const experience = {
           location: "Corvallis, OR",
           description: `Worked for Oregon State University's Student Computing Facilities as a computer lab manager.
           Troubleshot problems as they arose and helped teach users how to use the computers and software.`,
-          color: "#0071C5",
+          color: "#ECC767",
         },
         {
           title: "Assistant Network Technician",
@@ -648,7 +648,7 @@ const experience = {
           location: "Hillsboro, OR",
           description: `Worked at Intel as the Assistant Network Technician for the Desktop Platforms Group - Electronic Communications (DPG-EC).
           Duties included mostly layer 2 configuration of switches and a private subnet lab isolation project.`,
-          color: "#0071C5",
+          color: "#ECC767",
         },
       ],
     },
@@ -664,7 +664,7 @@ const experience = {
           location: "Corvallis, OR",
           description: `Taught ECE 473/573 to a mixed class of senior undergrads and graduate students.
           The class focused on digital design with Verilog, advanced synthesis techniques, and scripting.`,
-          color: "#0071C5",
+          color: "#ECC767",
         },
         {
           title: "Summer Class Instructor",
@@ -675,7 +675,7 @@ const experience = {
           location: "Corvallis, OR",
           description: `Taught class of computer science students over summer term.
           Material included an overview of architecture concepts including pipe-lining, advanced assembly programming, and digital/CMOS logic.`,
-          color: "#0071C5",
+          color: "#ECC767",
         },
         {
           title: "Teaching Assistant",
@@ -687,7 +687,7 @@ const experience = {
           description: `Taught Computer Architecture classes to undergraduate students. ECE/CS 375 where students learn AVR Assembly language while learning basic architecture concepts in a lab setting.
           ECE/CS 472 where students were lead through the design of a 5-stage pipelined MIPS processor in Verilog with advanced architecture concepts.
           ECE 473/573 Microprocessor System Design, where students are lead through the engineering, design, and programming of an Atmel controlled clock radio.`,
-          color: "#0071C5",
+          color: "#ECC767",
         },
         {
           title: "Precollege Outreach Programs Instructor",
@@ -698,7 +698,7 @@ const experience = {
           location: "Corvallis, OR",
           description: `Taught web design and other technology-oriented classes to both middle school and high school students through Oregon State University.
           Classes are taught almost year-round through both weekend programs and summer camps.`,
-          color: "#0071C5",
+          color: "#ECC767",
         },
       ],
     },
@@ -1129,7 +1129,7 @@ const projects = {
     },
     {
       id: "2",
-      name: "Word Part",
+      name: "Word Party",
       url: "https://lab.gatheract.com/?app=1614925747872492417",
       image: "word_party.png",
       description:
