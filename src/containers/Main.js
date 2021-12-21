@@ -149,6 +149,16 @@ export default function Main(propss) {
               )}
             />
             <Route
+              path="/publications"
+              render={(props) => (
+                <Publications
+                  {...props}
+                  theme={propss.theme}
+                  setTheme={propss.setTheme}
+                />
+              )}
+            />
+            <Route
               path="/contact"
               render={(props) => (
                 <Contact
