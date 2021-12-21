@@ -1,6 +1,5 @@
 /* Change this file to get your personal Porfolio */
 
-//TODO: Correct links to blog and blog deploying
 //TODO: Write block description
 //TODO: change box color form blue to gray
 
