@@ -1,11 +1,11 @@
 <?php if (!defined('PmWiki')) exit();
 /* PmWiki Skittlish skin
  *
- * Examples at: http://pmwiki.com/Cookbook/Skittlish and http://solidgone.org/Skins/
+ * Examples at: https://pmwiki.com/Cookbook/Skittlish and https://solidgone.org/Skins/
  * Copyright (c) 2009 David Gilbert
  * This work is licensed under a Creative Commons Attribution-Share Alike 3.0 United States License.
  * Please retain the links in the footer.
- * http://creativecommons.org/licenses/by-sa/3.0/us/
+ * https://creativecommons.org/licenses/by-sa/3.0/us/
  */
 global $FmtPV;
 $FmtPV['$SkinName'] = '"Skittlish"';
@@ -84,7 +84,7 @@ global $SkinColor, $ValidSkinColors, $_GET;
 	return $SkinColor;
 }
 function dg_PoweredBy(){
-	print ('<a style="color:black;" href="http://pmwiki.com/'.($GLOBALS['bi_BlogIt_Enabled']?'Cookbook/BlogIt">BlogIt':'">PmWiki').'</a>');
+	print ('<a style="color:black;" href="https://pmwiki.com/'.($GLOBALS['bi_BlogIt_Enabled']?'Cookbook/BlogIt">BlogIt':'">PmWiki').'</a>');
 }
 # Determine logo height and width
 function dg_SetLogoHeightWidth ($wPad, $hPad=0){

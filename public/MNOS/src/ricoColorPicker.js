@@ -1,6 +1,6 @@
 // ===================================================================
 // Original author: Matt Kruse <matt@mattkruse.com>
-// WWW: http://www.mattkruse.com/
+// WWW: https://www.mattkruse.com/
 //
 // Adapted to Rico by Matt Brown
 // ===================================================================

@@ -5,7 +5,7 @@
   *  Licensed under the Apache License, Version 2.0 (the "License"); you may not use this
   *  file except in compliance with the License. You may obtain a copy of the License at
   *
-  *         http://www.apache.org/licenses/LICENSE-2.0
+  *         https://www.apache.org/licenses/LICENSE-2.0
   *
   *  Unless required by applicable law or agreed to in writing, software distributed under the
   *  License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND,
@@ -494,7 +494,7 @@ if (!Date.prototype.setISO8601) {
 /**
  * Converts a string in ISO 8601 format to a date object.
  * Returns true if string is a valid date or date-time.
- * Based on info at http://delete.me.uk/2005/03/iso8601.html
+ * Based on info at https://delete.me.uk/2005/03/iso8601.html
  * offset can be used to bias the conversion and must be in minutes if provided
  */
   Date.prototype.setISO8601 = function (string,offset) {
@@ -539,7 +539,7 @@ if (!Date.prototype.toISO8601String) {
  *   fraction of a second)</dt>
  *   <dd>YYYY-MM-DDThh:mm:ss.sTZD (eg 1997-07-16T19:20:30.45+01:00)</dd>
  *</dl>
- * Based on: http://www.codeproject.com/jscript/dateformat.asp
+ * Based on: https://www.codeproject.com/jscript/dateformat.asp
  */
   Date.prototype.toISO8601String = function (format, offset) {
     if (!format) { var format = 6; }
@@ -649,7 +649,7 @@ if (!String.prototype.formatNumber) {
 /**
  * Fix select control bleed-thru on floating divs in IE.
  * Based on technique published by Joe King at:
- * http://dotnetjunkies.com/WebLog/jking/archive/2003/10/30/2975.aspx
+ * https://dotnetjunkies.com/WebLog/jking/archive/2003/10/30/2975.aspx
  */
 Rico.Shim = Class.create();
 
@@ -697,7 +697,7 @@ if (Prototype.Browser.IE) {
 /**
  * Rico.Shadow is intended for positioned elements.
  * Uses blur filter in IE, and alpha-transparent png images for all other browsers.
- * Based on: http://www.positioniseverything.net/articles/dropshadows.html
+ * Based on: https://www.positioniseverything.net/articles/dropshadows.html
  */
 Rico.Shadow = Class.create();
 

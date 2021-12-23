@@ -1,19 +1,19 @@
 <?xml version="1.0"?>
 
 <xsl:stylesheet version="1.0"
-  xmlns:xhtml="http://www.w3.org/1999/xhtml"
-  xmlns="http://www.w3.org/1999/xhtml"
-  xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-  xmlns:xs="http://www.w3.org/2001/XMLSchema"
-  xmlns:fn="http://www.w3.org/2005/02/xpath-functions"
-  xmlns:xdt="http://www.w3.org/2005/02/xpath-datatypes"
+  xmlns:xhtml="https://www.w3.org/1999/xhtml"
+  xmlns="https://www.w3.org/1999/xhtml"
+  xmlns:xsl="https://www.w3.org/1999/XSL/Transform"
+  xmlns:xs="https://www.w3.org/2001/XMLSchema"
+  xmlns:fn="https://www.w3.org/2005/02/xpath-functions"
+  xmlns:xdt="https://www.w3.org/2005/02/xpath-datatypes"
 exclude-result-prefixes="xhtml xsl fn xs xdt">
 
 <xsl:output
 omit-xml-declaration="yes"
 method="html"
 doctype-public="-//W3C//DTD XHTML 1.0 Transitional//EN"
-doctype-system="http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"/>
+doctype-system="https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"/>
 
 <xsl:attribute-set name="ricoTable"> 
   <xsl:attribute name="cellspacing">0</xsl:attribute> 

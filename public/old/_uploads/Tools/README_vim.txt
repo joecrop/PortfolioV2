@@ -35,7 +35,7 @@ installed into the .vim directory. You can google them to get more information.
 	Mark: Multiple search highlights at the same time.
 	Cursor Restore: Custom script to restore cursor to previous location when opening a file.
 	Code Templates: Automatically generates starting templates for verilog/UVM files.
-	Color Schemes: See http://vimcolors.com/
+	Color Schemes: See https://vimcolors.com/
 	Custom Macros: That amke verilog editing a bit easier (.vim/scripts/verilog_helpers.vim)
 
 If you want to use my setup, you will need to change the sso_name variable at

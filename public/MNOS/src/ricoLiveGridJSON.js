@@ -40,13 +40,13 @@
   *  Jeremy Green.  Adapted from code by Richard Cowin
   *  and Matt Brown.
   *
-  *  (c) 2005-2007 Richard Cowin (http://openrico.org)
-  *  (c) 2005-2007 Matt Brown (http://dowdybrown.com)
-  *  (c) 2008 Jeremy Green (http://www.webEprint.com)
+  *  (c) 2005-2007 Richard Cowin (https://openrico.org)
+  *  (c) 2005-2007 Matt Brown (https://dowdybrown.com)
+  *  (c) 2008 Jeremy Green (https://www.webEprint.com)
   *
   *  Rico is licensed under the Apache License, Version 2.0 (the "License"); you may not use this
   *  file except in compliance with the License. You may obtain a copy of the License at
-  *   http://www.apache.org/licenses/LICENSE-2.0
+  *   https://www.apache.org/licenses/LICENSE-2.0
   **/
 
 

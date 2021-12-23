@@ -4,7 +4,7 @@ export default function FullStackImg(props) {
   const theme = props.theme;
   return (
     <svg
-      xmlns="http://www.w3.org/2000/svg"
+      xmlns="https://www.w3.org/2000/svg"
       data-name="Layer 1"
       width="850.53801"
       height="740.82953"

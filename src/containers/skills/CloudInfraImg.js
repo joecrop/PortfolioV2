@@ -4,7 +4,7 @@ export default function CloudInfraImg(props) {
   const theme = props.theme;
   return (
     <svg
-      xmlns="http://www.w3.org/2000/svg"
+      xmlns="https://www.w3.org/2000/svg"
       data-name="Layer 1"
       width="786.81995"
       height="572.25773"

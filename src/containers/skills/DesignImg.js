@@ -6,8 +6,8 @@ export default function DesignImg(props) {
     <svg
       id="1c51936f-ad83-4493-a1e8-5a7ca1846cda"
       data-name="Layer 1"
-      xmlns="http://www.w3.org/2000/svg"
-      // xmlns:xlink="http://www.w3.org/1999/xlink"
+      xmlns="https://www.w3.org/2000/svg"
+      // xmlns:xlink="https://www.w3.org/1999/xlink"
       width="1164.07"
       height="555.93"
       viewBox="0 0 1164.07 555.93"

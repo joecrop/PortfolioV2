@@ -1,7 +1,7 @@
 {
   "private": true,
   "name": "joecrop",
-  "homepage": "http://joecrop.com/",
+  "homepage": "https://joecrop.com/",
   "version": "1.0.0",
   "scripts": {
     "build": "react-scripts build",

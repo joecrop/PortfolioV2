@@ -3,7 +3,7 @@ import React from "react";
 export default function ExperienceImg() {
   return (
     <svg
-      xmlns="http://www.w3.org/2000/svg"
+      xmlns="https://www.w3.org/2000/svg"
       data-name="Layer 1"
       width="779.31989"
       height="579.94408"

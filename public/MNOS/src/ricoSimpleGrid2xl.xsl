@@ -1,7 +1,7 @@
 <xsl:stylesheet version="1.0"
   xmlns="urn:schemas-microsoft-com:office:spreadsheet"
-  xmlns:xhtml="http://www.w3.org/1999/xhtml"
-  xmlns:xsl="http://www.w3.org/1999/XSL/Transform" 
+  xmlns:xhtml="https://www.w3.org/1999/xhtml"
+  xmlns:xsl="https://www.w3.org/1999/XSL/Transform" 
 	xmlns:msxsl="urn:schemas-microsoft-com:xslt"
 	xmlns:o="urn:schemas-microsoft-com:office:office"
 	xmlns:x="urn:schemas-microsoft-com:office:excel"
@@ -18,7 +18,7 @@
    xmlns:o="urn:schemas-microsoft-com:office:office"
    xmlns:x="urn:schemas-microsoft-com:office:excel"
    xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet"
-   xmlns:html="http://www.w3.org/TR/REC-html40">
+   xmlns:html="https://www.w3.org/TR/REC-html40">
 
  <Styles>
   <Style ss:ID="Default" ss:Name="Normal">

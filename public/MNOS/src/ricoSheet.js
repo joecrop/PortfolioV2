@@ -740,7 +740,7 @@ showHelp: function(e) {
     msg+="<p>You can only copy/paste data within this spreadsheet - not from/to external applications.";
 
     msg+="<p><strong>Notes</strong>";
-    msg+="<p>Formula parsing based on code originally published by E. W. Bachtal at <a href='http://ewbi.blogs.com/develops/'>http://ewbi.blogs.com/develops/</a>";
+    msg+="<p>Formula parsing based on code originally published by E. W. Bachtal at <a href='https://ewbi.blogs.com/develops/'>https://ewbi.blogs.com/develops/</a>";
     msg+="<p>Future functionality may include copy/paste from external applications, load/save, date formatting, and support for additional functions.";
     this.helpWindow=new Rico.Popup({canDragFunc:true});
     this.helpWindow.createWindow('Rico Spreadsheet',msg,'300px','300px','ricoLG_help');
@@ -1348,7 +1348,7 @@ toEditString: function() {
 
 
 // Excel formula parser
-// from http://ewbi.blogs.com/develops/2004/12/excel_formula_p.html
+// from https://ewbi.blogs.com/develops/2004/12/excel_formula_p.html
 parse: function(formula) {
   var tokens = new Rico.Formula.f_tokens();
   var tokenStack = new Rico.Formula.f_tokenStack();

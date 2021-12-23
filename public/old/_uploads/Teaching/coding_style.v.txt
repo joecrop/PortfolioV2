@@ -16,7 +16,7 @@
 //  THIS FILE MAY NOT BE MODIFIED OR REDISTRIBUTED WITHOUT THE      
 //  EXPRESSED WRITTEN CONSENT OF your_company
 //                                                                  
-//  your_company                   http://www.your_company.com         
+//  your_company                   https://www.your_company.com         
 //  your_company_address1          info@your_company.com               
 //  your_company_address2          your_company_phone
 //  your_company_city_state_zip                                     

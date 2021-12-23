@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
 <head>
 	<title>Joseph Crop - ECE474InclassStepsPt2 </title>
@@ -140,7 +140,7 @@ copy your working area from the last class:<br /><br /><em>cp -R incalss1 inclas
 </p></div>
 <div class='vspace'></div><div class='frame' > 
 <p>for help on vi, see: 
-<a class='urllink' href='http://web.engr.oregonstate.edu/~traylor/ece473/lectures/programming_editor_vi.pdf' rel='nofollow'>http://web.engr.oregonstate.edu/~traylor/ece473/lectures/programming_editor_vi.pdf</a>
+<a class='urllink' href='https://web.engr.oregonstate.edu/~traylor/ece473/lectures/programming_editor_vi.pdf' rel='nofollow'>https://web.engr.oregonstate.edu/~traylor/ece473/lectures/programming_editor_vi.pdf</a>
 </p></div>
 <div class='vspace'></div><div class='frame' > 
 <p>If you haven't already, create a synthesis (TCL) script with your editor 
@@ -154,7 +154,7 @@ look at the schematic.  You can see the information produced in the invoking
 window or within the tool gui. Look at the number and type of cells used by
 typing <strong><em>report_cell</em></strong> in the command window.<br /><br />The combinatorial area is referenced in (um^2) <del> to the size of a 2-input NAND cell </del>
 The library at:
-<a class='urllink' href='http://web.engr.oregonstate.edu/~traylor/ece474/reading/SAED_Cell_Lib_Rev1_4_20_1.pdf' rel='nofollow'>http://web.engr.oregonstate.edu/~traylor/ece474/reading/SAED_Cell_Lib_Rev1_4_20_1.pdf</a>
+<a class='urllink' href='https://web.engr.oregonstate.edu/~traylor/ece474/reading/SAED_Cell_Lib_Rev1_4_20_1.pdf' rel='nofollow'>https://web.engr.oregonstate.edu/~traylor/ece474/reading/SAED_Cell_Lib_Rev1_4_20_1.pdf</a>
 on page 34 gives the area of a NAND2X1 to be 5.53 um^2.  Dividing our design
 area by 5.53 gives the approximate gate count of the design (assuming minimum sized gates).
 </p></div>
@@ -164,7 +164,7 @@ new verilog file (fadder.gate.v) created by synthesis.  What is
 different about this file and the one you originally wrote?<br />
 </p></div>
 <div class='vspace'></div><div class='frame' > 
-<p>Go get the script, <em>comp_lib.sh</em> if you don't have it already:<br /><br /><em>wget <a class='urllink' href='http://web.engr.oregonstate.edu/~traylor/ece474/inclass/wk1/comp_lib.sh' rel='nofollow'>http://web.engr.oregonstate.edu/~traylor/ece474/inclass/wk1/comp_lib.sh</a></em><br /><br />Look at the comp_lib script. What is going on? <br />What files exist at the location that synop_lib is being set to?<br />(see below)<br /><br />---&gt; Efficiently traverse directories by using "pushd"and "popd":  <br />Instead of :  cd    &lt;new_directory&gt;, execute, <br />              pushd &lt;new_directory&gt;<br />This pushes the current directory to a stack.<br />When you are done at new_directory, execute, <br />              popd <br />and you are back where you initially started.<br />---&gt;
+<p>Go get the script, <em>comp_lib.sh</em> if you don't have it already:<br /><br /><em>wget <a class='urllink' href='https://web.engr.oregonstate.edu/~traylor/ece474/inclass/wk1/comp_lib.sh' rel='nofollow'>https://web.engr.oregonstate.edu/~traylor/ece474/inclass/wk1/comp_lib.sh</a></em><br /><br />Look at the comp_lib script. What is going on? <br />What files exist at the location that synop_lib is being set to?<br />(see below)<br /><br />---&gt; Efficiently traverse directories by using "pushd"and "popd":  <br />Instead of :  cd    &lt;new_directory&gt;, execute, <br />              pushd &lt;new_directory&gt;<br />This pushes the current directory to a stack.<br />When you are done at new_directory, execute, <br />              popd <br />and you are back where you initially started.<br />---&gt;
 </p></div>
 <div class='vspace'></div><div class='frame' > 
 <p>Why is the second step (vlog) taken? <br />Compile cell library into work using comp_lib.sh:<br /><br /><em>./comp_lib.sh</em><br /><br />(if you get a permission denied error you need to allow the program to be executed by typing: "chmod 750 comp_lib.sh")<br /><br />Compile the new image of the design (fadder.gate.v) and re-simulate.<br />Note gate delays that are visible.<br /><br />Recap steps: why and when were things done?
@@ -259,7 +259,7 @@ different about this file and the one you originally wrote?<br />
 
   (function() {
     var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'https://www') + '.google-analytics.com/ga.js';
     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
   })();
 

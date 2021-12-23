@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
 <head>
 	<title>Joseph Crop - NANDAnalogComparator </title>
@@ -144,7 +144,7 @@ a.varlink { text-decoration:none;}
 <p class='vspace'>Nothing too special on its own, but what happens when you pair it precisely with another NAND3 gate in a feedback pattern similar to an SR latch?
 </p>
 <div class='vspace'></div><div  style='text-align: center;' class='img'><img width='450px' src='../_uploads/Teaching/nand3_comparator.png' alt='Two NAND3 gates configured as an analog comparator' title='Two NAND3 gates configured as an analog comparator' /></div>
-<p class='vspace'>You actually end up with a simple form of clocked analog <a class='urllink' href='http://en.wikipedia.org/wiki/Comparator' rel='nofollow'>comparator</a>!
+<p class='vspace'>You actually end up with a simple form of clocked analog <a class='urllink' href='https://en.wikipedia.org/wiki/Comparator' rel='nofollow'>comparator</a>!
 These devices<sup>1</sup> (believe it or not) can actually be used to compare two analog values at the edge of a clock. Furthermore, 7410 chips usually have buffers at their inputs/outputs and for some models they are actually made from a combination of smaller 2-input gates.  Even with these issues the comparator still functions (but it does have much larger hysteresis and a smaller dynamic range).
 </p>
 <p class='vspace'>In order to compare continuously, this comparator needs to be followed by a latch or flip flop to keep the value of the last conversion as the comparator is being reset. This can again be made entirely out of NAND3 gates but for simplicity I used a 74175 quad FF chip.
@@ -165,7 +165,7 @@ These devices<sup>1</sup> (believe it or not) can actually be used to compare tw
 <div class='vspace'></div><ol><li>Test breadboard setup with 7410 and 74175 chips.
 </li><li>Under basic operating conditions (200kHz clock, 100kHz input) the comparator works very well. It draws about 46mA at 5V.
 </li><li>The maximum clock frequency I was able to get the comparator to operate correctly was just over 40MHz. Increasing the clock frequency increases the current to 61mA.
-</li><li>With the 40MHz clock, the highest input frequency that showed anything reasonable topped out at around 4MHz. which is pretty good compared to the bandwidth of popular analog comparators (<a class='urllink' href='http://www.national.com/ds/LM/LM339.pdf' rel='nofollow'>LM339</a>).
+</li><li>With the 40MHz clock, the highest input frequency that showed anything reasonable topped out at around 4MHz. which is pretty good compared to the bandwidth of popular analog comparators (<a class='urllink' href='https://www.national.com/ds/LM/LM339.pdf' rel='nofollow'>LM339</a>).
 </li></ol><p class='vspace'>
 </p>
 <table Border='1' style='border-collapse:collapse' cellpadding='5' ><tr ><th  align='center'>7400-series chips used</th><th  align='center'>hc74s10n, 74175n</th></tr>
@@ -182,11 +182,11 @@ These devices<sup>1</sup> (believe it or not) can actually be used to compare tw
 </li><li><em>Servo Driver</em>: By inputting a sign wave at the right frequency you can change the comparison level to output a slow PWM wave.
 </li><li><em>Sensors</em>: Many different types of sensors can be interfaced, temperature, light, sound, "clappers" etc.
 </li><li><em>Level Shifters</em>: By setting the threshold correctly you can easily pass data between a low supply (say 1V) and a high supply (say 5V).
-</li><li><em>Many more</em>: <a class='urllink' href='http://home.cogeco.ca/~rpaisley4/Comparators.html' rel='nofollow'>http://home.cogeco.ca/~rpaisley4/Comparators.html</a>
+</li><li><em>Many more</em>: <a class='urllink' href='https://home.cogeco.ca/~rpaisley4/Comparators.html' rel='nofollow'>https://home.cogeco.ca/~rpaisley4/Comparators.html</a>
 </li></ul><div class='vspace'></div><h3>Future Work</h3>
-<p>Not only can these NAND gates be used as analog comparators they can even be used as <a class='urllink' href='http://makerdude.com/blog/7400-based-full-wave-rectifier/' rel='nofollow'>diodes</a>, variable resistors, and variable capacitors. This opens the door or even more applications. Although, it has not been proven that they can be used as caps and resistors yet. ;)
+<p>Not only can these NAND gates be used as analog comparators they can even be used as <a class='urllink' href='https://makerdude.com/blog/7400-based-full-wave-rectifier/' rel='nofollow'>diodes</a>, variable resistors, and variable capacitors. This opens the door or even more applications. Although, it has not been proven that they can be used as caps and resistors yet. ;)
 </p>
-<p class='vspace'><br /><br /><br /><br /><sup>1</sup> <span style='font-size:83%'>NAND gate based comparators have been shown to work in custom ASICs where the structure of the gate is known and have been used to make <a class='urllink' href='http://ieeexplore.ieee.org/search/srchabstract.jsp?arnumber=5986446' rel='nofollow'>Stochastic Flash ADCs</a>. However, not only is the NAND structure of the 7410 not known, and is likely different than expected. For example, the chips have input and output buffers that change the characteristics of operation.</span>
+<p class='vspace'><br /><br /><br /><br /><sup>1</sup> <span style='font-size:83%'>NAND gate based comparators have been shown to work in custom ASICs where the structure of the gate is known and have been used to make <a class='urllink' href='https://ieeexplore.ieee.org/search/srchabstract.jsp?arnumber=5986446' rel='nofollow'>Stochastic Flash ADCs</a>. However, not only is the NAND structure of the 7410 not known, and is likely different than expected. For example, the chips have input and output buffers that change the characteristics of operation.</span>
 </p>
 <p class='vspace'  style='text-align: right;'> Views: 44971
 </p>
@@ -280,7 +280,7 @@ These devices<sup>1</sup> (believe it or not) can actually be used to compare tw
 
   (function() {
     var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'https://www') + '.google-analytics.com/ga.js';
     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
   })();
 
