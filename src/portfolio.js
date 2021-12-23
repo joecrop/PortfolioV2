@@ -1,6 +1,5 @@
 /* Change this file to get your personal Portfolio */
 
-//TODO: update home page images
 //TODO: add teaching philosophy
 
 // Website related settings
