@@ -1,7 +1,6 @@
 import React from "react";
 
-export default function CloudInfraImg(props) {
-  const theme = props.theme;
+export default function CloudInfraImg() {
   return (
     <svg
       xmlns="https://www.w3.org/2000/svg"
