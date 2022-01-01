@@ -1129,7 +1129,7 @@ const projects = {
     {
       id: "2",
       name: "Word Party",
-      url: "https://lab.gatheract.com/?app=1614925747872492417",
+      url: "https://joecrop.itch.io/wordparty",
       image: "word_party.png",
       description:
         "Word Party is a real-time collaborative word game that you can play with as many friends as you'd like.",
