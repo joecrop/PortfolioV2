@@ -870,10 +870,21 @@ const publications = {
       title: "Presentations",
       publications: [
         {
+          title: "A Testbench Creation And Maintenance Tool To Enhance IP Reuse",
+          company:
+            "General Technical Conference - Analog Devices",
+          company_url: "https://analog.com",
+          logo_path: "adi.png",
+          duration: "May 2022",
+          location: "Virtual",
+          description: `Joseph Crop et. al.`,
+          color: "#0071C5",
+        },
+        {
           title: "A Verification-driven model for IP delivery",
           company:
             "Maxim Integrated - 1st Virtual Functional Verification Summit",
-          company_url: "",
+          company_url: "https://maximintegrated.com",
           logo_path: "maxim.png",
           duration: "May 2021",
           location: "Virtual",
@@ -883,7 +894,7 @@ const publications = {
         {
           title: "The Future of OTP in P90 at Maxim",
           company: "Maxim Integrated - Internal Design Conference",
-          company_url: "",
+          company_url: "https://maximintegrated.com",
           logo_path: "maxim.png",
           duration: "May 2019",
           location: "San Jose, CA",
