@@ -53,12 +53,12 @@ async function changeImage() {
   let artHeight = 0;
   if(dimensions.height/totalHeight > dimensions.width/totalWidth) {
     // shrink height and scale width accordingly
-    artHeight = totalHeight * 0.9;
+    artHeight = totalHeight * 0.95;
     const scale = artHeight / dimensions.height;
     artWidth = dimensions.width * scale;
   } else {
     // shrink width and scale height accordingly
-    artWidth = totalWidth * 0.9;
+    artWidth = totalWidth * 0.95;
     const scale = artWidth / dimensions.width;
     artHeight = dimensions.height * scale; 
   }
