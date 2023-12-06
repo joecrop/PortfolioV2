@@ -25,7 +25,13 @@
       '1.png',
       '2.png',
       '3.png',
-      // Add more image URLs as needed
+      '4.png',
+      '5.png',
+      '6.png',
+      '7.png',
+      '8.png',
+      '9.png',
+      '10.png',
     ];
 
     let currentIndex = 0;
@@ -44,8 +50,8 @@
       // Increment the index for the next image
       currentIndex = (currentIndex + 1) % imageUrls.length;
 
-      // Schedule the next image change after 10 minutes
-      setTimeout(changeImage, 10 * 60 * 10);// * 1000);
+      // Schedule the next image change after 1 day
+      setTimeout(changeImage, 10 * 60 * 60 * 24);
     }
 
     // Start the image rotation
