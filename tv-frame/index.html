@@ -31,7 +31,13 @@
     let currentIndex = 0;
 
     // Function to change the image every 10 minutes
-    function changeImage() {
+    async function changeImage() {
+      await new Promise((resolve, reject) => {
+          const img = new Image();
+          img.onload = resolve;
+          img.onerror = reject;
+          img.src = imageUrls[currentIndex];
+        });
       // Set the current image
       document.body.style.backgroundImage = `url('${imageUrls[currentIndex]}')`;
 
@@ -39,7 +45,7 @@
       currentIndex = (currentIndex + 1) % imageUrls.length;
 
       // Schedule the next image change after 10 minutes
-      setTimeout(changeImage, 10 * 60 * 1000);
+      setTimeout(changeImage, 10 * 60 * 10);// * 1000);
     }
 
     // Start the image rotation
