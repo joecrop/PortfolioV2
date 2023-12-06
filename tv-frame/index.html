@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Full Screen Image Viewer</title>
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+      background-color: #000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+  </style>
+</head>
+<body>
+  <script>
+    // Array of image URLs
+    const imageUrls = [
+      '1.png',
+      '2.png',
+      '3.png',
+      // Add more image URLs as needed
+    ];
+
+    let currentIndex = 0;
+
+    // Function to change the image every 10 minutes
+    function changeImage() {
+      // Set the current image
+      document.body.style.backgroundImage = `url('${imageUrls[currentIndex]}')`;
+
+      // Increment the index for the next image
+      currentIndex = (currentIndex + 1) % imageUrls.length;
+
+      // Schedule the next image change after 10 minutes
+      setTimeout(changeImage, 10 * 60 * 1000);
+    }
+
+    // Start the image rotation
+    changeImage();
+  </script>
+</body>
+</html>

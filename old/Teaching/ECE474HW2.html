@@ -1,0 +1,294 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>Joseph Crop - ECE474HW2 </title>
+	<meta http-equiv='Content-Style-Type' content='text/css' />
+	<!--HTMLHeader--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: pre; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  .TCprogress {background-color:#5af; min-height:13px; width:13px; color:#fff; margin-left:auto; margin-right:auto;}
+table.TotalCounter td {font-size:x-small; text-align:center}.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+  td.markup1 pre { white-space: pre-wrap; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none;}
+
+--></style>  <meta name='robots' content='noindex,nofollow' />
+
+	<link rel='stylesheet' href='../_fpub/skins/simpletab/pmwiki.css' type='text/css' />
+	<style type='text/css'><!--
+	#header {background-color: #950;}
+	a:link, a:visited, #menu ul li .here a, #menu ul li .here a:hover {color: #950;}
+	--></style>
+	<!--[if lte IE 6]>
+	<style type="text/css">
+	img, #logo, #vis, #header { behavior: url("../_fpub/skins/simpletab/iepngfix.htc"); }
+	</style>
+	<![endif]-->
+</head>
+<body>
+	<div id="main" style="position:absolute; top:20px; left:5px; z-index:101;">
+		<div class="image" style="width:94px;display:inline;"> 
+			<a href=".."><img border="0" src="../_fpub/skins/simpletab/images/me.png" title="Joe Crop"></img></a>
+		</div>
+		<div class="image" style="width:50px;display:inline;"> 
+			<img src="../_fpub/skins/simpletab/images/chip1.jpg" title="Sub-Threshold Asynchronous Multiplier"></img>
+		</div>
+		<div class="image" style="width:50px;display:inline;"> 
+			<img src="../_fpub/skins/simpletab/images/chip2.png" title="Low-Power Wireles Brain Sensor"></img>
+		</div>
+		<div class="image" style="width:50px;display:inline;"> 
+			<img src="../_fpub/skins/simpletab/images/chip3.jpg" title="Current Sensing and Sub-Threshold Variability Test Chip"></img>
+		</div>
+		<div class="image" style="width:50px;display:inline;"> 
+			<img src="../_fpub/skins/simpletab/images/chip4.png" title="Synctium: A 530mV 10-Lane SIMD Processor with Variation Resiliency in 45nm SOI"></img>
+		</div>
+		<div class="image" style="width:50px;display:inline;"> 
+			<img src="../_fpub/skins/simpletab/images/chip5.png" title="Advanced Near-Threshold Current Sensing Completion Detection Test Chip"></img>
+		</div>
+		<div class="image" style="width:40px;display:inline;"> 
+			<img src="../_fpub/skins/simpletab/images/toggle.png" onclick="toggleGame();" title="Toggle Balls"></img>
+		</div>
+	</div>
+	<div id="canvas"></div>
+
+	<div id="page">
+		<div id="suptitle"></div>
+		<div id="header" >
+			<div id="vis">
+				<!-- <a id="logo" href=".." title="Joseph Crop"></a> -->
+				<div id="menu"><ul><li> <a class='wikilink' href='../Main/HomePage.html'>Home</a>
+</li><li> <span class='here'>  <a class='wikilink' href='../Teaching/Teaching.html'>Teaching</a></span>
+</li><li> <a class='wikilink' href='../Resume/Objective.html'>R&eacute;sum&eacute;</a>
+</li><li> <a class='wikilink' href='../Publications/Publications.html'>Publications</a>
+</li><li> <a class='wikilink' href='../Teaching/Projects.html'>Projects</a>
+</li><li> <a class='wikilink' href='../Music/Music.html'>Music</a>
+</li><li> <a class='wikilink' href='../Pictures/Pictures.html'>Pictures</a>
+</li><li> <a class='wikilink' href='../Contact/Contact.html'>Contact</a>
+</li></ul>
+</div>
+			</div>
+		</div>
+	<div id="tools">
+	    <a rel="nofollow" accesskey='e' href='../Teaching/ECE474HW2.html?action=edit'></a>
+	    <a rel="nofollow" accesskey='h' href='../Teaching/ECE474HW2.html?action=diff'></a>      
+	    <a rel="nofollow" accesskey='a' href='../Teaching/ECE474HW2.html?action=upload'></a>      
+	    <a rel="nofollow" accesskey='c' href='../Teaching/RecentChanges'></a>      
+	    <a rel="nofollow" accesskey='r' href='../Site/AllRecentChanges]'></a>
+	    <a rel="nofollow" accesskey='l' href='../Teaching/SideBar?action=edit'></a>
+			<a rel="nofollow" accesskey='t' href='../Site/TopBar?action=edit'></a>
+			<a rel="nofollow" accesskey='m' href='../Site/TabMenu?action=edit'></a>
+			<a rel="nofollow" accesskey='f' href='../Site/Footer?action=edit'></a>
+	</div>
+
+	<div id="sidebar"><div class='vspace'></div><div class='frame' > 
+<h2> <a class='wikilink' href='../Main/HomePage.html'>Home</a></h2>
+<h2> <a class='wikilink' href='../Teaching/Teaching.html'>Teaching</a></h2>
+<h2> <a class='wikilink' href='../Resume/Objective.html'>R&eacute;sum&eacute;</a></h2>
+<h2> <a class='wikilink' href='../Publications/Publications.html'>Publications</a></h2>
+<div class='indent'> <a class='wikilink' href='../Publications/Images.html'>Images</a>
+</div><h2> <a class='wikilink' href='../Chips/Chips.html'>Chips</a></h2>
+<h2> <a class='wikilink' href='../Teaching/Projects.html'>Projects</a></h2>
+<h2> <a class='wikilink' href='../Music/Music.html'>Music</a></h2>
+<h2> <a class='wikilink' href='../Pictures/Pictures.html'>Pictures</a></h2>
+<h2> <a class='wikilink' href='../Contact/Contact.html'>Contact</a></h2>
+<h2> <a class='wikilink' href='../Links/Links.html'>Links</a></h2>
+<h2> <a class='wikilink' href='../Site/Search.html'>Search</a></h2>
+</div>
+<div class='vspace'></div><div class='frame' > 
+<h3>Class Projects</h3>
+<div class='indent'><a class='wikilink' href='../Classes/ECE521.html'>ECE 521 - joeSpice</a>
+</div><div class='indent'><a class='wikilink' href='../Classes/ECE570.html'>ECE 570</a>
+</div><div class='indent'><a class='wikilink' href='../Classes/ECE577.html'>ECE 577</a>
+</div><h3>Tools</h3>
+<div class='indent'><a class='wikilink' href='../Tools/VIM8VerilogSetup.html'>VIM 8.0 Setup for Verilog</a>
+</div><div class='indent'><a class='wikilink' href='../Tools/SpiceMeasureParser.html'>Spice Measure File Parser</a>
+</div><div class='indent'><a class='wikilink' href='../Tools/GoogleDocsSchematic.html'>Google Docs Circuits</a>
+</div><div class='indent'><a class='wikilink' href='../Tools/OpenCores.html'>OpenCores.org Peojects</a>
+</div><div class='indent'><a class='wikilink' href='../Tools/CellCulling.html'>Cell Culling Toolkit</a>
+</div></div>
+</div>
+	
+	<div id="content"><!--PageText-->
+<div id='wikitext'>
+<h1>ECE 474 Homework 2</h1>
+<h2>Verilog combinatorial circuits</h2>
+<h3>Background</h3>
+<div class='frame' > 
+<p>We are learning about many of the synthesizable Verilog constructs for creating 
+combinatorial circuits. This exercise will give us an opportunity to start using
+these constructs with synthesis.<br /><br />We will create a multifunction ALU with 11 opcodes. It will have two 16-bit operand inputs, an 16-bit output, plus outputs for a zero indication and carry. The opcodes will be supplied by one 4-bit bus.<br /><br />You may use any of the combinatorial Verilog constructs we have looked at so far.
+Do not use constructs we have not discussed such as "generate".  You may need
+to use always blocks to efficiently make the alu.
+</p></div>
+<div class='vspace'></div><h3>Work to do</h3>
+<div class='frame' > 
+<p>1)  Create a hw2 working directory. Remember to copy .synopsys_dc.setup into it. 
+</p><pre>    Create a work directory.
+    Make a rtl_src directory where your alu.sv source file will be placed.
+</pre></div>
+<div class='vspace'></div><div class='frame' > 
+<p>2)  Create the ALU with the filename alu.sv.  The module <strong>must</strong> look as follows:
+</p>
+<div class='vspace'></div><pre>  module alu(<br />      input        [15:0] in_a     ,   //input a<br />      input        [15:0] in_b     ,   //input b<br />      input        [3:0]  in_opcode,   //opcode input<br />      output       [15:0] out_y    ,   //alu output<br />      output              out_zero ,   //logic '1' when o_y is all zeros<br />      output              out_carry    //indicates a carry out from ALU <br />      );<br />  endmodule<br /><br />  Declare all the opcodes in the module as follows.  <br /><br />  parameter c_op_add = 4'h1;<br />  parameter c_op_sub = 4'h2;<br />  parameter c_op_inc = 4'h3;<br />  parameter declaration for an opcode...<br />  parameter declaration for an opcode...<br />  ...<br />
+  Note the use of the prefix "c_" to mark the identifier as a constant.<br />  The opcodes for the ALU are as follows:  <br /><br />   c_op_add        in_a + in_b<br />   c_op_sub        in_a - in_b <br />   c_op_inc        in_a + 1<br />   c_op_dec        in_a - 1<br />   c_op_or         in_a OR in_b<br />   c_op_and        in_a AND in_b<br />   c_op_xor        in_a XOR in_b<br />   c_op_shr        in_a is shifted one place right, zero shifted in<br />   c_op_shl        in_a is shifted one place left, zero shifted in<br />   c_op_onescomp   in_a gets "ones complemented"<br />   c_op_twoscomp   in_a gets "twos complemented"<br />
+   The value of carry is as follows: <br />   -arithmetic operation 
+         : includes: c_op_add, c_op_sub, c_op_inc, c_op_dec, c_op_twoscomp<br />         : set if operation results in a carry to the 17th bit<br />   -non-arithmetic operation : zero <br />
+   -The signal out_zero should propagate X if out_y has any bits 
+    that are X while the other bits that are not X are all 0's. 
+</pre><div class='vspace'></div></div>
+<div class='vspace'></div><div class='frame' > 
+<p>3) Compile alu.sv and simulate it to determine it works correctly by creating a input stimulus do file by hand.
+</p>
+<p class='vspace'>The stimulus file should apply the operands and opcodes to test your alu. Both valid and invalid opcodes should be supplied.  
+</p>
+<p class='vspace'>Run a RTL simulation that shows correct operation. Print the waveform from vsim using hex format for signals.  
+</p>
+<p class='vspace'>Only worry about simulating unsigned numbers.
+</p>
+<div class='vspace'></div></div>
+<div class='vspace'></div><div class='frame' > 
+<p>4) Now synthesize the RTL and produce the gate level design. <br />
+Determine the following and put your answers on a separate sheet:<br />
+</p><ol><li>Find the total area used by the alu. (report_area command)
+</li><li>How many different types of cells (gates) were utilized : (report_hierarchy command)
+</li><li>Number of cells (gates).  This will require using the report_area command as well as looking at the cell library databook. It is located at:    /nfs/guille/a1/cadlibs/synop_lib/SAED_EDK90nm/Digital_Standard_Cell_Library/doc/databook. Its is called SAED Digital Standard Cell Library_Rev1_4_20.  Its is a pdf file but has no .pdf on it.  Search for the cell "NAND2X0" and record the area. (pg 34)  Divide the total area reported by design_vision by this number to get the gate equivalent count.
+</li><li>The synthesis tool will most likely introduce a hierarchical block to your design because it recognized something in your design. What is the block and what does it do? 
+</li><li>What style of implementation was chosen for this element? Hint: see report_hierarchy output
+</li><li>What was the maximum delay path through the alu and what were the beginning and endpoints for the max delay path?: (report_timing command)
+</li></ol><div class='vspace'></div></div>
+<div class='vspace'></div><h3>What to turn in</h3>
+<div class='frame' > 
+<ol><li>Your Verilog code
+</li><li>Turn in the schematic of your synthesized alu
+</li><li>The waveform of your code working correctly at both RTL and gate levels.
+</li><li>The sheet with your written answers from part 4 above.  On this sheet, describe any problems or issues your design had.
+</li></ol></div>
+<div class='vspace'></div><h3>Grading</h3>
+<div class='frame' > 
+<ul><li>Verilog coding and correct operation   70%
+<ul><li>RTL matches gates for valid opcodes and operands  (-10%)
+</li><li>no latches in design               (-10%)
+</li></ul></li><li>Waveform printout                      10%
+</li><li>Written answers (part 4, a-e)          20%
+</li></ul></div>
+</div>
+</div>
+	
+	<div class="clear"> </div>
+	
+</div>
+	
+<div id='footer'>
+	
+	<!--HTMLFooter-->
+</div>
+
+    <!--[if IE]><script type="text/javascript" src="lib/excanvas.js"></script><![endif]-->
+    <script src="../_fpub/skins/simpletab/lib/prototype-1.6.0.2.js"></script>
+
+    <!-- box2djs -->
+    <script src='../_fpub/skins/simpletab/js/box2d/common/b2Settings.js'></script>
+    <script src='../_fpub/skins/simpletab/js/box2d/common/math/b2Vec2.js'></script>
+    <script src='../_fpub/skins/simpletab/js/box2d/common/math/b2Mat22.js'></script>
+    <script src='../_fpub/skins/simpletab/js/box2d/common/math/b2Math.js'></script>
+    <script src='../_fpub/skins/simpletab/js/box2d/collision/b2AABB.js'></script>
+    <script src='../_fpub/skins/simpletab/js/box2d/collision/b2Bound.js'></script>
+    <script src='../_fpub/skins/simpletab/js/box2d/collision/b2BoundValues.js'></script>
+    <script src='../_fpub/skins/simpletab/js/box2d/collision/b2Pair.js'></script>
+    <script src='../_fpub/skins/simpletab/js/box2d/collision/b2PairCallback.js'></script>
+    <script src='../_fpub/skins/simpletab/js/box2d/collision/b2BufferedPair.js'></script>
+    <script src='../_fpub/skins/simpletab/js/box2d/collision/b2PairManager.js'></script>
+    <script src='../_fpub/skins/simpletab/js/box2d/collision/b2BroadPhase.js'></script>
+    <script src='../_fpub/skins/simpletab/js/box2d/collision/b2Collision.js'></script>
+    <script src='../_fpub/skins/simpletab/js/box2d/collision/Features.js'></script>
+    <script src='../_fpub/skins/simpletab/js/box2d/collision/b2ContactID.js'></script>
+    <script src='../_fpub/skins/simpletab/js/box2d/collision/b2ContactPoint.js'></script>
+    <script src='../_fpub/skins/simpletab/js/box2d/collision/b2Distance.js'></script>
+    <script src='../_fpub/skins/simpletab/js/box2d/collision/b2Manifold.js'></script>
+    <script src='../_fpub/skins/simpletab/js/box2d/collision/b2OBB.js'></script>
+    <script src='../_fpub/skins/simpletab/js/box2d/collision/b2Proxy.js'></script>
+    <script src='../_fpub/skins/simpletab/js/box2d/collision/ClipVertex.js'></script>
+    <script src='../_fpub/skins/simpletab/js/box2d/collision/shapes/b2Shape.js'></script>
+    <script src='../_fpub/skins/simpletab/js/box2d/collision/shapes/b2ShapeDef.js'></script>
+    <script src='../_fpub/skins/simpletab/js/box2d/collision/shapes/b2BoxDef.js'></script>
+    <script src='../_fpub/skins/simpletab/js/box2d/collision/shapes/b2CircleDef.js'></script>
+    <script src='../_fpub/skins/simpletab/js/box2d/collision/shapes/b2CircleShape.js'></script>
+    <script src='../_fpub/skins/simpletab/js/box2d/collision/shapes/b2MassData.js'></script>
+    <script src='../_fpub/skins/simpletab/js/box2d/collision/shapes/b2PolyDef.js'></script>
+    <script src='../_fpub/skins/simpletab/js/box2d/collision/shapes/b2PolyShape.js'></script>
+    <script src='../_fpub/skins/simpletab/js/box2d/dynamics/b2Body.js'></script>
+    <script src='../_fpub/skins/simpletab/js/box2d/dynamics/b2BodyDef.js'></script>
+    <script src='../_fpub/skins/simpletab/js/box2d/dynamics/b2CollisionFilter.js'></script>
+    <script src='../_fpub/skins/simpletab/js/box2d/dynamics/b2Island.js'></script>
+    <script src='../_fpub/skins/simpletab/js/box2d/dynamics/b2TimeStep.js'></script>
+    <script src='../_fpub/skins/simpletab/js/box2d/dynamics/contacts/b2ContactNode.js'></script>
+    <script src='../_fpub/skins/simpletab/js/box2d/dynamics/contacts/b2Contact.js'></script>
+    <script src='../_fpub/skins/simpletab/js/box2d/dynamics/contacts/b2ContactConstraint.js'></script>
+    <script src='../_fpub/skins/simpletab/js/box2d/dynamics/contacts/b2ContactConstraintPoint.js'></script>
+    <script src='../_fpub/skins/simpletab/js/box2d/dynamics/contacts/b2ContactRegister.js'></script>
+    <script src='../_fpub/skins/simpletab/js/box2d/dynamics/contacts/b2ContactSolver.js'></script>
+    <script src='../_fpub/skins/simpletab/js/box2d/dynamics/contacts/b2CircleContact.js'></script>
+    <script src='../_fpub/skins/simpletab/js/box2d/dynamics/contacts/b2Conservative.js'></script>
+    <script src='../_fpub/skins/simpletab/js/box2d/dynamics/contacts/b2NullContact.js'></script>
+    <script src='../_fpub/skins/simpletab/js/box2d/dynamics/contacts/b2PolyAndCircleContact.js'></script>
+    <script src='../_fpub/skins/simpletab/js/box2d/dynamics/contacts/b2PolyContact.js'></script>
+    <script src='../_fpub/skins/simpletab/js/box2d/dynamics/b2ContactManager.js'></script>
+    <script src='../_fpub/skins/simpletab/js/box2d/dynamics/b2World.js'></script>
+    <script src='../_fpub/skins/simpletab/js/box2d/dynamics/b2WorldListener.js'></script>
+    <script src='../_fpub/skins/simpletab/js/box2d/dynamics/joints/b2JointNode.js'></script>
+    <script src='../_fpub/skins/simpletab/js/box2d/dynamics/joints/b2Joint.js'></script>
+    <script src='../_fpub/skins/simpletab/js/box2d/dynamics/joints/b2JointDef.js'></script>
+    <script src='../_fpub/skins/simpletab/js/box2d/dynamics/joints/b2DistanceJoint.js'></script>
+    <script src='../_fpub/skins/simpletab/js/box2d/dynamics/joints/b2DistanceJointDef.js'></script>
+    <script src='../_fpub/skins/simpletab/js/box2d/dynamics/joints/b2Jacobian.js'></script>
+    <script src='../_fpub/skins/simpletab/js/box2d/dynamics/joints/b2GearJoint.js'></script>
+    <script src='../_fpub/skins/simpletab/js/box2d/dynamics/joints/b2GearJointDef.js'></script>
+    <script src='../_fpub/skins/simpletab/js/box2d/dynamics/joints/b2MouseJoint.js'></script>
+    <script src='../_fpub/skins/simpletab/js/box2d/dynamics/joints/b2MouseJointDef.js'></script>
+    <script src='../_fpub/skins/simpletab/js/box2d/dynamics/joints/b2PrismaticJoint.js'></script>
+    <script src='../_fpub/skins/simpletab/js/box2d/dynamics/joints/b2PrismaticJointDef.js'></script>
+    <script src='../_fpub/skins/simpletab/js/box2d/dynamics/joints/b2PulleyJoint.js'></script>
+    <script src='../_fpub/skins/simpletab/js/box2d/dynamics/joints/b2PulleyJointDef.js'></script>
+    <script src='../_fpub/skins/simpletab/js/box2d/dynamics/joints/b2RevoluteJoint.js'></script>
+    <script src='../_fpub/skins/simpletab/js/box2d/dynamics/joints/b2RevoluteJointDef.js'></script>
+    <script type="text/javascript" src="../_fpub/skins/simpletab/js/protoclass.js"></script> 
+    <script type="text/javascript" src='../_fpub/skins/simpletab/js/main.js'></script>
+	<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-38823739-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'https://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+	</script>
+</body>
+</html>

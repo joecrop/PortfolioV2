@@ -1,0 +1,40 @@
+      <link href="style_calc.css" rel="stylesheet" type="text/css">
+      <div id="converter">
+         <form name="form1">
+            <div id="title_embed">How Many Kitties?</div>
+            <div id="subtitle_embed"><p>A Unit Converter from Anything to Kitties!</p></div>
+
+
+         <div class="nostyle">
+            <select class="unit_selector" name="unit_selector" onchange="UnitSelect()">
+
+            </select>
+         </div>
+         <div class="nostyle" style="height: 85px;">
+            <div class="input">
+               <input name="from" id="from" type="text" size="10" onchange="KittyCalc()" onkeyup='KittyCalc()' onkeypress='validateNumber(event)' onClick="SelectAll('from');" value="0">
+               <select name="from_units" class="sub_unit_selector" onchange="KittyCalc()">
+               </select>
+            </div>
+            <div class="equ">=</div>
+            <div class="input">
+               <input name="to" id="to" type="text" size="10" onchange="UnitCalc()" onkeyup='UnitCalc()' onkeypress='validateNumber(event)' onClick="SelectAll('to');">
+               <select name="to_units" class="sub_unit_selector" onchange="UnitCalc()">
+
+               </select>
+            </div>
+         </div>
+         <div id="cat_icons">
+         </div>
+         </form>
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-1412171132263682";
+/* Widget */
+google_ad_slot = "6797206997";
+google_ad_width = 468;
+google_ad_height = 15;
+//-->
+</script>
+<script type="text/javascript" src="https://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
+</div>
+<script src="calc.js"></script>

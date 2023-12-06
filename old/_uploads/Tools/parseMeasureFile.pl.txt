@@ -1,0 +1,115 @@
+#!/usr/bin/perl
+
+############################################################
+# Author: Joe Crop
+# Email: cropj@eecs.oregonstate.edu
+#
+# Free to use, modify, and distribute
+############################################################
+
+
+############################################################
+#                 parseMeasureFile
+#
+# Takes in a file name of an HSPICE measure file (.mt0,
+# .mt1, etc.) and parses it to a hash that is returned,
+#
+# Inputs:
+#	$filename: a string containing the location of the file
+#			   to be read.
+# Outputs:
+#	%values: an array of key-value pairs.
+#
+# Examples:
+# my(%values) = &parseMeasureFile($filename);
+# my(%values) = &parseMeasureFile('/nfs/user/spiceout.mt0');
+############################################################
+sub parseMeasureFile
+{
+	#set the filename to the first argument to the function
+	my($filename) = $_[0];
+
+	# open the file
+	open (SPICEMT0, "<$filename") or print STDERR " cannot open .mt0 file: $!\n";
+		
+		# variables used in parsing state machine
+		my($line_found) = 0;
+		my($keys_found) = 0;
+		my($alter_found) = 0;
+
+		# variables that will contain the resulting data
+		my(@names) = ();
+		my(@results) = ();
+		my(%values) = ();
+
+		# loop through each line in the file
+		while (my $line = <SPICEMT0>)
+		{
+			if($line =~ m/^\$/ || $line =~ m/^\./){ ##ignore first lines with $ and .
+				$keys_found = 0;
+			} else {
+				$keys_found = 1; # setting to 1 means we have past the junk at the top and are now parsing the kew names
+			}
+	
+			# once the first key line is found we can parse them out to the @names array
+			if ($alter_found==0 && $keys_found==1){ # parse keys
+				@names = (@names, split(/\s+/, $line)); # save each key seperated by spaces and store them into the @names array
+				$line =~ s/ +//g; # remove spaces at begining of line
+				$line_found++; # count the number of key lines found
+				if($line =~ m/alter\#/){ # The alter key is always the last key name, once the alter key is found we can give up and move on to values
+					$alter_found = 1;
+				}
+			}
+			# once all the keys are parsed we move on to parsing the values
+			elsif($line_found >= 1) #parse values
+			{
+				@results = (@results, split(/\s+/, $line)); #split each line by white space and store in @results
+			}
+		}
+	close(SPICEMT0); #close the file
+
+	# for each key make a hash of key/value pairs
+	# i.e. if @names[0] = "voltage" and @results[0] = "1.2"
+	# then %values[voltage] = 1.2
+	for($i = 0; $i < @names; $i++)
+	{	
+		if($results[$i] =~ m/failed/)
+		{
+			$values{$names[$i]} = "failed";
+		}
+		else
+		{
+			$values{$names[$i]} = expand($results[$i]);
+		}
+	}
+
+	return(%values)
+
+}
+
+############################################################
+#                        expand
+# helper function that converts text of scientific notation
+# to a float that is passed as variable.
+#
+# Inputs:
+#	$text: a string with any number notation, scientific or
+#		   integer.
+# Outputs:
+#	$number: a float...
+#
+# Examples:
+# $number = expand('5e-9');
+# print(expand($text));
+############################################################
+
+sub expand {
+       my $n = shift;
+       return $n unless $n =~ /^(.*)e([-+]?)(.*)$/;
+       my ($num, $sign, $exp) = ($1, $2, $3);
+       my $sig = $sign eq '-' ? "." . ($exp - 1 + length $num) : '';
+       return sprintf "%${sig}f", $n;
+}
+
+return true;
+

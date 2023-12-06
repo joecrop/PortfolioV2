@@ -1,0 +1,401 @@
+let p4_user = 'joseph.crop'
+
+" Default Settings (tabs and file types) {{{
+set nocompatible    " use vim defaults
+set ls=2            " always show status line
+
+set expandtab       " overide default tab style
+set tabstop=3       " numbers of spaces of tab character
+set shiftwidth=3    " numbers of spaces to (auto)indent
+set softtabstop=3   " allows for backspace to work with soft tabs
+autocmd BufRead,BufNewFile *.log set filetype=log
+"autocmd BufRead,BufNewFile *.sv,*.svi,*.svh set filetype=systemverilog
+autocmd BufRead,BufNewFile *.m set expandtab tabstop=4 shiftwidth=4 "only change tabstop for matlab
+"autocmd BufRead,BufNewFile *.pl,*.pm set tabstop=4 shiftwidth=4 softtabstop=4 "use 4 spaces per tab in perl
+autocmd BufRead,BufNewFile *Makefile* set noexpandtab "use tabs in Makefiles
+"autocmd BufEnter *.v highlight OverLength ctermbg=darkgrey guibg=#e9c9c9 "highlight lines longer than 80
+"autocmd BufEnter *.sv highlight OverLength ctermbg=darkgrey guibg=#e9c9c9 "highlight lines longer than 80
+"autocmd BufEnter *.v match OverLength /\%80v./ "highlight lines linger than 80
+"autocmd BufEnter *.sv match OverLength /\%80v./ "highlight lines linger than 80
+
+autocmd BufEnter *.v set spell
+autocmd BufEnter *.sv set spell
+
+
+" create verilog template file every time a new file is created
+autocmd BufNewFile *.v so ~/.vim/templates/verilog_template.v
+autocmd bufnewfile *.v exe "1," . 35 . "s/module MODULE/module ".expand("%:t:r")."/g"
+
+autocmd BufNewFile *.sv call GetUVMTemplate()
+
+set scrolloff=5     " keep 5 lines when scrolling
+set showcmd         " display incomplete commands
+set hlsearch        " highlight searches
+set incsearch       " do incremental searching
+set ruler           " show the cursor position all the time
+"set visualbell t_vb=    " turn off error beep/flash
+"set novisualbell    " turn off visual bell
+"set nobackup        " do not keep a backup file
+set number          " show line numbers
+"set ignorecase      " ignore case when searching
+"set noignorecase   " don't ignore case
+set title           " show title in console title bar
+set ttyfast         " smoother changes
+"set ttyscroll=0        " turn off scrolling, didn't work well with PuTTY
+"set modeline        " last lines in document sets vim mode
+"set modelines=3     " number lines checked for modelines
+"set shortmess=atI   " Abbreviate messages
+"set nostartofline   " don't jump to first character when paging
+"set whichwrap=b,s,h,l,<,>,[,]   " move freely between files
+"set viminfo='20,<50,s10,h
+"set spell " check spelling
+"set autoindent     " always set autoindenting on
+"set smartindent        " smart indent
+"set cindent            " cindent
+set noautoindent
+set nosmartindent
+set nocindent  
+set bs=2 " use backspace key in vim 7.3
+set nomousehide " don't hide mouse in gvim
+
+set mouse=a
+map <ScrollWheelUp> <C-Y>
+map <ScrollWheelDown> <C-E>
+
+"set autowrite      " auto saves changes when quitting and swiching buffer
+"set expandtab      " tabs are converted to spaces, use only when required
+set sm             " show matching braces, somewhat annoying...
+"set nowrap         " don't wrap lines
+
+"autocmd CursorMoved,CursorMovedI * :if match(getline('.'), '^\s*\/.*') == 0 | :setlocal textwidth=80 | :else | :setlocal textwidth=0 | :endif
+
+" activates filetype detection
+filetype plugin indent on
+
+" syntax highlighing
+syntax on
+
+" Automatically open directory tree when vim starts
+let g:netrw_banner = 0
+let g:netrw_liststyle = 3
+let g:netrw_browse_split = 4
+let g:netrw_altv = 1
+let g:netrw_winsize = 25
+"augroup ProjectDrawer
+"  autocmd!
+"  autocmd VimEnter * :Vexplore
+"augroup END
+
+" don't try to save a netrw buffer when quitting
+autocmd FileType netrw setl bufhidden=delete
+"}}}
+
+" Files, backups and undo {{{
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Turn backup off, since most stuff is in SVN, git anyway...
+"set nobackup
+"set nowb
+"set noswapfile
+
+"Persistent undo (needs vim 7.3 or higher)
+try
+   set undofile
+   set undodir=$HOME/.vim/undodir
+   set undolevels=1000
+   set undoreload=10000
+catch
+endtry
+"}}}
+
+" colors and fonts {{{
+if has("gui_running")
+   set lines=50       " height = 50 lines
+   set columns=125        " width = 100 columns
+endif
+
+set guifont=Monospace\ 11  " use this font
+set t_Co=256
+set background=dark   " adapt colors for background
+set selectmode=mouse,key,cmd
+set keymodel=
+colorscheme obsidian
+highlight Pmenu guibg=Gray20 guifg=Gold3
+highlight PmenuSel guibg=brown4 guifg=Gold3 gui=bold
+"}}}
+
+" Restore cursor position when opening a previously opened file {{{
+if has("autocmd")
+   au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|else|exe "norm $"|endif|endif
+endif
+"}}}
+
+" Highlight Tabs {{{
+let g:indent_guides_auto_colors = 0
+let g:indent_guides_start_level = 2
+let g:indent_guides_enable_on_vim_startup = 1
+let g:indent_guides_guide_size = 1
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=#333333 ctermbg=3
+autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=#444444 ctermbg=4
+
+
+" make tabs and tab shifting highlighted
+highlight TabMatchColor ctermbg=gray guibg=gray
+match TabMatchColor /\t/ 
+
+augroup CursorLine
+   au!
+   au VimEnter,WinEnter,BufWinEnter * setlocal cursorline
+   au WinLeave * setlocal nocursorline
+augroup END
+
+"}}}
+
+" folding settings {{{
+" This a is plugin for automatically restoring a file's cursor position
+" and folding information after restartin vim. Is stores info in the .vim/view
+" folder
+source ~/.vim/plugin/restore_view.vim
+set viewoptions=cursor,folds,slash,unix " save this for next opoening of file
+set foldmethod=marker   "fold based on indent
+set foldnestmax=10      "deepest fold is 10 levels
+"set nofoldenable        "dont fold by default
+set foldlevel=0         "this is just what i use
+"use space to unfold
+nnoremap <space> za
+"}}}
+
+" Usefull Verilog macros and functions {{{
+source ~/.vim/scripts/verilog_helpers.vim
+" }}}
+
+" System Verilog and UVM Template Auto Generation {{{
+function! GetUVMTemplate()
+   echoerr ""
+   echo "You are creating a new SystemVerilog File, would you like to use a template?"
+   let i = 1
+   let file_list = split(system('ls ~/.vim/templates/*.sv*', '\n'))
+   for FILE in file_list
+      if(i == 1)
+         echo i . ') ' . FILE . ' (DEFAULT)'
+      else
+         echo i . ') ' . FILE
+      endif
+      let i+=1
+   endfor
+   let c = input("Make a Selection: ")
+   let idx = str2nr(c)
+   if(c)
+      let myfile = file_list[idx-1]
+   else
+      let myfile = file_list[0]
+   endif
+   execute '0r '. myfile
+   exe "1," . 35 . "s/MODULE/".expand("%:t:r")."/g"
+endfunction
+"}}}
+
+" easier installation of plugins (Pathogen) {{{
+"call pathogen#runtime_append_all_bundles()
+"call pathogen#helptags()
+execute pathogen#infect()
+"}}}
+
+" Perforce Version Control {{{
+" Common Command Shortcuts
+"        Short-cut       Command ~
+"        PA              add
+"        PD              diff
+"        PD2             diff2
+"        PE              edit
+"        PG              get/sync
+"        PH              help    |perforce-help|
+"        PO              opened
+"        PP              print
+"        PR              revert
+let g:p4CmdPath = 'p4'
+let g:p4EnableMenu = 1
+let g:p4UseExpandedMenu = 0 " set to 1 to see much more options in menu
+let g:p4DefaultOptions = '-u '.p4_user
+let g:p4Presets = 'P4CONFIG'
+let g:p4MaxLinesInDialog = 5
+let g:p4UseVimDiff2 = 1
+runtime bundle/perforce/perforce/perforceutils.vim
+runtime bundle/perforce/perforce/perforcemenu.vim
+"make capital W submit current file
+"cmap W PSubmit % #
+"}}}
+
+" paths used for verilog linting {{{
+let paths = ["","","","","","",""]
+let paths[0] = PROJECT_ROOT.DESIGN_TOP."/digital/".DESIGN_TOP."/rtl"
+let paths[1] = PROJECT_ROOT.DESIGN_TOP."/models/".DESIGN_TOP."/src"
+let paths[2] = PROJECT_ROOT.DESIGN_TOP."/sim/src"
+let paths[3] = PROJECT_ROOT.DESIGN_TOP."/digital/rtl"
+let paths[4] = PROJECT_ROOT.DESIGN_TOP."/models/src"
+let paths[5] = PROJECT_ROOT.DESIGN_TOP."/verif/src"
+let paths[6] = "."
+" allow systemverilog
+let verilog_files = ""
+for path in paths
+   let verilog_files = verilog_files ." -incdir ".path
+   let verilog_files = verilog_files ." -y ".path
+endfor
+"}}}
+
+" Real-time linting with ALE {{{
+
+let g:ale_linters = {
+         \   'systemverilog': ['iverilog'],
+         \}
+
+set nocompatible
+filetype off
+
+let &runtimepath.=',~/.vim/bundle/ale'
+
+filetype plugin on
+
+"let g:ale_sign_column_always = 1
+let g:ale_statusline_format = ['ERR: %d', 'WARN: %d', 'ok']
+let g:ale_echo_msg_error_str = 'E'
+let g:ale_echo_msg_warning_str = 'W'
+let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
+
+" don't run lint on huge files
+if (getfsize(expand(@%)) > 50000)
+   let g:ale_lint_on_save = 1
+   let g:ale_lint_on_text_changed = 0
+   let g:ale_lint_on_enter = 0
+endif
+
+function! AleFinishedClearSyntastic()
+   call SyntasticReset()
+   lclose
+endfunction
+
+augroup AleFinishedLintGroup
+   autocmd!
+   autocmd User ALELint call AleFinishedClearSyntastic()
+augroup END
+
+" }}}
+
+" Lightline Status bar configuration {{{
+let g:lightline = {
+         \ 'colorscheme': 'wombat',
+         \ 'active': {
+         \   'left': [ [ 'mode', 'paste' ],
+         \             [ 'fugitive', 'readonly', 'filename', 'modified' ] ]
+         \ },
+         \ 'component_function': {
+         \   'modified': 'LightlineModified'
+         \ },
+         \ }
+
+function! LightlineModified()
+   return ALEGetStatusLine()
+endfunction
+"}}}
+
+" Linting with syntastic and irun{{{
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+" disable when we are using ALE
+let b:syntastic_skip_checks = 1
+
+" Set the bwlow to lines to 1 to enable linting on save
+let g:syntastic_always_populate_loc_list = 0
+let g:syntastic_auto_loc_list = 0
+
+let g:syntastic_check_on_open = 0
+let g:syntastic_check_on_wq = 0
+let g:syntastic_enable_balloons = 1
+
+"let g:syntastic_debug = 3
+let g:syntastic_verilog_checkers = ["irun"]
+let g:syntastic_verilog_irun_args = verilog_files
+"let g:syntastic_verilog_checkers = ["iverilog"]
+"let g:syntastic_verilog_iverilog_args = verilog_files
+let g:syntastic_filetype_map = { "systemverilog": "verilog" }
+
+let g:syntastic_matlab_checkers = ["mlint"]
+
+"let g:syntastic_perl_checkers = ['perl']
+"let g:syntastic_perl_lib_path = [ '/usr/pack/perl-5.16.2-da/perl/lib/site_perl/5.16.2/x86_64-linux', '/usr/pack/perl-5.16.2-da/perl/lib/site_perl/5.16.2', '/usr/pack/perl-5.16.2-da/perl/lib/5.16.2/x86_64-linux', '/usr/pack/perl-5.16.2-da/perl/lib/5.16.2']
+"let g:syntastic_perl_interpreter = ['/usr/sepp/bin/perl-5.16.2-da']
+"let g:syntastic_enable_perl_checker = 1
+
+"}}}
+
+" Multiple color highlights {{{
+" From bundle/mark/vimballs/mark*.vmb
+" To install
+"     vim mark*.vmb.gz 
+"     :so % 
+" To uninstall, use the :RmVimball command.
+"
+" \m to mark a word
+" \n to clear a mark
+" \T to toggle marks
+" \M to clear all marks
+nmap <Leader>T <Plug>MarkToggle 
+nmap <Leader>M <Plug>MarkAllClear 
+"remove the default overriding of * and #, use: 
+nmap <Plug>IgnoreMarkSearchNext <Plug>MarkSearchNext 
+nmap <Plug>IgnoreMarkSearchPrev <Plug>MarkSearchPrev
+let g:mwDefaultHighlightingPalette = 'extended'
+"}}}
+
+" Auto Complete (neocomplete + neosnippets) {{{
+let g:neocomplete#enable_at_startup = 1
+" Use smartcase.
+let g:neocomplcache_enable_smart_case = 1
+" Set minimum syntax keyword length.
+let g:neocomplcache_min_syntax_length = 2
+let g:neocomplcache_lock_buffer_name_pattern = '\*ku\*'
+" For cursor moving in insert mode(Not recommended)
+let g:neocomplcache_enable_cursor_hold_i = 1
+let g:neocomplcache_enable_insert_char_pre = 1
+" custom dictionary for UVM
+let  g:neocomplete#sources#dictionary#dictionaries = {
+         \ 'systemverilog' : '~/.vim/templates/uvm_dictionary.txt'
+         \ }
+
+" Enable omni completion.
+autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType python setlocal omnifunc=pythoncompletge#Complete
+autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+autocmd FileType perl setlocal omnifunc=perlcomplete#CompleteTags
+
+" Snipit Plugin key-mappings.
+" " use ctrl-k to expand a snip
+imap <C-k>     <Plug>(neosnippet_expand_or_jump)
+smap <C-k>     <Plug>(neosnippet_expand_or_jump)
+xmap <C-k>     <Plug>(neosnippet_expand_target)
+
+" Tell Neosnippet about the other snippets
+let g:neosnippet#snippets_directory='~/.vim/bundle/neosnippet-snippets-master/neosnippets'
+
+" SuperTab like snippets behavior.
+imap <expr><TAB>
+         \ pumvisible() ? "\<C-n>" :
+         \ neosnippet#expandable_or_jumpable() ?
+         \    "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+         \ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+
+" For conceal markers.
+if has('conceal')
+   set conceallevel=2 concealcursor=niv
+endif
+
+" }}}
+
+"We put this at the bottom because some plugin is trying to overwrite it earlier in vimrc
+"wrap comments only
+set textwidth=80
+set formatoptions=cro
