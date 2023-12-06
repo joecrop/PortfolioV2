@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,18 +8,63 @@
   <style>
     body {
       margin: 0;
-      overflow: hidden;
-      background-color: #000;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      background-repeat: no-repeat;
-      background-size: cover;
     }
+    body::after {
+      content: "";
+      background: url('textured-paper.png');
+      background-repeat: repeat;
+      opacity: 0.3;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      position: absolute;
+      z-index: -1;   
+    }
+
+    .container {
+      display: table;
+      height: 100%;
+      position: absolute;
+      overflow: hidden;
+      width: 100%;
+      z-index: 2;
+    }
+
+    .helper {
+      display: table-cell;
+      vertical-align: middle;
+      z-index: 2;
+      position: relative;
+    }
+
+    #content {
+      display: none;
+      margin: 0 auto;
+      width: 80vw;
+      height: 80vh;
+      box-shadow: inset 0px 0px 5px rgba(0, 0, 0, 0.5);
+    }
+
+    #art {
+      position:relative;
+      z-index: -2;
+      max-height: calc(80vh);
+      max-width: calc(80vw);
+    }
+
   </style>
 </head>
+
 <body>
+  <div class="container">
+    <div class="helper">
+      <div id="content">
+        <img id="art" src="">
+      </div>
+    </div>
+  </div>
   <script src="index.js"></script>
 </body>
+
 </html>
