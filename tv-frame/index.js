@@ -6,6 +6,13 @@ setInterval(function() {
     window.location.reload();
   }
 }, 1000 * 60 * 60 * 2);
+
+// request fullscreen mode every second
+setInterval(function() {
+  if (!document.fullscreenElement) {
+    document.documentElement.requestFullscreen();
+  }
+}, 1000);
     
 async function getImageDimensions(src){
   return new Promise((resolve, reject) => {
