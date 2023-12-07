@@ -1,7 +1,11 @@
-// refresh the page every day
-setTimeout(function() {
+// Check if we are near midnight once every 2 hours
+setInterval(function() {
+  // is the date within 1 hour of midnight?
+  if(new Date().getHours() === 0) {
+    // reload the page
     window.location.reload();
-}, 1000 * 60 * 60 * 24);
+  }
+}, 1000 * 60 * 60 * 2);
     
 async function getImageDimensions(src){
   return new Promise((resolve, reject) => {
