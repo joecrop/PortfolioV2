@@ -81,3 +81,5 @@ async function changeImage() {
 
 // Get a new image
 changeImage();
+
+document.body.addEventListener("click", changeImage);
