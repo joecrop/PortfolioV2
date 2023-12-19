@@ -70,7 +70,6 @@ async function changeImage() {
   // Set the current image
   document.getElementById("art").src = path;
   // Set the width and height of the image
-  console.log(dimensions)
   document.getElementById("art").style.width = artWidth + "px";
   document.getElementById("art").style.height = artHeight + "px";
   document.getElementById("content").style.width = artWidth + "px";
