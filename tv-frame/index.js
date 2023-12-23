@@ -60,12 +60,12 @@ async function changeImage() {
     // shrink height and scale width accordingly
     artHeight = totalHeight * 0.9;
     const scale = artHeight / dimensions.height;
-    artWidth = dimensions.width * scale / 1.00;
+    artWidth = dimensions.width * scale / 0.97;
   } else {
     // shrink width and scale height accordingly
     artWidth = totalWidth * 0.9;
     const scale = artWidth / dimensions.width;
-    artHeight = dimensions.height * scale * 1.00; 
+    artHeight = dimensions.height * scale * 0.97; 
   }
 
   // Set the current image
