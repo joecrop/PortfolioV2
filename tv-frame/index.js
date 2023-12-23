@@ -24,6 +24,7 @@ async function changeImage() {
   while(path.length === 0) {
     // generate a random between 1 and 100
     let randomNumber = Math.floor(Math.random() * 100) + 1;
+    randomNumber = 17;
 
     try {
       await new Promise((resolve, reject) => {
@@ -57,20 +58,19 @@ async function changeImage() {
   let artHeight = 0;
   if(dimensions.height/totalHeight > dimensions.width/totalWidth) {
     // shrink height and scale width accordingly
-    artHeight = totalHeight * 0.95;
+    artHeight = totalHeight * 0.9;
     const scale = artHeight / dimensions.height;
-    artWidth = dimensions.width * scale;
+    artWidth = dimensions.width * scale / 1.00;
   } else {
     // shrink width and scale height accordingly
-    artWidth = totalWidth * 0.95;
+    artWidth = totalWidth * 0.9;
     const scale = artWidth / dimensions.width;
-    artHeight = dimensions.height * scale; 
+    artHeight = dimensions.height * scale * 1.00; 
   }
 
   // Set the current image
   document.getElementById("art").src = path;
   // Set the width and height of the image
-  console.log(dimensions)
   document.getElementById("art").style.width = artWidth + "px";
   document.getElementById("art").style.height = artHeight + "px";
   document.getElementById("content").style.width = artWidth + "px";
