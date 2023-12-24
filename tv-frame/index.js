@@ -1,11 +1,11 @@
-// Check if we are near midnight once every 2 hours
+// Change the image every hour
 setInterval(function() {
   // is the date within 1 hour of midnight?
-  if(new Date().getHours() === 0) {
+  //if(new Date().getHours() === 0) {
     // reload the page
     window.location.reload();
-  }
-}, 1000 * 60 * 60 * 2);
+  //}
+}, 1000 * 60 * 60 * 1);
 
 async function getImageDimensions(src){
   return new Promise((resolve, reject) => {
@@ -24,7 +24,6 @@ async function changeImage() {
   while(path.length === 0) {
     // generate a random between 1 and 100
     let randomNumber = Math.floor(Math.random() * 100) + 1;
-    randomNumber = 17;
 
     try {
       await new Promise((resolve, reject) => {
