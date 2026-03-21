@@ -1,0 +1,59 @@
+<html>
+<head>
+	<script type="text/javascript" src="MNOS.js"></script>
+	<link href="MNOS.css" rel="stylesheet" type="text/css">
+	<script type="text/javascript" src="lib/prototype.js"></script>
+	<script type="text/javascript" src="src/effects.js"></script>
+
+	<title>MNOS Demonstration</title>
+</head>
+<body>
+<div style="width:850px;height:740px;margin:auto">
+<div id="left" style="float:left;width:420px;height:730px;background-image:url('phone.png');">
+	<div id="phoneContent" style="position:relative;height:470px;width:310px;left:50px;top:60px;background-color:white;background-image:url('background.png')">
+		<div id="connectionIcons" style="position:relative;height:24px;width:120px;left:80px;top:0px;">
+			<img id="connection_zigbee" src="images/zigbee_off.png" />
+			<img id="connection_bluetooth" src="images/bluetooth_off.png" />
+			<img id="connection_3g" src="images/3g_off.png" />
+			<img id="connection_wifi" src="images/wifi_off.png" />
+		</div>
+		<div id="message" style="position:relative;left:50px;top:0px;width:260px;height:30px;background-image:url('message-bg.png');color:#FFFFFF;text-align:center;display:none;filter:alpha(opacity=70); -moz-opacity:0.7;">
+			<div id="message_inner"></div>
+		</div>
+		<div id="phoneContentInner" style="position:absolute;top:160px;width:100px;height:150px;left:100px;filter:alpha(opacity=70); -moz-opacity:0.7;">
+			<img id="select_power" src="images/power_off.png" onclick="toggleButtons('power');"></img>
+			<br><br>
+			<img id="select_speed" src="images/speed_off.png" onclick="toggleButtons('speed');"></img>
+			<br><br>
+			<img id="select_cost" src="images/cost_off.png" onclick="toggleButtons('cost');"></img>
+			<br>
+		</div>
+		
+	</div>
+	<div id="phoneButton" style="position:relative;height:25px;width:87px;left:160px;top:69px;" onclick="showMenu();"></div>
+</div>
+<div id="right" style="margin-left:460px;width:400px;height:730px;background-color:#FFFFFF;border:2px solid black;">
+	<div id="interfaceForm" style="height:500px;">
+	<table id="connectionsTable">
+	<thead>
+		<tr><th>Name</th><th>Speed (Mbps)</th><th>Cost ($/Mb)</th><th>Power (mW)</th><th>Avail.</th></tr>
+	</thead>
+	<tbody>
+	</tbody>
+	<tfoot>
+		<tr><td colspan=5 style="text-align:right;"><button onclick="updateConnections();">Update</botton></td></tr>
+	</tfoot>
+	</table>
+	</div>
+	<div id="interfaceList"></div>
+	<div id="bandwidth" style="width:400px;">
+		<div id="bandwidthImage" style="margin:auto;overflow:hidden;width:100px;height:60px;background-image:url('bandwidth-gradient.png');">
+			<div id="bandwidthCover" style="position:relative;width:1000px;height:60px;top:0px;left:40px;background-color:#FFFFFF;"></div>
+		</div>
+		<div id="bandwidthText" style="width:130px;margin:auto;">SPEED: 40 Mbps</div>
+	</div>
+	</div>
+
+</div>
+</body>
+</html>

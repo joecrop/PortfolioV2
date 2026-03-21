@@ -1,0 +1,98 @@
+var cost;
+var power;
+var speed;
+var i = 1;
+var bestconn = 0;
+var bestConns = new Array(0);
+
+function algorithm()
+{
+	if(connections.length) {
+		if((cost && !power && !speed) || (cost == power && cost == speed)) {
+			while(i < connections.length) {
+				if(connections[i]['available']) {
+					if(connections[i]['cost'] < connections[bestconn]['cost'])
+						bestconn = i;
+					else if(connections[i]['cost']  == connections[bestconn]['cost']) {
+						if(connections[i]['speed'] > connections[bestconn]['speed'])
+							bestconn = i;
+						else if(connections[i]['speed'] == connections[i]['speed'] && connections[i]['power'] < connections[i]['power'])
+							bestconn = i;
+					}
+					else if(!connections[bestconn]['available'])
+						bestconn = i;
+				}
+				i++;
+			}
+			if(connections[bestconn]['available'])
+				bestConns[0] = bestconn;
+			
+		} else if(cost && speed) {
+			var bcnum = 0;
+			var j = 0;
+			while(j < connections.length) {
+				if(connections[j]['available'] && !connections[j]['cost']) {
+					bestConns[bcnum] = j;
+					bcnum++;
+				}
+			i++;
+			}
+		}
+
+					
+		} else if(cost && power) {
+			while(i < connections.length) {
+				if(connections[i]['available'] && !connections[i]['cost']) {
+					if(connections[i]['power'] < connections[bestconn]['power'])
+						bestconn = i;
+					else if(connections[i]['power'] == connections[bestconn]['power'] && connections[i]['speed'] > connections[bestconn]['speed'])
+						bestconn = i;
+				}
+				i++;
+			}
+			if(connections[bestconn]['available'])
+				bestConns[0] = bestconn;
+		} else if(speed && power) {
+			while(i < connections.length) {
+				if(connections[i]['available']) {
+					if(connections[i]['power'] < connections[bestconn]['power'] && connections[i]['speed'] >= averageBandwidth)
+						bestconn = i;
+					else if(connections[i]['power'] == connections[bestconn]['power'] && connections[i]['speed'] > connections[bestconn]['speed'] && connections[i]['speed'] >= averageBandwidth)
+						bestconn = i;
+					else if(connections[i]['power'] == connections[bestconn]['power'] && connections[i]['speed'] == connections[bestconn]['speed'] && connections[i]['cost'] < connections[bestconn]['cost'] && connections[i]['speed'] >= averageBandwidth)
+						bestconn = i;
+				}
+				i++;
+			}
+			if(connections[bestconn]['available'])
+				bestConns[0] = bestconn;
+		} else if(!cost && speed && !power) {
+			var bcnum = 0;
+			var j = 0;
+			while(j < connections.length) {
+				if(connections[i]['available']) {
+					bestConns[bcnum] = j;
+					bcnum++;
+				}
+				j++;
+			}
+		} else if(!cost && !speed && power) {
+			while(i < connections.length) {
+				if(connections[i]['available']) {
+					if(connections[i]['power'] < connections[bestconn]['power'])
+						bestconn = i;
+					else if(connections[i]['power'] == connections[bestconn]['power'] && connections[i]['speed'] > connections[bestconn]['speed'])
+						bestconn = i;
+					else if(connections[i]['power'] == connections[bestconn]['power'] && connections[i]['speed'] == connections[bestconn]['speed'] && connections[i]['cost'] < connections[bestconn]['cost'])
+						bestconn = i;
+					else if(!connections[bestconn]['available'])
+						bestconn = i;
+				}
+				i++;
+			}	
+			if(connection[bestconn]['available'])
+				bestConns[0] = bestconn;
+		}
+	}
+	return bestConns;
+}

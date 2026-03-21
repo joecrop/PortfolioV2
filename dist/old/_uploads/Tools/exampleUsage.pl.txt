@@ -1,0 +1,69 @@
+#!/usr/bin/perl
+
+############################################################
+# Author: Joe Crop
+# Email: cropj@eecs.oregonstate.edu
+#
+# Free to use, modify, and distribute
+#
+# This file serves as an example of how to use the 
+# parseMeasureFile.pl parser.
+############################################################
+
+# use the file parser
+require "parseMeasureFile.pl";
+
+#define local varaibles
+my(%ileak) = ();
+my(%vleakoff) = ();
+my(%vleakon) = ();
+my(%offset) = ();
+my($temperature, $offsetr, $offsetf, $vleakoff, $vleakon, $offset);
+
+# look in a directory and parse every measure file
+foreach $file (</home/user/measureFileLocation/*>) # change to proper directory
+{
+	if($file =~ m/.mt\d+$/) # check to make sure it is a measure file
+	{
+		#print "$file\n"; #uncomment if you want to see the names of the files you are parsing
+		%data = parseMeasureFile($file); # parse the file
+
+		while ( my ($key, $value) = each(%data)) # pull out specific data
+		{
+			if($key =~ m/temper/)
+			{
+				$temperature = $value;
+			}
+			elsif($key =~ m/offsetf/)
+			{
+				$offsetf = $value;
+			}
+			elsif($key =~ m/vleakoff/)
+			{
+				$vleakoff = $value;
+			}
+			elsif($key =~ m/vleakon/)
+			{
+				$vleakon = $value;
+			}
+			#print "$key => $value\n"; #uncomment this line if you want to print the entire hash
+		}
+
+		print "$temperature\t$offsetf\t$vleakoff\t$vleakon\n"; #print the data we took out
+	}
+}
+
+################################################################
+## Alternate Method
+################################################################
+foreach $file (</home/user/measureFileLocation/*>) # change to proper directory
+{
+	if($file =~ m/.mt\d+$/) # check to make sure it is a measure file
+	{
+		#print "$file\n"; #uncomment if you want to see the names of the files you are parsing
+		%data = parseMeasureFile($file); # parse the file
+
+		print "$data[temper], $data[offsetf], $data[vleakoff], $data[vleakon]\n"; #print from the hash directly
+	}
+}
+

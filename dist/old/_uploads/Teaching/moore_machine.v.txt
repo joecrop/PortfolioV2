@@ -1,0 +1,56 @@
+module moore_machine (
+	i_in,
+	i_clk,
+	i_reset_n,
+	o_out
+);
+
+	//constants
+	parameter S0 = 2'b00;
+	parameter S1 = 2'b01;
+	parameter S2 = 2'b10;
+	parameter S3 = 2'b11;
+
+	input i_in;
+	input i_clk;
+	input i_reset_n;
+	output o_clk;
+
+	reg [1:0] state;
+	reg [1:0] state_next;
+
+	//state register
+	always @ (posedge clk, negedge reset)
+	begin
+		if (~reset)
+		begin
+			state <= 0;
+		end
+		else
+		begin
+			state <= state_next;
+		end
+	end
+
+
+	//next state logic
+	always @ (*)
+		case (state)
+			S0: if (i_in) state_next = S0;
+				else      state_next = S1;
+			S1: if (i_in) state_next = S2;
+				else      state_next = S1;
+			S2: if (i_in) state_next = S0;
+				else      state_next = S3;
+			S3: if (i_in) state_next = S0;
+				else      state_next = S1;
+			default:      state_next = S0;
+		endcase
+
+	//output logic
+	assign o_out = state[1] & state[0];
+
+	//can also be done:
+	//assign o_out = (state == S3);
+
+endmodule //moore_machine

@@ -1,0 +1,239 @@
+/* STYLE_NOTES begin
+  * Throughout this file, these STYLE_NOTES comment blocks will provide some 
+  *   explanation about the block of code that follows.
+  * This first comment block provides some general formatting info.
+  *   Use // format for comments.
+  *   Limit line length to 80 characters.
+  *   Indent using 2 spaces per level.  Don't use tabs.
+  *   Organize sections consistently.  (WIRES, then REGISTERS, then ...)
+  * The following block is a standard header template.  Don't skimp on the
+  *   description.  Include $Id$ and other revision-control flags.
+  * STYLE_NOTES end */
+//-------------------------------------------------------------------
+//                                                                 
+//  COPYRIGHT (C) 2007, your_company
+//                                                                  
+//  THIS FILE MAY NOT BE MODIFIED OR REDISTRIBUTED WITHOUT THE      
+//  EXPRESSED WRITTEN CONSENT OF your_company
+//                                                                  
+//  your_company                   https://www.your_company.com         
+//  your_company_address1          info@your_company.com               
+//  your_company_address2          your_company_phone
+//  your_company_city_state_zip                                     
+//-------------------------------------------------------------------
+// Title       : coding_style
+// Author      : you
+// Created     : 01/01/2007
+// Description : Where does this file get inputs and send outputs?
+// What does the guts of this file accomplish, and how does it do it?
+// What module(s) does this file instantiate?
+//               
+// $Id$ 
+//-------------------------------------------------------------------  
+
+`timescale 1ns / 1ps
+
+/* STYLE_NOTES begin
+  * A generic "clk" named input makes the design portable.  (It is attached to
+  *   a more descriptive clk name at a higher level.)
+  * "i_" and "o_" are handy ways to label module inputs/outputs.  Especially
+  *   useful when viewing waveforms.
+  * "rst_n" listed last so you don't have to worry which line omits the comma.
+  *   Use "_n" for active-low.  "_l" looks too much like "_1".
+  * STYLE_NOTES end*/
+module coding_style(
+  clk,
+  i_buf_req,
+  o_buf_ack,
+  i_proc_rdata,
+  o_proc_raddr,
+  rst_n
+);
+
+/* STYLE_NOTES begin
+  * Include your global constants header files here.
+  * STYLE_NOTES end*/
+`include "coding_style.vh"
+
+/* STYLE_NOTES begin
+  * Comment your I/O by block and by signal
+  * STYLE_NOTES end*/
+input clk;                                      // clock
+input rst_n;                                    // reset
+    // signals to/from another_module
+input i_buf_req;                                // input buffer request
+output o_buf_ack;                               // output buffer ack
+    // signals to/from a_different_module
+input [`PROC_DWIDTH-1:0] i_proc_rdata;          // processor read data
+output [`PROC_AWIDTH-1:0] o_proc_raddr;         // processor read address
+
+/* STYLE_NOTES begin
+  * Use parameters for local variables like state machine state enumeration.
+  * STYLE_NOTES end*/
+//
+// PARAMETERS
+//
+// state machine for controlling something
+parameter IDLE = 2'b00;
+parameter READ_DATA = 2'b01;
+parameter PUSH_DATA = 2'b10;
+parameter WAIT_COMPLETE = 2'b11;
+
+/* STYLE_NOTES begin
+  * Not necessary to re-declare outputs as wires.
+  * When using an always block for logic, wires will be minimal.
+  * STYLE_NOTES end*/
+// 
+// WIRES
+// 
+wire some_internal_wire;                        // passed between submodules
+wire some_strobe;                               // passed between submodules
+
+/* STYLE_NOTES begin
+  * Use "_ff" for single-bit flops.
+  * Use "_reg" for multi-bit flops.
+  * Use "_next" for all combinatorial d-inputs assigned in always blocks.
+  * STYLE_NOTES end*/
+//
+// REGISTERS
+//
+reg [1:0] state_proc_reg;                       // processor state machine
+reg [1:0] state_proc_next;
+reg [`PROC_DWIDTH-1:0] proc_rdata_reg;          // capture proc read data
+reg buf_ack_ff;                                 // pulse ack output
+reg buf_ack_next;
+reg some_level_ff;                              // toggle level signal
+reg some_level_next;
+reg [`PROC_AWIDTH-1:0] proc_raddr_reg;          // read address output
+reg [`PROC_AWIDTH-1:0] proc_raddr_next;
+reg [`PROC_DWIDTH-1:0] some_pulse_bus_reg;      // multi-bit output
+reg [`PROC_DWIDTH-1:0] some_pulse_bus_next;
+
+/* STYLE_NOTES begin
+  * Try to avoid complicated logic assignments in continuous assign
+  * statements.  Nested &, |, and ?: notations are extremely hard to follow.
+  * For many designs, this section will simply assign the output wires.
+  * STYLE_NOTES end*/
+// 
+// ASSIGNMENTS
+// 
+assign o_buf_ack = buf_ack_ff;
+assign o_proc_raddr = proc_raddr_reg;
+
+/* STYLE_NOTES begin
+  * Only synchronous assigns done here.  Always use non-blocking <=
+  * Use "#1" for protecting against issues when interfacing with bad code.
+  * Async reset values of "0" are by far the most common, and are not needed 
+  *   for FPGA (they consume unnecessary resources).
+  * STYLE_NOTES end*/
+//
+// SYNCHRONOUS
+//
+always @(posedge clk or negedge rst_n)
+if (!rst_n) begin
+    state_proc_reg <= #1 IDLE;
+    buf_ack_ff <= #1 0;
+    some_level_ff <= #1 1;
+    proc_raddr_reg <= #1 0;
+end
+else begin
+    state_proc_reg <= #1 state_proc_next;
+    buf_ack_ff <= #1 buf_ack_next;
+    some_level_ff <= #1 some_level_next;
+    some_pulse_bus_reg <= #1 some_pulse_bus_next;
+    proc_raddr_reg <= #1 proc_raddr_next;
+    proc_rdata_reg <= #1 i_proc_rdata;
+end
+
+/* STYLE_NOTES begin
+  * Do all your logic here, reads more like C code.
+  * Make sure your sensitivity list is complete.
+  * At the top of the always block, make all your default assignments to
+  *   feedback flops or constants such as zeros.
+  * All assign statements here must be blocking  =
+  * Note that the operation of this state machine makes no real sense!
+  * STYLE_NOTES end*/
+//
+// ASYNCHRONOUS
+//
+always @(state_proc_reg
+  or i_buf_req
+  or proc_rdata_reg
+  or some_level_ff
+  or proc_raddr_reg
+) begin
+  state_proc_next = state_proc_reg;
+  some_level_next = some_level_ff;
+  proc_raddr_next = proc_raddr_reg;
+  buf_ack_next = 0;
+  some_pulse_bus_next = 0;
+
+  // state machine
+  case (state_proc_reg)
+
+    //  Normal processing IDLE state.  Wait for the next 
+    //  buffer request.
+    IDLE: begin                         // 0
+      if (i_buf_req) begin
+        buf_ack_next = 1;               // assert buf_ack pulse
+        state_proc_next = READ_DATA;
+      end
+    end
+
+    //  Some description of what the state does
+    READ_DATA: begin                    // 1
+      some_pulse_bus_next = `PULSE_BUS_VALUE;
+      state_proc_next = PUSH_DATA;
+    end
+
+    //  Some description of what the state does
+    PUSH_DATA: begin                    // 2
+      state_proc_next = WAIT_COMPLETE;
+    end
+
+    //  Some description of what the state does
+    WAIT_COMPLETE: begin                // 3
+      if (proc_rdata_reg == `PROC_RDATA_TRIGGER) begin
+        proc_raddr_next = proc_raddr_reg + 1;     // increment address
+        some_level_next = ~some_level_ff;         // toggle some_level
+        state_proc_next = IDLE;
+      end
+      else begin
+        proc_raddr_next = proc_raddr_reg - 2;     // decrement address by 2
+      end
+    end
+
+    default : begin
+      state_proc_next = IDLE;
+    end
+
+  endcase
+
+end
+
+/* STYLE_NOTES begin
+  * Always instantiate by port name, not order.
+  * Use short instance names to make waveform and synthesis debug easier.
+  * Note how "i_", "o_" and "rst_n" order are used here.
+  * STYLE_NOTES end*/
+//
+// INSTANTIATIONS
+//
+submodule_1 sub1(
+  .clk(clk),
+  .i_some_internal_wire(some_internal_wire),
+  .i_proc_rdata(i_proc_rdata),
+  .o_some_strobe(some_strobe),
+  .rst_n(rst_n)
+);
+
+submodule_2 sub2(
+  .clk(clk),
+  .i_some_strobe(some_strobe),
+  .i_some_level(some_level_ff),
+  .o_some_internal_wire(some_internal_wire),
+  .rst_n(rst_n)
+);
+
+
+endmodule   // coding_style
