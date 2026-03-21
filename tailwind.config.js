@@ -6,11 +6,11 @@ export default {
     extend: {
       colors: {
         background: {
-          DEFAULT: "#0a0a0a",
+          DEFAULT: "#06060f",
           light: "#f9f9f9",
         },
         surface: {
-          DEFAULT: "#111111",
+          DEFAULT: "#0e0e1a",
           light: "#ffffff",
         },
         border: {
@@ -42,6 +42,8 @@ export default {
         "slide-up": "slideUp 0.5s ease forwards",
         bounce: "bounce 2s infinite",
         "spin-slow": "spin 8s linear infinite",
+        "orb-float": "orbFloat 9s ease-in-out infinite",
+        "pulse-dot": "pulseDot 2s ease-in-out infinite",
       },
       keyframes: {
         fadeIn: {
@@ -51,6 +53,14 @@ export default {
         slideUp: {
           from: { opacity: "0", transform: "translateY(20px)" },
           to: { opacity: "1", transform: "translateY(0)" },
+        },
+        orbFloat: {
+          "0%, 100%": { marginTop: "0px" },
+          "50%": { marginTop: "-40px" },
+        },
+        pulseDot: {
+          "0%, 100%": { boxShadow: "0 0 8px #4ade80" },
+          "50%": { boxShadow: "0 0 16px #4ade80, 0 0 24px #4ade80" },
         },
       },
       typography: ({ theme }) => ({

@@ -1,9 +1,6 @@
-import { useCallback, useRef } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import Typewriter from "typewriter-effect";
-import Particles from "@tsparticles/react";
-import { loadSlim } from "@tsparticles/slim";
 import { FaGithub, FaLinkedin, FaGitlab, FaEnvelope, FaTwitter } from "react-icons/fa";
 import { HiArrowDown } from "react-icons/hi";
 import { greeting, socialMediaLinks } from "../../data/portfolio";
@@ -30,54 +27,16 @@ const socials = [
 ];
 
 export default function HeroSection() {
-  const particlesInit = useCallback(async (engine) => {
-    await loadSlim(engine);
-  }, []);
-
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Particles background */}
-      <div className="absolute inset-0 z-0">
-        <Particles
-          init={particlesInit}
-          options={{
-            fullScreen: false,
-            background: { color: { value: "transparent" } },
-            fpsLimit: 60,
-            interactivity: {
-              events: {
-                onHover: { enable: true, mode: "repulse" },
-              },
-              modes: {
-                repulse: { distance: 80, duration: 0.4 },
-              },
-            },
-            particles: {
-              color: { value: "#E3405F" },
-              links: {
-                color: "#E3405F",
-                distance: 130,
-                enable: true,
-                opacity: 0.15,
-                width: 1,
-              },
-              move: {
-                enable: true,
-                speed: 0.6,
-                random: true,
-              },
-              number: { density: { enable: true }, value: 40 },
-              opacity: { value: 0.25 },
-              shape: { type: "circle" },
-              size: { value: { min: 1, max: 3 } },
-            },
-          }}
-          className="w-full h-full"
-        />
-      </div>
-
-      {/* Gradient overlays */}
-      <div className="absolute inset-0 z-0 bg-gradient-to-b from-background/50 via-transparent to-background/80 dark:from-background/50 dark:to-background pointer-events-none" />
+      {/* Subtle radial vignette so text is readable over the aurora orbs */}
+      <div
+        className="absolute inset-0 z-0 pointer-events-none"
+        style={{
+          background:
+            "radial-gradient(ellipse 80% 60% at 50% 50%, transparent 40%, rgba(6,6,15,0.7) 100%)",
+        }}
+      />
 
       {/* Content */}
       <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-24 text-center">
@@ -95,7 +54,7 @@ export default function HeroSection() {
           {/* Name */}
           <motion.h1
             variants={item}
-            className="text-5xl sm:text-7xl font-bold tracking-tight text-text-light dark:text-text"
+            className="text-5xl sm:text-7xl font-bold tracking-tight text-white"
           >
             {greeting.title2}
           </motion.h1>
@@ -103,10 +62,17 @@ export default function HeroSection() {
           {/* Typewriter */}
           <motion.div
             variants={item}
-            className="text-xl sm:text-2xl font-medium text-muted min-h-[2rem]"
+            className="text-xl sm:text-2xl font-medium text-white/50 min-h-[2rem]"
           >
             {"I'm a "}
-            <span className="text-accent">
+            <span
+              style={{
+                background: "linear-gradient(135deg,#a78bfa,#38bdf8)",
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent",
+                backgroundClip: "text",
+              }}
+            >
               <Typewriter
                 options={{
                   strings: [
@@ -128,7 +94,7 @@ export default function HeroSection() {
           {/* Subtitle */}
           <motion.p
             variants={item}
-            className="max-w-2xl mx-auto text-base sm:text-lg text-muted leading-relaxed"
+            className="max-w-2xl mx-auto text-base sm:text-lg text-white/50 leading-relaxed"
           >
             {greeting.subTitle}
           </motion.p>
@@ -138,20 +104,26 @@ export default function HeroSection() {
             variants={item}
             className="flex flex-wrap justify-center gap-4 pt-2"
           >
-            <a
+            <motion.a
               href={greeting.resumeLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="px-6 py-3 bg-accent hover:bg-accent-hover text-white font-semibold rounded-lg transition-colors shadow-lg shadow-accent/20"
+              className="btn-aurora-primary"
+              whileHover={{ y: -2, boxShadow: "0 8px 30px rgba(99,102,241,0.45)" }}
+              whileTap={{ scale: 0.97, y: 1 }}
+              transition={{ duration: 0.15 }}
             >
               View Resume
-            </a>
-            <Link
-              to="/contact"
-              className="px-6 py-3 border border-border dark:border-border hover:border-accent text-text-light dark:text-text hover:text-accent font-semibold rounded-lg transition-colors"
+            </motion.a>
+            <motion.div
+              whileHover={{ y: -2, boxShadow: "0 8px 24px rgba(0,0,0,0.3)" }}
+              whileTap={{ scale: 0.97, y: 1 }}
+              transition={{ duration: 0.15 }}
             >
-              Get in Touch
-            </Link>
+              <Link to="/contact" className="btn-aurora-secondary">
+                Get in Touch
+              </Link>
+            </motion.div>
           </motion.div>
 
           {/* Social links */}

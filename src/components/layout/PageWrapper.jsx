@@ -19,7 +19,7 @@ export default function PageWrapper({ children, className = "" }) {
       animate="animate"
       exit="exit"
       transition={pageTransition}
-      className={`pt-16 min-h-screen ${className}`}
+      className={`relative z-10 pt-16 min-h-screen ${className}`}
     >
       {children}
     </motion.main>

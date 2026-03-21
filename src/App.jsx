@@ -2,6 +2,7 @@ import { lazy, Suspense, useEffect } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 import ScrollProgress from "./components/layout/ScrollProgress";
+import AuroraBackground from "./components/layout/AuroraBackground";
 
 // Eager-load Home for fast first paint
 import Home from "./pages/Home";
@@ -47,6 +48,7 @@ export default function App() {
 
   return (
     <>
+      <AuroraBackground />
       <ScrollProgress />
       <ScrollToTop />
 
