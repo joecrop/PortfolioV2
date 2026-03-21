@@ -18,9 +18,9 @@ export default {
           light: "#e5e7eb",
         },
         accent: {
-          DEFAULT: "#E3405F",
-          hover: "#c73351",
-          muted: "rgba(227,64,95,0.15)",
+          DEFAULT: "#38BDF8",
+          hover: "#0ea5e9",
+          muted: "rgba(56,189,248,0.15)",
         },
         muted: {
           DEFAULT: "#6b7280",

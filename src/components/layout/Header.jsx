@@ -80,6 +80,9 @@ export default function Header() {
   const dropdownRef = useRef(null);
 
   const isScrolled = scrollY > 20;
+  const navTextBase = isScrolled
+    ? "text-text dark:text-text/70"
+    : "text-text-light/80 dark:text-text/70";
 
   // Close dropdown when clicking outside
   useEffect(() => {
@@ -128,7 +131,7 @@ export default function Header() {
                     }
                     className={cn(
                       "flex items-center gap-1 px-3 py-2 rounded-md text-sm font-medium transition-colors",
-                      "text-text/70 dark:text-text/70 hover:text-accent dark:hover:text-accent",
+                      `${navTextBase} hover:text-accent dark:hover:text-accent`,
                       openDropdown === link.label && "text-accent"
                     )}
                   >
@@ -154,7 +157,7 @@ export default function Header() {
                       "px-3 py-2 rounded-md text-sm font-medium transition-colors",
                       isActive
                         ? "text-accent"
-                        : "text-text/70 dark:text-text/70 hover:text-accent dark:hover:text-accent"
+                        : `${navTextBase} hover:text-accent dark:hover:text-accent`
                     )
                   }
                 >
@@ -169,7 +172,7 @@ export default function Header() {
             <button
               onClick={toggleTheme}
               aria-label="Toggle theme"
-              className="p-2 rounded-md text-text/70 dark:text-text/70 hover:text-accent dark:hover:text-accent transition-colors"
+              className={`p-2 rounded-md ${navTextBase} hover:text-accent dark:hover:text-accent transition-colors`}
             >
               <motion.div
                 key={theme}
@@ -184,7 +187,7 @@ export default function Header() {
             {/* Mobile hamburger */}
             <button
               onClick={() => setMobileOpen(!mobileOpen)}
-              className="lg:hidden p-2 rounded-md text-text/70 dark:text-text/70 hover:text-accent transition-colors"
+              className={`lg:hidden p-2 rounded-md ${navTextBase} hover:text-accent transition-colors`}
               aria-label="Toggle menu"
             >
               {mobileOpen ? <HiX className="w-5 h-5" /> : <HiMenu className="w-5 h-5" />}
