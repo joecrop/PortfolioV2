@@ -1,6 +1,5 @@
 import { lazy, Suspense, useEffect } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
-import { AnimatePresence } from "framer-motion";
 import ScrollProgress from "./components/layout/ScrollProgress";
 import AuroraBackground from "./components/layout/AuroraBackground";
 
@@ -34,6 +33,16 @@ function PageFallback() {
   );
 }
 
+// Wraps each lazy element in its own Suspense so AnimatePresence never sees
+// the Routes tree replaced — only the page content inside suspends.
+function S({ component: C }) {
+  return (
+    <Suspense fallback={<PageFallback />}>
+      <C />
+    </Suspense>
+  );
+}
+
 // Scroll-to-top on route change
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -44,37 +53,31 @@ function ScrollToTop() {
 }
 
 export default function App() {
-  const location = useLocation();
-
   return (
     <>
       <AuroraBackground />
       <ScrollProgress />
       <ScrollToTop />
 
-      <Suspense fallback={<PageFallback />}>
-        <AnimatePresence mode="wait">
-          <Routes location={location} key={location.pathname}>
-            <Route path="/"                  element={<Home />} />
-            <Route path="/experience"        element={<ExperiencePage />} />
-            <Route path="/projects"          element={<ProjectsPage />} />
-            <Route path="/education"         element={<EducationPage />} />
-            <Route path="/publications"      element={<PublicationsPage />} />
-            <Route path="/contact"           element={<ContactPage />} />
-            <Route path="/teaching"          element={<TeachingPage />} />
-            <Route path="/chips"             element={<ChipsPage />} />
-            <Route path="/classes"           element={<ClassesPage />} />
-            <Route path="/resume"            element={<ResumePage />} />
-            <Route path="/music"             element={<MusicPage />} />
-            <Route path="/pictures"          element={<PicturesPage />} />
-            <Route path="/links"             element={<LinksPage />} />
-            <Route path="/projects/:slug"     element={<BlogPost />} />
-            <Route path="/tools/mnos"        element={<MNOSPage />} />
-            <Route path="/tools/kitties"     element={<HowManyKittiesPage />} />
-            <Route path="*"                  element={<NotFound />} />
-          </Routes>
-        </AnimatePresence>
-      </Suspense>
+      <Routes>
+          <Route path="/"               element={<Home />} />
+          <Route path="/experience"     element={<S component={ExperiencePage} />} />
+          <Route path="/projects"       element={<S component={ProjectsPage} />} />
+          <Route path="/education"      element={<S component={EducationPage} />} />
+          <Route path="/publications"   element={<S component={PublicationsPage} />} />
+          <Route path="/contact"        element={<S component={ContactPage} />} />
+          <Route path="/teaching"       element={<S component={TeachingPage} />} />
+          <Route path="/chips"          element={<S component={ChipsPage} />} />
+          <Route path="/classes"        element={<S component={ClassesPage} />} />
+          <Route path="/resume"         element={<S component={ResumePage} />} />
+          <Route path="/music"          element={<S component={MusicPage} />} />
+          <Route path="/pictures"       element={<S component={PicturesPage} />} />
+          <Route path="/links"          element={<S component={LinksPage} />} />
+          <Route path="/projects/:slug" element={<S component={BlogPost} />} />
+          <Route path="/tools/mnos"     element={<S component={MNOSPage} />} />
+          <Route path="/tools/kitties"  element={<S component={HowManyKittiesPage} />} />
+          <Route path="*"               element={<S component={NotFound} />} />
+        </Routes>
     </>
   );
 }

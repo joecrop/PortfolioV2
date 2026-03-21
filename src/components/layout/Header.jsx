@@ -1,9 +1,8 @@
 import { useState, useRef, useEffect } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
-import { HiSun, HiMoon, HiMenu, HiX } from "react-icons/hi";
+import { HiMenu, HiX } from "react-icons/hi";
 import { HiChevronDown } from "react-icons/hi";
-import { useTheme } from "../../hooks/useTheme";
 import { cn } from "../../lib/utils";
 
 const navLinks = [
@@ -79,11 +78,17 @@ function DropdownMenu({ items, isOpen }) {
 }
 
 export default function Header() {
-  const { theme, toggleTheme, isDark } = useTheme();
   const [mobileOpen, setMobileOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState(null);
+  const [hoveredLabel, setHoveredLabel] = useState(null);
   const location = useLocation();
   const dropdownRef = useRef(null);
+
+  const activeLabel = navLinks.find((link) => {
+    if (link.to) return link.to === "/" ? location.pathname === "/" : location.pathname.startsWith(link.to);
+    if (link.dropdown) return link.dropdown.some((item) => location.pathname.startsWith(item.to));
+    return false;
+  })?.label ?? null;
 
   // Close dropdown when clicking outside
   useEffect(() => {
@@ -134,25 +139,49 @@ export default function Header() {
           </Link>
 
           {/* Desktop Nav */}
-          <nav className="hidden lg:flex items-center gap-0.5" ref={dropdownRef}>
-            {navLinks.map((link) =>
-              link.dropdown ? (
+          <nav
+            className="hidden lg:flex items-center gap-0.5"
+            ref={dropdownRef}
+            onMouseLeave={() => setHoveredLabel(null)}
+          >
+            {navLinks.map((link) => {
+              const showBubble =
+                hoveredLabel === link.label ||
+                (!hoveredLabel && activeLabel === link.label);
+              return link.dropdown ? (
                 <div key={link.label} className="relative">
                   <button
+                    onMouseEnter={() => setHoveredLabel(link.label)}
                     onClick={() =>
                       setOpenDropdown(openDropdown === link.label ? null : link.label)
                     }
                     className={cn(
-                      "flex items-center gap-1 px-3 py-1.5 rounded-full text-sm font-medium transition-colors",
-                      openDropdown === link.label
-                        ? "text-accent bg-white/10"
-                        : "text-white/60 hover:text-white hover:bg-white/8"
+                      "relative flex items-center gap-1 px-3 py-1.5 rounded-full text-sm font-medium transition-colors",
+                      hoveredLabel === link.label
+                        ? "text-white"
+                        : activeLabel === link.label || openDropdown === link.label
+                        ? "text-accent"
+                        : "text-white/60"
                     )}
                   >
-                    {link.label}
+                    {showBubble && (
+                      <motion.div
+                        layoutId="nav-bubble"
+                        className="absolute inset-0 rounded-full"
+                        style={{
+                          background: "rgba(255,255,255,0.10)",
+                          backdropFilter: "blur(12px)",
+                          WebkitBackdropFilter: "blur(12px)",
+                          border: "1px solid rgba(255,255,255,0.18)",
+                          boxShadow: "0 2px 12px rgba(255,255,255,0.06), inset 0 1px 0 rgba(255,255,255,0.15)",
+                        }}
+                        transition={{ type: "spring", stiffness: 380, damping: 36 }}
+                      />
+                    )}
+                    <span className="relative z-10">{link.label}</span>
                     <HiChevronDown
                       className={cn(
-                        "w-3.5 h-3.5 transition-transform",
+                        "w-3.5 h-3.5 transition-transform relative z-10",
                         openDropdown === link.label && "rotate-180"
                       )}
                     />
@@ -166,38 +195,44 @@ export default function Header() {
                 <NavLink
                   key={link.to}
                   to={link.to}
+                  onMouseEnter={() => setHoveredLabel(link.label)}
                   className={({ isActive }) =>
                     cn(
-                      "px-3 py-1.5 rounded-full text-sm font-medium transition-colors",
-                      isActive
-                        ? "text-accent bg-white/10"
-                        : "text-white/60 hover:text-white hover:bg-white/8"
+                      "relative px-3 py-1.5 rounded-full text-sm font-medium transition-colors",
+                      hoveredLabel === link.label
+                        ? "text-white"
+                        : isActive
+                        ? "text-accent"
+                        : "text-white/60"
                     )
                   }
                 >
-                  {link.label}
+                  {({ isActive }) => (
+                    <>
+                      {(hoveredLabel === link.label || (!hoveredLabel && isActive)) && (
+                        <motion.div
+                          layoutId="nav-bubble"
+                          className="absolute inset-0 rounded-full"
+                          style={{
+                            background: "rgba(255,255,255,0.10)",
+                            backdropFilter: "blur(12px)",
+                            WebkitBackdropFilter: "blur(12px)",
+                            border: "1px solid rgba(255,255,255,0.18)",
+                            boxShadow: "0 2px 12px rgba(255,255,255,0.06), inset 0 1px 0 rgba(255,255,255,0.15)",
+                          }}
+                          transition={{ type: "spring", stiffness: 380, damping: 36 }}
+                        />
+                      )}
+                      <span className="relative z-10">{link.label}</span>
+                    </>
+                  )}
                 </NavLink>
-              )
-            )}
+              );
+            })}
           </nav>
 
           {/* Right controls */}
           <div className="flex items-center gap-1">
-            <button
-              onClick={toggleTheme}
-              aria-label="Toggle theme"
-              className="p-2 rounded-full text-white/50 hover:text-white hover:bg-white/10 transition-colors"
-            >
-              <motion.div
-                key={theme}
-                initial={{ rotate: -90, opacity: 0 }}
-                animate={{ rotate: 0, opacity: 1 }}
-                transition={{ duration: 0.2 }}
-              >
-                {isDark ? <HiSun className="w-4 h-4" /> : <HiMoon className="w-4 h-4" />}
-              </motion.div>
-            </button>
-
             {/* Mobile hamburger */}
             <button
               onClick={() => setMobileOpen(!mobileOpen)}
