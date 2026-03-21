@@ -420,6 +420,188 @@ const skills = {
             color: "#5b77ef",
           },
         },
+        {
+          skillName: "GitHub",
+          fontAwesomeClassname: "simple-icons:github",
+          style: {
+            color: "#e0e0e0",
+          },
+        },
+        {
+          skillName: "Next.js",
+          fontAwesomeClassname: "simple-icons:nextdotjs",
+          style: {
+            color: "#e0e0e0",
+          },
+        },
+        {
+          skillName: "Express.js",
+          fontAwesomeClassname: "simple-icons:express",
+          style: {
+            color: "#aaaaaa",
+          },
+        },
+        {
+          skillName: "Tailwind CSS",
+          fontAwesomeClassname: "simple-icons:tailwindcss",
+          style: {
+            color: "#38BDF8",
+          },
+        },
+        {
+          skillName: "GraphQL",
+          fontAwesomeClassname: "simple-icons:graphql",
+          style: {
+            color: "#E10098",
+          },
+        },
+        {
+          skillName: "Redis",
+          fontAwesomeClassname: "simple-icons:redis",
+          style: {
+            color: "#DC382D",
+          },
+        },
+        {
+          skillName: "Nginx",
+          fontAwesomeClassname: "simple-icons:nginx",
+          style: {
+            color: "#009639",
+          },
+        },
+        {
+          skillName: "Linux / Ubuntu",
+          fontAwesomeClassname: "simple-icons:linux",
+          style: {
+            color: "#FCC624",
+          },
+        },
+        {
+          skillName: "AWS",
+          fontAwesomeClassname: "simple-icons:amazonaws",
+          style: {
+            color: "#FF9900",
+          },
+        },
+        {
+          skillName: "Vite",
+          fontAwesomeClassname: "logos:vitejs",
+          style: {
+            color: "#646CFF",
+          },
+        },
+        {
+          skillName: "Webpack",
+          fontAwesomeClassname: "simple-icons:webpack",
+          style: {
+            color: "#8DD6F9",
+          },
+        },
+        {
+          skillName: "WebSockets",
+          fontAwesomeClassname: "mdi:lan-connect",
+          style: {
+            color: "#6BA3BE",
+          },
+        },
+        {
+          skillName: "REST APIs",
+          fontAwesomeClassname: "mdi:api",
+          style: {
+            color: "#6BA3BE",
+          },
+        },
+        {
+          skillName: "GitHub Actions",
+          fontAwesomeClassname: "simple-icons:githubactions",
+          style: {
+            color: "#2088FF",
+          },
+        },
+        {
+          skillName: "Yarn",
+          fontAwesomeClassname: "simple-icons:yarn",
+          style: {
+            color: "#2C8EBB",
+          },
+        },
+        {
+          skillName: "ESLint",
+          fontAwesomeClassname: "simple-icons:eslint",
+          style: {
+            color: "#4B32C3",
+          },
+        },
+        {
+          skillName: "Postman",
+          fontAwesomeClassname: "simple-icons:postman",
+          style: {
+            color: "#FF6C37",
+          },
+        },
+        {
+          skillName: "Sass/SCSS",
+          fontAwesomeClassname: "simple-icons:sass",
+          style: {
+            color: "#CC6699",
+          },
+        },
+        {
+          skillName: "Bootstrap",
+          fontAwesomeClassname: "simple-icons:bootstrap",
+          style: {
+            color: "#7952B3",
+          },
+        },
+        {
+          skillName: "Electron",
+          fontAwesomeClassname: "simple-icons:electron",
+          style: {
+            color: "#47848F",
+          },
+        },
+        {
+          skillName: "Supabase",
+          fontAwesomeClassname: "simple-icons:supabase",
+          style: {
+            color: "#3ECF8E",
+          },
+        },
+        {
+          skillName: "JWT",
+          fontAwesomeClassname: "simple-icons:jsonwebtokens",
+          style: {
+            color: "#FB015B",
+          },
+        },
+        {
+          skillName: "OAuth2",
+          fontAwesomeClassname: "simple-icons:auth0",
+          style: {
+            color: "#EB5424",
+          },
+        },
+        {
+          skillName: "LTI",
+          fontAwesomeClassname: "mdi:school-outline",
+          style: {
+            color: "#38BDF8",
+          },
+        },
+        {
+          skillName: "Google Cloud",
+          fontAwesomeClassname: "simple-icons:googlecloud",
+          style: {
+            color: "#4285F4",
+          },
+        },
+        {
+          skillName: "VS Code",
+          fontAwesomeClassname: "simple-icons:visualstudiocode",
+          style: {
+            color: "#007ACC",
+          },
+        },
       ],
     },
   ],

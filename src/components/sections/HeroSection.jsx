@@ -164,7 +164,7 @@ export default function HeroSection() {
               className="flex flex-wrap justify-center lg:justify-start gap-4 pt-1"
             >
               <motion.a
-                href={greeting.resumeLink}
+                href={greeting.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-aurora-primary"
@@ -172,7 +172,7 @@ export default function HeroSection() {
                 whileTap={{ scale: 0.97, y: 1 }}
                 transition={{ duration: 0.15 }}
               >
-                View Resume
+                View LinkedIn
               </motion.a>
               <motion.div
                 whileHover={{ y: -2, boxShadow: "0 8px 24px rgba(0,0,0,0.3)" }}
