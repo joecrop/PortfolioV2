@@ -526,6 +526,36 @@ const experience = {
       title: "IC Design Experience",
       experiences: [
         {
+          title: "Co-Founder and SVP of Digital & Algorithms",
+          company: "Overlord Labs",
+          company_url: "https://overlord-labs.com",
+          logo_path: "overlord_labs_logo.jpeg",
+          duration: "Jul 2025 - Present",
+          location: "Remote",
+          description: `I work on digital design, microprocessor design, and algorithms to build a smarter, safer foundation for the next era of battery management systems.`,
+          color: "#ECC767",
+        },
+        {
+          title: "Senior Principal Engineer",
+          company: "Integense Micro",
+          company_url: "https://integense.com",
+          logo_path: "integense_logo.jpeg",
+          duration: "Sep 2022 - Jun 2025",
+          location: "Remote",
+          description: `Senior Principal Engineer focused on advanced mixed-signal IC design.`,
+          color: "#ECC767",
+        },
+        {
+          title: "Advisor, Principal Engineer",
+          company: "Xceltronics",
+          company_url: "https://xceltronics.com",
+          logo_path: "crxmicrotech_logo.jpeg",
+          duration: "Aug 2022 - Jun 2025",
+          location: "Remote",
+          description: `Leader of digital design for Xceltronics.`,
+          color: "#ECC767",
+        },
+        {
           title: "Principal Member of Technical Staff",
           company: "Analog Devices (ADI)",
           company_url: "https://analogdevices.com",
@@ -585,14 +615,13 @@ const experience = {
       title: "Web Design / Dev-Ops / IT",
       experiences: [
         {
-          title: "CEO",
-          company: "GatherAct LLC",
-          company_url: "https://gatheract.com",
-          logo_path: "ga-logo.png",
-          duration: "Aug. 2010 - Present",
+          title: "Chief Executive Officer",
+          company: "LTIAAS",
+          company_url: "https://ltiaas.com",
+          logo_path: "ltiaas_logo.jpeg",
+          duration: "Mar 2021 - Present",
           location: "Home Office",
-          description: `Co-Founded GatherAct, an ed-tech company that does consulting and API services tailored to ed-tech.
-          GatherAct founded LTI As A Service (LTIAAS) that makes it easy for ed-tech tool to integrate with schools.`,
+          description: `As CEO of LTIAAS, I lead a dynamic team dedicated to simplifying learning content integration for edtech companies worldwide. Our platform enables developers to rapidly deploy applications across any LMS, reducing time-to-market and technical complexity. Under my leadership, LTIAAS has scaled to serve over 1.5 million monthly API requests, supporting clients in every continent.`,
           color: "#ECC767",
         },
         {

@@ -147,7 +147,8 @@ export default function Header() {
             {navLinks.map((link) => {
               const showBubble =
                 hoveredLabel === link.label ||
-                (!hoveredLabel && activeLabel === link.label);
+                openDropdown === link.label ||
+                (!hoveredLabel && !openDropdown && activeLabel === link.label);
               return link.dropdown ? (
                 <div key={link.label} className="relative">
                   <button
@@ -209,7 +210,7 @@ export default function Header() {
                 >
                   {({ isActive }) => (
                     <>
-                      {(hoveredLabel === link.label || (!hoveredLabel && isActive)) && (
+                      {(hoveredLabel === link.label || (!hoveredLabel && !openDropdown && isActive)) && (
                         <motion.div
                           layoutId="nav-bubble"
                           className="absolute inset-0 rounded-full"
