@@ -1,110 +1,118 @@
-% LaTeX resume using res.cls
-\documentclass[line,margin]{res} 
-\usepackage{helvetica} % uses helvetica postscript font (download helvetica.sty)
-%\usepackage{newcent}   % uses new century schoolbook postscript font 
+% LaTeX resume using res.cls -- compiled with pdflatex
+\documentclass[line,margin]{res}
+\usepackage[scaled]{helvet}          % Helvetica-style sans font (pdflatex-compatible)
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage[T1]{fontenc}
 \usepackage{graphicx}
 \usepackage{hyperref}
+\hypersetup{colorlinks=true, urlcolor=blue}
 
 \begin{document}
 
 \name{Joe Crop}
-% \address used twice to have two lines of address
-
 
 \begin{resume}
-\vspace{-4 mm}
-\noindent\begin{minipage}{0.84\textwidth}\raggedleft
-12814 Sierra Vista Dr., Lake Oswego, OR 97035\\
-joe.crop@gmail.com\\
-\url{https://joecrop.com}\\
-(503) 332-4445
+\vspace{-4mm}
+\noindent\begin{minipage}{0.82\textwidth}\raggedleft
+Lake Oswego, OR \quad\textbullet\quad joe.crop@gmail.com \quad\textbullet\quad (503) 332-4445 \\
+\url{https://joecrop.com} \quad\textbullet\quad \url{https://linkedin.com/in/joecrop}
 \end{minipage}
-\hfill%
-\begin{minipage}{0.16\textwidth}% adapt widths of minipages to your needs
-\includegraphics[scale=0.2]{qr.eps}
-\end{minipage}%
+\hfill
+\begin{minipage}{0.16\textwidth}
+\includegraphics[scale=0.2]{qr.png}
+\end{minipage}
 
 
-\section{OBJECTIVE}
-An experienced digital mixed-signal IC design and verification engineer looking to make a bigger impact
- 
+\section{SUMMARY}
+IC architect, algorithm designer, and serial entrepreneur with 15+ years spanning silicon tape-out,
+mixed-signal design, and company building. PhD in ECE from Oregon State University. 30+ tape-outs
+across consumer, automotive, medical, and energy applications.
+
+
 \section{EDUCATION}
 
-{\sl PhD,} Electrical Computer Engineering, Oregon State University (2014)\\
-Concentration: Reliability of ultra low-power digital mixed-signal integrated circuits
+{\sl PhD,} Electrical \& Computer Engineering \hfill Oregon State University, 2014 \\
+Dissertation: Resilient ultra-low-power digital mixed-signal ICs --- reliability under near-threshold operation
 
-{\sl BS,} Electrical Computer Engineering, Oregon State University (2009)\\
-Minor: Computer Science
- 
- 
+{\sl BS,} Electrical \& Computer Engineering \hfill Oregon State University, 2009 \quad Minor: CS
+
+
 \section{EXPERIENCE}
 
-   \textbf{Senior Principal Member of Technical Staff:} Currently works at \textit{Analog Devices} (Formally Maxim Integrated) designing, verifying, and modeling digital and mixed-signal IP for a broad range of applications.  (2014-Present)
+\textbf{Co-Founder \& SVP, Digital \& Algorithms --- Overlord Labs} \hfill Jul 2025--Present \\
+Building the next-generation BMS SoC (Overlord Genesis\texttrademark): embedded RISC-V core,
+physics-based on-chip electrochemical battery modeling, autonomous protection, and fully
+programmable OEM firmware. Leading digital architecture, microprocessor design, and battery
+algorithm development.
+
+\textbf{CEO \& Founder --- LTIAAS} \hfill Mar 2021--Present \\
+Founded and scaled a B2B SaaS API platform simplifying LTI (Learning Tools Interoperability)
+for edtech developers and publishers. Scaled to 1.5M+ monthly API requests across every continent.
+
+\textbf{Senior Principal Engineer --- Integense Micro} \hfill Sep 2022--Jun 2025 \\
+Advanced mixed-signal IC design and architecture for high-performance signal chain ICs.
+Led digital RTL, verification, and top-level integration.
+
+\textbf{Advisor \& Principal Engineer --- Xceltronics / CRX Microtech} \hfill Aug 2022--Jun 2025 \\
+Led digital design for the CRX1 (16S BMS monitor/protector/balancer IC) and CRX0
+(single-cell Li-ion protector). Defined architecture, RTL, and verification strategy.
+
+\textbf{Principal Member of Technical Staff --- Analog Devices (f.k.a.\ Maxim Integrated)}
+\hfill 2014--2022
 
 \begin{itemize}
-  \item \textit{Digital and Mixed-Signal IP Projects:} Design, verification, and modeling of Pipeline and SAR ADCs, Hybrid PLLs, power converters, memory controllers, RISCV digital/mixed-signal IP blocks, and process qualification test chips.
-
- \item \textit{Product Contributions:} RF-to-bits Hybrid-Radio Receivers, Audio DACs, Ultrasound Front-ends, Power Converters, ADCs, Battery Management ICs
- 
- \item \textit{Digital Expertise:} Lead team that architected an automated "chip generator" that included AMS+UVM testbench and regmap/model generation, I2C, SPI, OTP, and other digital/mixed-signal IPs that were used in most new designs across Maxim. Currently leading digital IP design and verification projects.
-
+  \item \textit{IP Design \& Verification:} Pipelined and SAR ADCs, Hybrid PLLs, power converters,
+        memory controllers, RISC-V mixed-signal blocks, OTP, I2C, SPI, and process qualification chips.
+  \item \textit{Products:} RF-to-bits Hybrid-Radio Receivers (MAX2175), Audio DACs, Ultrasound
+        front-ends, Battery Management ICs (MAX77865S, MAX11261), Power Converters.
+  \item \textit{CAD / Automation:} Architected an automated chip generator covering AMS+UVM
+        testbench and regmap/model generation plus reusable mixed-signal IP; deployed across
+        most new Maxim design starts.
 \end{itemize}
 
+\textbf{I/O Design Intern --- Intel} \hfill Summer 2012 \\
+I/O circuits for next-generation 22nm server processors; designed novel circuits and verified
+operation across PVT corners.
 
-\textbf{Design Intern}: Interned at Intel designing I/O circuits for next-generation server processors in 22nm CMOS. (Summer 2012)
+\textbf{Instructor \& Research Assistant --- Oregon State University} \hfill 2009--2014 \\
+Taught ECE 473/573 (digital design, SystemVerilog, synthesis). Researched resilient ultra-low-power
+VLSI and bio-medical sensor SoCs (SRC, NSF, DOE, DARPA funded). Research intern at Fudan
+University, Shanghai (Summer 2011).
 
-\textbf{Instructor}: Taught ECE 473/573 to a mixed class of senior undergrads and graduate students. The class focused on digital design with SystemVerilog, synthesis techniques, and scripting. (Spring 2013)
 
-\textbf{Research Intern}: Spent the summer as a research intern at Fudan University in Shanghai, China. Research focused on low-power and low-energy encryption engine optimization for
-integrated RFID systems. (Summer 2011)
-
-\textbf{Research Assistant}: Researched resilient ultra low-power digital circuits and architectures in the VLSI group at OSU (SRC,NSF,DOE,DOD,NSA, and DARPA funded) as well as bio-medical sensor SOCs. (2010 –- 2014)
-
-\textbf{Summer Class Instructor}: Taught class of computer science students over summer term. Material included computer architecture concepts, advanced assembly programming, and digital/CMOS logic. (Summer 2010)
-
-\textbf{Graduate Teaching Assistant:} Taught Computer Architecture / EE classes to undergraduate students. Topics range from digital logic and basic computer architecture to advanced CMOS circuit design. (2009 –- 2011)
-
-%\textbf{Pre-college Outreach Programs Instructor}: Taught web design and other technology-oriented classes to both middle school and high school students through OSU. (2006 –- 2014)
-
- 
 \section{TECHNICAL SKILLS}
 
-\textbf{Programming Languages:} JavaScript, TypeScript, Java/Scala, C, C++, PHP, REST, AJAX, JSON, Android SDK, SQL, HTML, Perl, Python, UNIX/Linux Shell Scripting, Verilog, SystemVerilog, Verilog AMS, UVM, VHDL, Skill, \LaTeX, Microsoft Assembly (MASM), AVR Assembly/C/C++/Arduino, TI MSP430 Assembly, SPICE, LabWindows CVI (LabView)
+\textbf{IC Design \& EDA:} SystemVerilog, Verilog-AMS, VHDL, UVM, SPICE/Spectre, Virtuoso,
+  Synopsys Design Vision / PrimeTime, Cadence Xcelium / SimVision / SKILL / OCEAN, Calibre (DRC/LVS),
+  SoC Encounter (CPF/UPF), Xilinx FPGA, Altium / KiCad, MATLAB, PBS / LSF / SGE
 
-\textbf{Engineering:} Perforce/GIT, Matlab, SPICE/Spectre, Virtuoso, Xilinx FPGA Toolset, Sun Grid Engine, ModelSim, Synopsis Front-End Toolchain (Design Vision, Primetime, etc.), Xcellium/Spectre/Simvision, SoC Encounter (+ CPF/UPF), Altium PCB Design Software, LabView, Focused Ion Bean/Scanning Electron Microscope
+\textbf{Languages \& Frameworks:} Python, C/C++, JavaScript/TypeScript, React, Vue.js, Next.js,
+  Express.js, Node.js, PHP, Java, Perl, Bash/Shell, SQL, GraphQL, REST APIs, WebSockets
+
+\textbf{DevOps \& Cloud:} Git, Perforce, Docker, Kubernetes, AWS, Linux/Ubuntu,
+  PostgreSQL, MongoDB, MySQL, Redis, Firebase, Nginx, GitHub Actions, GitLab CI, Netlify
 
 
-\section{NOTABLE PUBLICATIONS}
+\section{SELECTED PUBLICATIONS}
 
-\textbf{J. Crop}; et. al. ``A Testbench Creation and Maintenance Tool To Enhance IP Reuse'', GTC, 2022
+\textbf{J.~Crop} et al., ``A Testbench Creation and Maintenance Tool To Enhance IP Reuse,'' GTC, 2022
 
-\textbf{J. Crop}; et. al. ``A Verification-driven model for IP delivery'', 1st Virtual Functional Verification Summit, Maxim Integrated, 2021
+\textbf{J.~Crop} et al., ``A Verification-Driven Model for IP Delivery,'' Functional Verification Summit, 2021
 
-\textbf{J. Crop}; et. al. ``The Future of OTP in P90 at Maxim'', Internal Design Conference, Maxim Integrated 2019
+B.~Querbach \ldots \textbf{J.~Crop}, P.Y.~Chiang, ``Architecture of a Reusable BIST Engine \ldots
+on 14-nm SoC,'' IEEE Design \& Test, 2016
 
-B. Querbach, R.Khanna, S.Puligundla, D. Blankenbeckler, \textbf{J.Crop}, P.Y. Chiang. ``Architecture of a Reusable BIST Engine for Detection and Autocorrection of Memory Failures and for IO Debug, Validation, Link Training, and Power Optimization on 14-nm SoC'', IEEE Design \& Test, 2016
+R.~Pawlowski, \textbf{J.~Crop} et al., ``Characterization of Radiation-Induced Soft Errors from
+0.33V to 1.0V in 65nm CMOS,'' CICC 2014
 
-R. Pawlowski, \textbf{J. Crop}, M. Cho, J. Tschanz, V. De, T. Fairbanks, H. Quinn, S. Borkar, and P.Y. Chiang, ``Characterization of Radiation-Induced SRAM and Logic Soft Errors from 0.33V to 1.0V in 65nm CMOS'', CICC, 2014
+\textbf{Crop, J.}; Pawlowski, R.; Chiang, P., ``Regaining Throughput Using Completion Detection
+for Error-Resilient, Near-Threshold Logic,'' DAC 2012
 
-R. Pawlowski, \textbf{J. Crop}, M. Cho, J. Tschanz, V. De, S. Borkar, T. Fairbanks, H. Quinn, P. Chiang ``A Reference Design for Effective Characterization of Soft Error Vulnerability of Ultra-low Voltage Logic and Memory Circuits'', SELSE Workshop, 2014
+Pawlowski \ldots \textbf{Crop, J.} et al., ``Synctium-I: A 530mV, 10-Lane SIMD Processor with
+Variation Resiliency in 45nm-SOI,'' ISSCC 2012
 
-%Krimer, E.; \textbf{Crop, J.}; Erez, M.; and Chiang, P.; ``Replication-Free Single-Event Transient (SET) Detection for Eliminating Silent Data Corruption in CMOS Logic,'' Silicon Errors in Logic - System Effects (SELSE-9), Stanford University, March 2013
-
-\textbf{Crop, J.}; Pawlowski, R.; and Chiang, P.; ``Regaining Throughput Using Completion Detection for Error-Resilient, Near-Threshold Logic'', DAC, 2012
-
-Chen, C-H; \textbf{Crop, J}; Chiang, P; Temes, G; , ``A 12-Bit 7 W/Channel 1 Khz/Channel Incremental ADC for Biosensor Interface Circuits'' ISCAS 2012
-
-Pawlowski, R; Krimer, E.; \textbf{Crop, J}; Postman, J; Chiang, P.; Erez, M.; , ``Synctium-I: A 530mV, 10-lane SIMD Processor with Variation Resiliency in 45nm-SOI'' ISSCC 2012
-
-Xiao, M; Xiang, S; Wang, J; \textbf{Crop,J}; , ``Design of a UHF RFID Tag Baseband with the Hummingbird Cryptographic Engine'' ASICON 2011
-
-%\textbf{Crop, J.}; et. al. , ``Error Detection and Recovery Techniques for Variation-Aware CMOS Computing: A Comprehensive Review.'' J. Low Power Electron. Appl. 2011
-
-\textbf{Crop, J.}; et. al. , ``Design automation methodology for improving the variability of synthesized digital circuits operating in the sub/near-threshold regime,'' IGCC, 2011 
-
-Moezzi-Madani, N.; Thorolfsson, T.; \textbf{Crop, J.}; Chiang, P.; Davis, W.R.; , ``An energy efficient 64-QAM MIMO detector for emerging wireless standards,''  Design, Automation \& Test in Europe Conference \& Exhibition (DATE) , 2011
-
-\textbf{Crop, J.}; et. al.; , ``150mV sub-threshold Asynchronous multiplier for low-power sensor applications,'' VLSI Design Automation and Test (VLSI-DAT), 2010
+\textbf{Crop, J.} et al., ``150mV Sub-Threshold Asynchronous Multiplier for Low-Power Sensor
+Applications,'' VLSI-DAT 2010
 
 \end{resume}
 \end{document}
