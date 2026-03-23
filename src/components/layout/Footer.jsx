@@ -12,13 +12,13 @@ const socialIcons = [
 
 export default function Footer() {
   return (
-    <footer className="border-t border-border/30 dark:border-border/30 bg-background-light dark:bg-background mt-16">
+    <footer className="relative z-10 border-t border-border/30 dark:border-border/30 bg-background-light dark:bg-background mt-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="flex flex-col items-center gap-6">
           {/* Logo */}
           <Link
             to="/"
-            className="font-display text-2xl text-accent hover:text-accent-hover transition-colors"
+            className="font-sans font-bold text-3xl tracking-tight bg-gradient-to-r from-[#38BDF8] to-[#a78bfa] bg-clip-text text-transparent hover:opacity-80 transition-opacity"
           >
             Joe Crop
           </Link>
@@ -51,7 +51,7 @@ export default function Footer() {
           </nav>
 
           <p className="text-sm text-muted">
-            Made with ❤️ by Joe Crop · {new Date().getFullYear()}
+            Made by Joe Crop · &copy; {new Date().getFullYear()}
           </p>
         </div>
       </div>

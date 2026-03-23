@@ -97,7 +97,8 @@ export default function HeroSection() {
             animate="show"
             className="flex-1 space-y-6 text-center lg:text-left"
           >
-            <motion.div variants={item} className="flex items-center gap-2 justify-center lg:justify-start">
+            <motion.div variants={item} className="flex items-center gap-2 justify-center lg:justify-start flex-wrap">
+              {/* PhD — cyan dot */}
               <span
                 className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono"
                 style={{
@@ -107,10 +108,40 @@ export default function HeroSection() {
                 }}
               >
                 <span
-                  className="w-1.5 h-1.5 rounded-full bg-emerald-400 inline-block"
-                  style={{ boxShadow: "0 0 6px #34d399" }}
+                  className="w-1.5 h-1.5 rounded-full inline-block"
+                  style={{ background: "#38bdf8", boxShadow: "0 0 6px #38bdf8" }}
                 />
-                PhD · ECE · Oregon State
+                PhD
+              </span>
+              {/* CEO — emerald dot */}
+              <span
+                className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono"
+                style={{
+                  background: "rgba(52,211,153,0.08)",
+                  border: "1px solid rgba(52,211,153,0.25)",
+                  color: "#34d399",
+                }}
+              >
+                <span
+                  className="w-1.5 h-1.5 rounded-full inline-block"
+                  style={{ background: "#34d399", boxShadow: "0 0 6px #34d399" }}
+                />
+                CEO
+              </span>
+              {/* Co-Founder — violet dot */}
+              <span
+                className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono"
+                style={{
+                  background: "rgba(167,139,250,0.08)",
+                  border: "1px solid rgba(167,139,250,0.25)",
+                  color: "#a78bfa",
+                }}
+              >
+                <span
+                  className="w-1.5 h-1.5 rounded-full inline-block"
+                  style={{ background: "#a78bfa", boxShadow: "0 0 6px #a78bfa" }}
+                />
+                Co-Founder
               </span>
             </motion.div>
 
@@ -137,11 +168,11 @@ export default function HeroSection() {
                 <Typewriter
                   options={{
                     strings: [
+                      "CEO",
                       "Microchip Designer",
                       "Full Stack Developer",
                       "Dev-Ops Engineer",
                       "Educator",
-                      "Circuit Hacker",
                     ],
                     autoStart: true,
                     loop: true,
