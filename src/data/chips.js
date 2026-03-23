@@ -1,5 +1,90 @@
 export const chipsData = [
   {
+    id: 11,
+    name: "Overlord Genesis™ BMS IC",
+    company: "Overlord Labs",
+    year: "2025+",
+    type: "Intelligent BMS SoC",
+    description:
+      "Next-generation battery management SoC with an embedded RISC-V core for fully programmable on-chip firmware. Combines high-resolution cell sensing (voltage, current, temperature) with physics-based electrochemical modeling (Genesis™) and autonomous protection (OverWatch™) — all without an external MCU. Supports custom OEM charging curves, thermal limits, and power profiles, plus hardware-level security and built-in battery telemetry.",
+    specs: [
+      { label: "Core", value: "Embedded RISC-V" },
+      { label: "Sensing", value: "High-res V / I / T" },
+      { label: "Algorithm", value: "On-chip physics-based model" },
+      { label: "Security", value: "Hardware-level auth" },
+    ],
+    image: "/images/OL-genesis.png",
+    publishedLink: "https://overlord-labs.com/",
+  },
+  {
+    id: 9,
+    name: "CRX1 Battery Monitor & Protector IC",
+    company: "CRX Microtech (formerly Xceltronics)",
+    year: "2023+",
+    type: "Battery Management IC",
+    description:
+      "BMS monitor and protector IC for up to 16-series Li-ion packs. Integrates autonomous voltage, current, and temperature measurement, hardware protection, and active cell balancing. Drives charge/discharge FETs via integrated charge pump with I2C or SPI communication.",
+    specs: [
+      { label: "Cell Config", value: "Up to 16S Li-ion/LiPo" },
+      { label: "Interface", value: "I2C / SPI" },
+      { label: "Package", value: "64-pin TQFP 7×7mm" },
+      { label: "Features", value: "Measure + Protect + Balance" },
+    ],
+    image: "/images/CRX1.png",
+    publishedLink: null,
+  },
+  {
+    id: 10,
+    name: "CRX0 Single-Cell Li-ion Protector",
+    company: "CRX Microtech (formerly Xceltronics)",
+    year: "2024+",
+    type: "Battery Protection IC",
+    description:
+      "Next-generation single-cell Li-ion battery protector built for smartphones, tablets, and portable devices. Delivers industry-leading accuracy for overcharge, over-discharge, and overcurrent protection. The smallest and most competitively priced Li-ion protector in its class, with superior RF/EMI immunity and IEC compliance. One universal design covers all configurations, minimizing customer design effort.",
+    specs: [
+      { label: "Cell Config", value: "Single-cell Li-ion" },
+      { label: "Protection", value: "OVP / UVP / OCP" },
+      { label: "Target", value: "Consumer portable devices" },
+      { label: "Differentiator", value: "RF/EMI robust, ultra-compact" },
+    ],
+    image: "/images/CRX0.png",
+    publishedLink: null,
+  },
+  {
+    id: 7,
+    name: "MAX77865S Companion PMIC",
+    company: "Maxim Integrated (now Analog Devices)",
+    year: "2016+",
+    type: "Power Management IC",
+    description:
+      "Multi-function companion PMIC for flagship Android smartphones, including Samsung Galaxy S8/Note 8. Integrates a multi-phase USB Type-C charger with Power Delivery support, multiple high-efficiency buck converters, LDO regulators, and a fuel gauge interface — all in a compact form factor for ultra-thin mobile devices.",
+    specs: [
+      { label: "Type", value: "Companion PMIC" },
+      { label: "Charging", value: "USB-C / Power Delivery" },
+      { label: "Company", value: "Maxim Integrated" },
+    ],
+    image: "/images/max77865s.jpg",
+    publishedLink: null,
+  },
+  {
+    id: 8,
+    name: "MAX11261 24-Bit Delta-Sigma ADC",
+    company: "Maxim Integrated (now Analog Devices)",
+    year: "2019+",
+    type: "Precision ADC",
+    description:
+      "6-channel, 24-bit delta-sigma ADC delivering exceptional precision at very low power. Features a 6.2 nV/√Hz noise PGA (1x–128x gain), 16 ksps sample rate, 64-entry on-chip FIFO, and an I2C interface in a tiny wafer-level package. Targets battery-powered instrumentation, medical equipment, pressure sensors, and wearable electronics.",
+    specs: [
+      { label: "Resolution", value: "24-bit" },
+      { label: "Channels", value: "6" },
+      { label: "Sample Rate", value: "16 ksps" },
+      { label: "Noise", value: "6.2 nV/√Hz" },
+      { label: "Interface", value: "I2C" },
+    ],
+    image: "/images/max11261.png",
+    publishedLink: "https://www.analog.com/en/products/max11261.html",
+  },
+  {
     id: 1,
     name: "MAX2175 Hybrid-Radio Receiver",
     company: "Maxim Integrated (now Analog Devices)",
@@ -12,7 +97,7 @@ export const chipsData = [
       { label: "Standards", value: "AM/FM/HD Radio" },
       { label: "Company", value: "Maxim Integrated" },
     ],
-    image: null,
+    image: "/images/MAX2175-block-diagram.jpg",
     publishedLink: null,
   },
   {
@@ -28,7 +113,7 @@ export const chipsData = [
       { label: "Test Facility", value: "LANSCE, Los Alamos" },
       { label: "Focus", value: "Near-threshold reliability" },
     ],
-    image: "/pictures/3d_graph.png",
+    image: "/images/LANSCE-chip.png",
     publishedLink: null,
   },
   {
@@ -44,7 +129,7 @@ export const chipsData = [
       { label: "Architecture", value: "10-lane SIMD" },
       { label: "Publication", value: "ISSCC 2012" },
     ],
-    image: null,
+    image: "/images/SYNCYTIUM.png",
     publishedLink: null,
   },
   {

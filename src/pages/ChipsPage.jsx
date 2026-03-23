@@ -84,8 +84,8 @@ export default function ChipsPage() {
               IC Chips
             </h1>
             <div className="w-16 h-1 bg-accent mx-auto rounded-full" />
-            <p className="mt-4 text-muted max-w-xl mx-auto">
-              Integrated circuits I've designed, taped out, or published during my career at Maxim / ADI and as a Ph.D. researcher at Oregon State University.
+            <p className="mt-4 text-text dark:text-text max-w-xl mx-auto">
+              Integrated circuits I've designed, taped out, or published during my career at Maxim / ADI and beyond, as well as a Ph.D. researcher at Oregon State University.
             </p>
           </motion.div>
 
