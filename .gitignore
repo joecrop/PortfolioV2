@@ -6,6 +6,9 @@
 /build
 .pnp.js
 
+# build output (Netlify rebuilds this from source)
+/dist
+
 # testing
 /coverage
 
