@@ -23,8 +23,8 @@ export default {
           muted: "rgba(56,189,248,0.15)",
         },
         muted: {
-          DEFAULT: "#6b7280",
-          light: "#9ca3af",
+          DEFAULT: "#ffffff",
+          light: "#6b7280",
         },
         text: {
           DEFAULT: "#f9fafb",
