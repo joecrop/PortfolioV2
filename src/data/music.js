@@ -84,8 +84,9 @@ export const musicData = {
     },
   ],
   currentEnsembles: [
-    { name: "OSU Trumpet Choir", instrument: "Trumpet" },
-    { name: "Corvallis-OSU Symphony Orchestra", instrument: "Trumpet" },
+    { years: "2014–2015", name: "Brookline Symphony Orchestra", instrument: "Trumpet" },
+    { years: "2004–2014", name: "OSU Trumpet Choir", instrument: "Trumpet" },
+    { years: "2004–2014", name: "Corvallis-OSU Symphony Orchestra", instrument: "Trumpet" },
   ],
   pastEnsembles: [
     { years: "2009", name: "OSU Brass Choir" },

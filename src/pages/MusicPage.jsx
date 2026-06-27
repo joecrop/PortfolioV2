@@ -106,7 +106,7 @@ export default function MusicPage() {
             </h1>
             <div className="w-16 h-1 bg-accent mx-auto rounded-full" />
             <p className="mt-4 text-muted max-w-lg mx-auto">
-              I've played trumpet since 5th grade. Here are recordings from performances with various ensembles at Oregon State University and beyond.
+              I've played the trumpet for over 30 years. Here are recordings from performances with various ensembles at Oregon State University and beyond.
             </p>
           </motion.div>
 
